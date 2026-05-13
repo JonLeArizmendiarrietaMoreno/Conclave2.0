@@ -175,7 +175,7 @@ public class MainGUI extends JFrame {
 		this.getContentPane().add(jCalendar, null);
 		
 		displayMainGUI = new JTextArea();
-		displayMainGUI.setText("Dios esta muerto y tu lo has matado");
+		displayMainGUI.setText("Dios esta moribundo y lo voy a rematar");
 		displayMainGUI.setBounds(192, 158, 145, 82);
 		displayMainGUI.setLineWrap(true);
 		displayMainGUI.setWrapStyleWord(true);
