@@ -1,0 +1,34 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-13 16:27:04 #1 store] 
+Database 'C:\Users\ehu\workspaces\eclipse-workspace\Market26\src\main\resources\products.temp' is opened by 18260@U025233
+
+[2026-05-13 16:27:04 #2 type] 
+Type domain.Seller is not enhanced.
+
+[2026-05-13 16:27:04 #3 type] 
+Type domain.Sale is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-13 16:43:32 #1 store] 
+Database 'C:\Users\ehu\workspaces\eclipse-workspace\Market26\src\main\resources\products.temp' is opened by 16704@U025233
+
+[2026-05-13 16:43:32 #2 type.registry] 
+New type domain.Seller
+
+[2026-05-13 16:43:32 #3 type] 
+Type domain.Seller is not enhanced.
+
+[2026-05-13 16:43:32 #4 type.registry] 
+New type domain.Sale
+
+[2026-05-13 16:43:32 #5 type] 
+Type domain.Sale is not enhanced.
+
+[2026-05-13 16:43:32 #6 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-13 16:43:32 #7 type.registry] 
+New type java.util.ArrayList<domain.Sale>
+

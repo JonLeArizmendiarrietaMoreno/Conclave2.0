@@ -1,0 +1,67 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-12 15:20:11 #1 store] 
+Database 'C:\Users\ehu\workspaces\eclipse-workspace\Market26\src\main\resources\products.temp' is opened by 8600@U025233
+
+[2026-05-12 15:20:11 #2 type.registry] 
+New type domain.Seller
+
+[2026-05-12 15:20:11 #3 type] 
+Type domain.Seller is not enhanced.
+
+[2026-05-12 15:20:11 #4 type.registry] 
+New type domain.Sale
+
+[2026-05-12 15:20:11 #5 type] 
+Type domain.Sale is not enhanced.
+
+[2026-05-12 15:20:11 #6 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-12 15:20:11 #7 type.registry] 
+New type java.util.ArrayList<domain.Sale>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-12 15:20:26 #1 server] 
+Server on port 6136 has started by 3268@U025233
+
+[2026-05-12 15:20:31 #2 store] 
+Database 'C:\Users\ehu\workspaces\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\products.temp' is opened by 3268@U025233
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-12 15:20:31 #1 type] 
+Type domain.Seller is not enhanced.
+
+[2026-05-12 15:20:31 #2 type] 
+Type domain.Sale is not enhanced.
+
+[2026-05-12 15:20:45 #3 store] 
+Database 'C:\Users\ehu\workspaces\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\products.temp' is closed by 3268@U025233
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-12 15:36:17 #1 store] 
+Database 'C:\Users\ehu\workspaces\eclipse-workspace\Market26\src\main\resources\products.temp' has been recovered (tr. 1-6)
+
+[2026-05-12 15:36:17 #2 store] 
+Database 'C:\Users\ehu\workspaces\eclipse-workspace\Market26\src\main\resources\products.temp' is opened by 10884@U025233
+
+[2026-05-12 15:36:17 #3 type] 
+Type domain.Seller is not enhanced.
+
+[2026-05-12 15:36:17 #4 type] 
+Type domain.Sale is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-12 16:46:43 #1 store] 
+Database 'C:\Users\ehu\workspaces\eclipse-workspace\Market26\src\main\resources\products.temp' is opened by 12820@U025233
+
+[2026-05-12 16:46:43 #2 type] 
+Type domain.Seller is not enhanced.
+
+[2026-05-12 16:46:43 #3 type] 
+Type domain.Sale is not enhanced.
+
