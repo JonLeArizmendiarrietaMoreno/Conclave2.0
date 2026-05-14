@@ -62,18 +62,14 @@ public class BLFacadeImplementation  implements BLFacade {
     
 
     
-    
-    @Override
     public HashMap<Cardenal, Boolean> iniciarConclave(Date fechaInicio) {
         dataAccess.open();
         try {
         	HashMap<Cardenal, Boolean> hm = dataAccess.getCardenales();
 
-        	
-
             // 3. Crear y guardar el cónclave
             Conclave conclave = new Conclave(new Date());
-            dataAccess.updateElectores(hm, conclave);
+            dataAccess.añadirElectores(hm, conclave);
             dataAccess.addConclave(conclave);
             
 
@@ -89,9 +85,27 @@ public class BLFacadeImplementation  implements BLFacade {
     
     
     
-    
-    
-    
+    public boolean iniciarVotacion(Date horaInicio) {
+    	dataAccess.open();
+        try {
+        	
+            Conclave conclaveActual = dataAccess.getConclaveActivo();
+            if (conclaveActual == null) {
+                return false;  // No a habido ningun conclave
+            }
+
+            SesionVoto ultima = dataAccess.getLastSesionVoto(conclaveActual);
+
+            if (ultima != null && ultima.getHoraFin() == null) {
+                return false;  // Votación previa aún abierta
+            }
+            
+            return dataAccess.añadirSesionVoto(horaInicio, conclaveActual);
+        } finally {
+            dataAccess.close();
+        }
+
+    }
     
     
     

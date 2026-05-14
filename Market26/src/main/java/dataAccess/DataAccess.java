@@ -33,6 +33,7 @@ import java.text.SimpleDateFormat;
 import javax.imageio.ImageIO;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
@@ -197,13 +198,14 @@ public class DataAccess {
         em.persist(conclave);
         em.getTransaction().commit();
     }
-
+    
+    
     
     /**
      * Recorre el HashMap, comprueba si cada cardenal es elector (presente y edad < 80),
      * actualiza el valor a true en el mapa y persiste un objeto CardenalElector en BD.
      */
-    public void updateElectores(HashMap<Cardenal, Boolean> mapa, Conclave conclave) {
+    public void añadirElectores(HashMap<Cardenal, Boolean> mapa, Conclave conclave) {
     	Calendar rightNow = Calendar.getInstance();
         int anyoActual = rightNow.get(Calendar.YEAR);
         
@@ -232,6 +234,7 @@ public class DataAccess {
     }
     
     
+    
     /*
     db.getTransaction().begin();
     
@@ -242,6 +245,218 @@ public class DataAccess {
     return db.find(Pilot.class,name);
     
     */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /**
+     * Busca el ultimo Conclave.
+     */
+    public Conclave getConclaveActivo() {
+        TypedQuery<Conclave> query = em.createQuery(
+            "SELECT c FROM Conclave c WHERE c.fechaFin IS NULL", Conclave.class);
+        try {
+            return query.getSingleResult();
+        } catch (NoResultException e) {
+            return null;
+        }
+    }
+    
+    
+    
+    /**
+     * Busca la ultima sesion voto.
+     */
+    public SesionVoto getLastSesionVoto(Conclave conclave) {
+        TypedQuery<SesionVoto> query = em.createQuery(
+            "SELECT s FROM SesionVoto s WHERE s.conclave = :conclave ORDER BY s.idSesion DESC", SesionVoto.class);
+        query.setParameter("conclave", conclave);
+        query.setMaxResults(1);
+        List<SesionVoto> result = query.getResultList();
+        
+        if (result.isEmpty()) {
+            return null;
+        } else {
+            return result.get(0);
+        }
+        //return result.isEmpty() ? null : result.get(0); TERNARIO
+        //return  if                true : false
+    }
+    
+    
+    public boolean añadirSesionVoto(Date horaInicio,Conclave conclaveActual) 
+    {
+    	
+    	em.getTransaction().begin();
+    	try {
+        // id automatic, resultado se inicia en "", horafin == null
+        SesionVoto nuevaSesionVoto = new SesionVoto(horaInicio, conclaveActual);
+        em.persist(nuevaSesionVoto);
+        em.getTransaction().commit();
+        
+    	}
+    	catch (NoResultException e) {
+    		em.getTransaction().rollback();
+            return false;
+        }
+        return true;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

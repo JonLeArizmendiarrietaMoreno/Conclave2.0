@@ -8,8 +8,9 @@ import java.util.List;
 @Entity
 public class Conclave {
 
-	@Id @GeneratedValue
-    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private Date fechaInicio;
     private Date fechaFin;  // null por defecto = cónclave abierto
 

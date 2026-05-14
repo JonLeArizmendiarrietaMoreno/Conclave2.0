@@ -43,7 +43,8 @@ public interface BLFacade  {
 	
 	
 	
-	
+    @WebMethod
+	public boolean iniciarVotacion(Date horaInicio);
 	
 	
 	
@@ -122,42 +123,6 @@ public interface BLFacade  {
 	
 		
 	@WebMethod public Image downloadImage(String imageName);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

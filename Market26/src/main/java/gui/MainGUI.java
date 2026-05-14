@@ -216,10 +216,10 @@ public class MainGUI extends JFrame {
 		
 		
 		IniciarConclave.addActionListener(new ActionListener() {
-		    @Override
 		    public void actionPerformed(ActionEvent e) {
 		        try {
 		            // Llamada a la fachada (asegúrate de que appFacadeInterface no sea null)
+		        	System.out.println(jCalendar.getDate());
 		            HashMap<Cardenal, Boolean> resultado = blfacadeinterface.iniciarConclave(jCalendar.getDate());
 
 		            // Mostrar información en el área de texto
@@ -237,7 +237,18 @@ public class MainGUI extends JFrame {
 		});
 		
 		
-		
+		// Dentro del constructor de MainGUI, después de crear IniciarVotacion
+		IniciarVotacion.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+
+		        boolean conseguido = blfacadeinterface.iniciarVotacion(jCalendar.getDate());
+		        if (conseguido) {
+		            displayMainGUI.setText("Votación iniciada a las " + jCalendar.getDate());
+		        } else {
+		            displayMainGUI.setText("Error: ya hay una votación abierta.");
+		        }
+		    }
+		});
 		
 		
 		

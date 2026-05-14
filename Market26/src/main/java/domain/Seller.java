@@ -13,7 +13,7 @@ import javax.xml.bind.annotation.XmlID;
 import javax.xml.bind.annotation.XmlIDREF;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@Entity
+
 public class Seller implements Serializable {
 	
 	/**
