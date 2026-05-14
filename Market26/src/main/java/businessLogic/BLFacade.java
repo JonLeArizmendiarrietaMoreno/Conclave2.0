@@ -1,10 +1,22 @@
 package businessLogic;
 
 import java.io.File;
+
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
+
+
+
+import gui.*;
+import domain.*;
+import domain.Cardenal;
 import domain.Sale;
+
+
+
+
 import exceptions.FileNotUploadedException;
 import exceptions.MustBeLaterThanTodayException;
 import exceptions.SaleAlreadyExistException;
@@ -14,13 +26,60 @@ import javax.jws.WebService;
 import java.awt.image.BufferedImage;
 import java.awt.Image;
 
-import gui.*;
+
 /**
  * Interface that specifies the business logic.
  */
 @WebService
 public interface BLFacade  {
 	  
+	
+	
+	
+	
+	
+    @WebMethod
+    public HashMap<Cardenal, Boolean> iniciarConclave(Date fechaInicio);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	/**
 	 * This method creates/adds a product to a seller
@@ -63,6 +122,48 @@ public interface BLFacade  {
 	
 		
 	@WebMethod public Image downloadImage(String imageName);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 	
 
 	

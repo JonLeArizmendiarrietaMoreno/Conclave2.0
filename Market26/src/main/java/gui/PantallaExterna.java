@@ -2,14 +2,22 @@ package gui;
 
 import java.awt.EventQueue;
 
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+
+import javax.persistence.*;
+import javax.swing.*;
+import java.awt.*;
+
 
 public class PantallaExterna extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -36,6 +44,12 @@ public class PantallaExterna extends JFrame {
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		textField = new JTextField();
+		textField.setBounds(52, 69, 280, 156);
+		contentPane.add(textField);
+		textField.setColumns(10);
 
 	}
 

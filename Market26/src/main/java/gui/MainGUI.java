@@ -1,11 +1,8 @@
 package gui;
 
 /**
- * @author Software Engineering teachers
+ * @author Jon Le Arizmendiarrieta
  */
-
-
-import javax.swing.*;
 
 import businessLogic.BLFacade;
 
@@ -16,20 +13,31 @@ import java.awt.GridLayout;
 import java.awt.Rectangle;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.util.Calendar;
-import java.util.Locale;
-import java.util.ResourceBundle;
-import com.toedter.calendar.JCalendar;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.FlowLayout;
+
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+import java.util.ResourceBundle;
+import java.util.Date;
+import java.util.HashMap;
+
+import com.toedter.calendar.JCalendar;
+
+import javax.swing.*;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.SystemColor;
 
-import java.util.Date;
+import domain.*;
+
+
+
 
 
 
@@ -47,14 +55,14 @@ public class MainGUI extends JFrame {
 
 	private JButton IniciarVotacion;
 
-    private static BLFacade appFacadeInterface;
+    private static BLFacade blfacadeinterface;
 	
 	public static BLFacade getBusinessLogic(){
-		return appFacadeInterface;
+		return blfacadeinterface;
 	}
 	 
 	public static void setBussinessLogic (BLFacade facade){
-		appFacadeInterface=facade;
+		blfacadeinterface=facade;
 	}
 	protected JLabel jLabelSelectOption;
 	private JTextField NombrePersona;
@@ -71,14 +79,11 @@ public class MainGUI extends JFrame {
 	private Calendar calendarAnt = null;
 	private JTextArea displayMainGUI;
 
-	
-	
-	
-	
 	/**
 	 * This is the default constructor
 	 */
 	public MainGUI( String mail) {
+		
 		super();
 
 		this.sellerMail=mail;
@@ -107,10 +112,7 @@ public class MainGUI extends JFrame {
 		});
 		
 		jContentPane = new JPanel();
-		
-		
 		setContentPane(jContentPane);
-		
 		
 		
 		JLabel lblHora = new JLabel("Hora:");
@@ -127,13 +129,6 @@ public class MainGUI extends JFrame {
 		jContentPane.add(spinnerHora);
 		
 		
-		
-		
-		
-		
-		
-		
-		
 		JButton RegistrarPersona = new JButton("Registrar Persona"); //$NON-NLS-1$ //$NON-NLS-2$
 		RegistrarPersona.setBounds(10, 128, 119, 23);
 		RegistrarPersona.addActionListener(new ActionListener() {
@@ -141,11 +136,14 @@ public class MainGUI extends JFrame {
 			}
 		});
 		
+		
 		JButton CerrarVotacion = new JButton("Cerrar Votacion"); //$NON-NLS-1$ //$NON-NLS-2$
 		CerrarVotacion.setBounds(10, 162, 107, 23);
 		
+		
 		JButton AceptarRechazarCandidatura = new JButton("AceptarRechazarCandidatura");
 		AceptarRechazarCandidatura.setBounds(10, 196, 175, 23);
+		
 		
 		NombrePersona = new JTextField();
 		NombrePersona.setForeground(SystemColor.activeCaptionBorder);
@@ -163,14 +161,6 @@ public class MainGUI extends JFrame {
 		setTitle("Conclave2.0");
 		
 		
-		
-		
-		
-		
-		
-		
-		
-
 		jCalendar.setBounds(new Rectangle(252, 0, 225, 150));
 		this.getContentPane().add(jCalendar, null);
 		
@@ -179,14 +169,18 @@ public class MainGUI extends JFrame {
 		displayMainGUI.setBounds(192, 158, 145, 82);
 		displayMainGUI.setLineWrap(true);
 		displayMainGUI.setWrapStyleWord(true);
-		
 		displayMainGUI.setLineWrap(true);
 		displayMainGUI.setWrapStyleWord(true);
 
-		
+
 		jContentPane.add(displayMainGUI);
 		
-		
+						
+		//-------------------------------------------------------------------------------------------------
+		//-------------------------------------------------------------------------------------------------
+		//LISTENERS!!!!!!!!!!!!
+		//-------------------------------------------------------------------------------------------------
+		//-------------------------------------------------------------------------------------------------
 
 		this.jCalendar.addPropertyChangeListener(new PropertyChangeListener() {
 			public void propertyChange(PropertyChangeEvent propertychangeevent) {
@@ -219,6 +213,37 @@ public class MainGUI extends JFrame {
 							offset += 5;
 				Component o = (Component) jCalendar.getDayChooser().getDayPanel().getComponent(jCalendar.getCalendar().get(Calendar.DAY_OF_MONTH) + offset);
 				}}});
+		
+		
+		IniciarConclave.addActionListener(new ActionListener() {
+		    @Override
+		    public void actionPerformed(ActionEvent e) {
+		        try {
+		            // Llamada a la fachada (asegúrate de que appFacadeInterface no sea null)
+		            HashMap<Cardenal, Boolean> resultado = blfacadeinterface.iniciarConclave(jCalendar.getDate());
+
+		            // Mostrar información en el área de texto
+		            int electores = 0;
+		            for (Boolean esElector : resultado.values()) {
+		                if (esElector) electores++;
+		            }
+		            displayMainGUI.setText("Cónclave iniciado.\nElectores: " + electores +
+		                                    "\nTotal cardenales: " + resultado.size());
+		        } catch (Exception ex) {
+		            ex.printStackTrace();
+		            displayMainGUI.setText("Error al iniciar cónclave: " + ex.getMessage());
+		        }
+		    }
+		});
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	
 		addWindowListener(new WindowAdapter() {

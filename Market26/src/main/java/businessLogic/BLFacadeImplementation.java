@@ -1,5 +1,10 @@
 package businessLogic;
+
+
+
+
 import java.io.File;
+
 import java.util.Date;
 import java.util.List;
 
@@ -7,7 +12,21 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 import dataAccess.DataAccess;
+import domain.*;
 import domain.Sale;
+import domain.Cardenal;
+
+
+import domain.CardenalElector;
+import domain.Conclave;
+import java.util.ArrayList;
+import java.util.Calendar;
+
+
+
+
+
+
 import exceptions.FileNotUploadedException;
 import exceptions.MustBeLaterThanTodayException;
 import exceptions.SaleAlreadyExistException;
@@ -16,7 +35,7 @@ import java.awt.image.BufferedImage;
 import java.awt.Image;
 import javax.imageio.ImageIO;
 import java.io.IOException;
-
+import java.util.HashMap;
 
 /**
  * It implements the business logic as a web service.
@@ -26,27 +45,94 @@ public class BLFacadeImplementation  implements BLFacade {
 	 private static final int baseSize = 160;
 
 		private static final String basePath="src/main/resources/images/";
-	DataAccess dbManager;
+	DataAccess dataAccess;
 
 	public BLFacadeImplementation()  {		
 		System.out.println("Creating BLFacadeImplementation instance");
-		dbManager=new DataAccess();		
+		dataAccess=new DataAccess();		
 	}
 	
     public BLFacadeImplementation(DataAccess da)  {
 		System.out.println("Creating BLFacadeImplementation instance with DataAccess parameter");
-		dbManager=da;		
+		dataAccess=da;		
 	}
     
 
+    
+    
+
+    
+    
+    @Override
+    public HashMap<Cardenal, Boolean> iniciarConclave(Date fechaInicio) {
+        dataAccess.open();
+        try {
+        	HashMap<Cardenal, Boolean> hm = dataAccess.getCardenales();
+
+        	
+
+            // 3. Crear y guardar el cónclave
+            Conclave conclave = new Conclave(new Date());
+            dataAccess.updateElectores(hm, conclave);
+            dataAccess.addConclave(conclave);
+
+
+            // 5. Enviar mensaje "Extra Omnes" a la pantalla externa
+            //dataAccess.getPantalla("Extra Omnes");
+
+            return hm;
+        } finally {
+            dataAccess.close();
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 	/**
 	 * {@inheritDoc}
 	 */
    @WebMethod
 	public Sale createSale(String title, String description,int status, float price, Date pubDate, String sellerEmail, File file) throws  FileNotUploadedException, MustBeLaterThanTodayException, SaleAlreadyExistException {
-		dbManager.open();
-		Sale product=dbManager.createSale(title, description, status, price, pubDate, sellerEmail, file);		
-		dbManager.close();
+		dataAccess.open();
+		Sale product=dataAccess.createSale(title, description, status, price, pubDate, sellerEmail, file);		
+		dataAccess.close();
 		return product;
    };
 	
@@ -55,9 +141,9 @@ public class BLFacadeImplementation  implements BLFacade {
     */
 	@WebMethod 
 	public List<Sale> getSales(String desc){
-		dbManager.open();
-		List<Sale>  rides=dbManager.getSales(desc);
-		dbManager.close();
+		dataAccess.open();
+		List<Sale>  rides=dataAccess.getSales(desc);
+		dataAccess.close();
 		return rides;
 	}
 	
@@ -66,16 +152,16 @@ public class BLFacadeImplementation  implements BLFacade {
 	    */
 		@WebMethod 
 		public List<Sale> getPublishedSales(String desc, Date pubDate) {
-			dbManager.open();
-			List<Sale>  rides=dbManager.getPublishedSales(desc,pubDate);
-			dbManager.close();
+			dataAccess.open();
+			List<Sale>  rides=dataAccess.getPublishedSales(desc,pubDate);
+			dataAccess.close();
 			return rides;
 		}
 	/**
 	    * {@inheritDoc}
 	    */
 	@WebMethod public BufferedImage getFile(String fileName) {
-		return dbManager.getFile(fileName);
+		return dataAccess.getFile(fileName);
 	}
 
     
@@ -90,9 +176,9 @@ public class BLFacadeImplementation  implements BLFacade {
 	 */
     @WebMethod	
 	 public void initializeBD(){
-    	dbManager.open();
-		dbManager.initializeDB();
-		dbManager.close();
+    	dataAccess.open();
+		dataAccess.initializeDB();
+		dataAccess.close();
 	}
     /**
 	 * {@inheritDoc}

@@ -1,8 +1,12 @@
 package domain;
 
+import javax.persistence.*;
 import java.util.Date;
 
+
+@MappedSuperclass
 public class Persona {
+	@Id
     private int id;
     private String nombre;
     private Date fechaNacimiento;

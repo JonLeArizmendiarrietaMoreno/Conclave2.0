@@ -1,9 +1,11 @@
 package gui;
 
 import java.awt.Color;
+
 import java.net.URL;
 import java.util.Locale;
 
+import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
@@ -12,6 +14,9 @@ import configuration.ConfigXML;
 import dataAccess.DataAccess;
 import businessLogic.BLFacade;
 import businessLogic.BLFacadeImplementation;
+
+
+
 
 public class ApplicationLauncher { 
 	
@@ -24,16 +29,20 @@ public class ApplicationLauncher {
 		
 		MainGUI a=new MainGUI("seller3@gmail.com");
 		a.setVisible(true);
+		/*
+		JFrame pantallaExterna = new PantallaExterna();
 
+		pantallaExterna.setVisible(true);
+		*/
 
 		try {
 			
-			BLFacade appFacadeInterface;
+			BLFacade blfcade;
 			UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
 			
 			if (c.isBusinessLogicLocal()) {
 				DataAccess da= new DataAccess();
-				appFacadeInterface=new BLFacadeImplementation(da);
+				blfcade=new BLFacadeImplementation(da);
 			}
 			else { //If remote
 				
@@ -47,10 +56,10 @@ public class ApplicationLauncher {
 		 
 		        Service service = Service.create(url, qname);
 
-		        appFacadeInterface = service.getPort(BLFacade.class);
+		        blfcade = service.getPort(BLFacade.class);
 			} 
 			
-			MainGUI.setBussinessLogic(appFacadeInterface);
+			MainGUI.setBussinessLogic(blfcade);
 			//ErreklamatuGUI g=new ErreklamatuGUI();
 			//g.setVisible(true);
 			

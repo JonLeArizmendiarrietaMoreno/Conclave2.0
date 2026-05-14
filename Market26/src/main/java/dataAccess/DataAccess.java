@@ -1,6 +1,7 @@
 package dataAccess;
 
 import javax.persistence.EntityManager;
+
 import domain.Cardenal;
 import domain.CardenalElector;
 import domain.Conclave;
@@ -8,22 +9,26 @@ import domain.MaestroDeCeremonias;
 import domain.Papa;
 import domain.Persona;
 import domain.SesionVoto;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import gui.PantallaExterna;
+
+
+
+
+
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
-
-
-import gui.PantallaExterna;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 import javax.imageio.ImageIO;
 import javax.persistence.EntityManager;
@@ -47,13 +52,13 @@ import exceptions.SaleAlreadyExistException;
  * It implements the data access to the objectDb database
  */
 public class DataAccess {
-	private  EntityManager  db;
+	private  EntityManager  em;
+	
 	private  EntityManagerFactory emf;
     private static final int baseSize = 160;
 
 	private static final String basePath="src/main/resources/images/";
 	private static final String dbServerDir = "src/main/resources/db/";
-
 
 	ConfigXML c=ConfigXML.getInstance();
 
@@ -81,17 +86,22 @@ public class DataAccess {
 
 	}
      
-    public DataAccess(EntityManager db) {
-    	this.db=db;
+    public DataAccess(EntityManager em) {
+    	this.em=em;
     }
 
+    //----------------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------------
+    //INITIALIZE!!!!!!!!!!!!!
+    //----------------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------------
+    public void initializeDB(){
 		
-public void initializeDB(){
-		
-		db.getTransaction().begin();
+		em.getTransaction().begin();
 
 		try { 
 	       
+			
 		    //Create sellers 
 			Seller seller1=new Seller("seller1@gmail.com","Aitor Fernandez");
 			Seller seller2=new Seller("seller22@gmail.com","Ane Gaztañaga");
@@ -115,18 +125,141 @@ public void initializeDB(){
 			seller3.addSale("sukaldeko mahaia", "1.8*0.8, 4 aulkiekin. Prezio finkoa", 3,45, today, null);
 
 			
-			db.persist(seller1);
-			db.persist(seller2);
-			db.persist(seller3);
+			em.persist(seller1);
+			em.persist(seller2);
+			em.persist(seller3);
+			
+			
+			SimpleDateFormat a = new SimpleDateFormat("yyyy-MM-dd");
 
-	
-			db.getTransaction().commit();
+
+			System.out.println(a.parse("1970-05-20"));
+			em.getTransaction().commit();
 			System.out.println("Db initialized");
 		}
 		catch (Exception e){
 			e.printStackTrace();
 		}
 	}
+    
+    
+    public void initializeDB2(){
+		
+		em.getTransaction().begin();
+
+		try { 
+	        SimpleDateFormat today = new SimpleDateFormat("yyyy-MM-dd");
+		
+	        Cardenal card1 = new Cardenal(1, "Juan Pérez", today.parse("1970-05-20"), "Obispo de Roma", true);
+	            Cardenal card2 = new Cardenal(2, "Luis Gómez", today.parse("1945-03-10"), "Cardenal Presbítero", true);
+	            Cardenal card3 = new Cardenal(3, "Carlos Ruiz", today.parse("1990-07-15"), "Diácono", false);
+	        // ... persistir cada uno
+	        em.persist(card1);
+	        em.persist(card2);
+	        em.persist(card3);
+	
+			em.getTransaction().commit();
+			
+			System.out.println(today.parse("1970-05-20"));
+			System.out.println("Db initialized");
+		}
+		catch (Exception e){
+			e.printStackTrace();
+		}
+	}
+
+    
+    
+    
+    
+    /**
+     * Devuelve un HashMap con todos los cardenales y valor false (inicial).
+     */
+    public HashMap<Cardenal, Boolean> getCardenales() {
+        em.getTransaction().begin();
+        TypedQuery<Cardenal> query = em.createQuery("SELECT c FROM Cardenal c", Cardenal.class);
+        List<Cardenal> lista = query.getResultList();
+        em.getTransaction().commit();
+        
+        HashMap<Cardenal, Boolean> map = new HashMap<>();
+        for (Cardenal c : lista) {
+            map.put(c, false);
+        }
+        return map;
+    }
+
+    
+    /**
+     * Guarda un nuevo cónclave.
+     */
+    public void addConclave(Conclave conclave) {
+        em.getTransaction().begin();
+        em.persist(conclave);
+        em.getTransaction().commit();
+    }
+
+    
+    /**
+     * Recorre el HashMap, comprueba si cada cardenal es elector (presente y edad < 80),
+     * actualiza el valor a true en el mapa y persiste un objeto CardenalElector en BD.
+     */
+    public void updateElectores(HashMap<Cardenal, Boolean> mapa, Conclave conclave) {
+    	Calendar rightNow = Calendar.getInstance();
+        int anyoActual = rightNow.get(Calendar.YEAR);
+        
+        em.getTransaction().begin();
+        for (Map.Entry<Cardenal, Boolean> entry : mapa.entrySet()) {
+            Cardenal cardenal = entry.getKey();
+            rightNow.setTime(cardenal.getFechaNacimiento());
+            int edad = anyoActual - rightNow.get(Calendar.YEAR);
+            boolean esElector = cardenal.isPresente() && (edad < 80);
+            
+            if (esElector) {
+                entry.setValue(true);
+                CardenalElector elector = new CardenalElector(cardenal.getId(), cardenal.getNombre(), cardenal.getFechaNacimiento(), cardenal.getCargo(), true);
+                em.persist(elector);
+            }
+        }
+        em.getTransaction().commit();
+    }
+
+    /**
+     * Envía un mensaje a la pantalla externa (simulado).
+     */
+    public PantallaExterna getPantalla(String mensaje) {
+        return new PantallaExterna();
+        
+    }
+    
+    
+    /*
+    db.getTransaction().begin();
+    
+    Pilot pilot = new Pilot(name, nac, points);
+    db.persist(pilot);
+    db.getTransaction().commit();
+    
+    return db.find(Pilot.class,name);
+    
+    */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    //----------------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------------
+    //FUNCIONES Deprecated!!!!!!!!!!!!!
+    //----------------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------------
 		/**
 	 * This method creates/adds a product to a seller
 	 * 
@@ -152,26 +285,26 @@ public void initializeDB(){
 			if (file==null)
 				throw new FileNotUploadedException(ResourceBundle.getBundle("Etiquetas").getString("DataAccess.ErrorFileNotUploadedException"));
 
-			db.getTransaction().begin();
+			em.getTransaction().begin();
 			
-			Seller seller = db.find(Seller.class, sellerEmail);
+			Seller seller = em.find(Seller.class, sellerEmail);
 			if (seller.doesSaleExist(title)) {
-				db.getTransaction().commit();
+				em.getTransaction().commit();
 				throw new SaleAlreadyExistException(ResourceBundle.getBundle("Etiquetas").getString("DataAccess.SaleAlreadyExist"));
 			}
 
 			Sale sale = seller.addSale(title, description, status, price, pubDate, file);
 			//next instruction can be obviated
 
-			db.persist(seller); 
-			db.getTransaction().commit();
+			em.persist(seller); 
+			em.getTransaction().commit();
 			 System.out.println("sale stored "+sale+ " "+seller);
 
 			return sale;
 		} catch (NullPointerException e) {
 			   e.printStackTrace();
 			// TODO Auto-generated catch block
-			db.getTransaction().commit();
+			em.getTransaction().commit();
 			return null;
 		}
 		
@@ -188,7 +321,7 @@ public void initializeDB(){
 		System.out.println(">> DataAccess: getProducts=> from= "+desc);
 
 		List<Sale> res = new ArrayList<Sale>();	
-		TypedQuery<Sale> query = db.createQuery("SELECT s FROM Sale s WHERE s.title LIKE ?1",Sale.class);   
+		TypedQuery<Sale> query = em.createQuery("SELECT s FROM Sale s WHERE s.title LIKE ?1",Sale.class);   
 		query.setParameter(1, "%"+desc+"%");
 		
 		List<Sale> sales = query.getResultList();
@@ -208,7 +341,7 @@ public void initializeDB(){
 		System.out.println(">> DataAccess: getProducts=> from= "+desc);
 
 		List<Sale> res = new ArrayList<Sale>();	
-		TypedQuery<Sale> query = db.createQuery("SELECT s FROM Sale s WHERE s.title LIKE ?1 AND s.pubDate <=?2",Sale.class);   
+		TypedQuery<Sale> query = em.createQuery("SELECT s FROM Sale s WHERE s.title LIKE ?1 AND s.pubDate <=?2",Sale.class);   
 		query.setParameter(1, "%"+desc+"%");
 		query.setParameter(2,pubDate);
 		
@@ -224,14 +357,14 @@ public void open(){
 		String fileName=c.getDbFilename();
 		if (c.isDatabaseLocal()) {
 			emf = Persistence.createEntityManagerFactory("objectdb:"+fileName);
-			db = emf.createEntityManager();
+			em = emf.createEntityManager();
 		} else {
 			Map<String, String> properties = new HashMap<String, String>();
 			  properties.put("javax.persistence.jdbc.user", c.getUser());
 			  properties.put("javax.persistence.jdbc.password", c.getPassword());
 
 			  emf = Persistence.createEntityManagerFactory("objectdb://"+c.getDatabaseNode()+":"+c.getDatabasePort()+"/"+fileName, properties);
-			  db = emf.createEntityManager();
+			  em = emf.createEntityManager();
     	   }
 		System.out.println("DataAccess opened => isDatabaseLocal: "+c.isDatabaseLocal());
 
@@ -263,7 +396,7 @@ public void open(){
 	
 	
 	public void close(){
-		db.close();
+		em.close();
 		System.out.println("DataAcess closed");
 	}
 	

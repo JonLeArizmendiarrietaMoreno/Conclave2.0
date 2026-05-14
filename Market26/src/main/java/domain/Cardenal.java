@@ -1,8 +1,16 @@
 package domain;
 
 import java.util.Date;
+import javax.persistence.*;
 
+
+
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Cardenal extends Persona {
+	
+	@ManyToOne
+	private Conclave conclave;
     private String cargo;
     private boolean presente;
 
@@ -13,10 +21,6 @@ public class Cardenal extends Persona {
         this.presente = presente;
     }
 
-    // Constructor sin 'presente' (por defecto false)
-    public Cardenal(int id, String nombre, Date fechaNacimiento, String cargo) {
-        this(id, nombre, fechaNacimiento, cargo, false);
-    }
 
     // Getters y setters específicos
     public String getCargo() {
@@ -35,6 +39,9 @@ public class Cardenal extends Persona {
         this.presente = presente;
     }
 
+    public Conclave getConclave() { return conclave; }
+    public void setConclave(Conclave conclave) { this.conclave = conclave; }
+    
     @Override
     public String toString() {
         return getNombre() + " (" + cargo + ") - ID: " + getId()
