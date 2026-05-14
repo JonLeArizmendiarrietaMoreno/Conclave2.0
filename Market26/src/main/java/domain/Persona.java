@@ -1,21 +1,24 @@
 package domain;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.util.*;
 
-
+@Entity
 @MappedSuperclass
 public class Persona {
-	@Id
+	
+	
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombre;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date fechaNacimiento;
 
-    public Persona(int id, String nombre, Date fechaNacimiento) {
-        this.id = id;
+    public Persona(String nombre, Date fechaNacimiento) {
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
     }
+    public Persona() {}
 
     public int getId() {
         return id;

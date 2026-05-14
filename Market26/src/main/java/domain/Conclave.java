@@ -2,18 +2,28 @@
 package domain;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Entity
 public class Conclave {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int idConclave;
     private Date fechaInicio;
-    private Date fechaFin;  // null por defecto = cónclave abierto
+    private Date fechaFin;  // null por defecto
 
+    
+    @OneToMany(mappedBy = "conclave")   // Cardenal tiene el many-to-one
+    private List<CardenalElector> cardenalesElectores;
+
+    @OneToMany(mappedBy = "conclave")   // SesionVoto tiene el many-to-one
+    private List<SesionVoto> sesionesVoto;
+
+    @ManyToOne 
+    private MaestroDeCeremonias maestroDeCeremonias;
+
+    @OneToOne
+    private Papa papaElegido;
 
     public Conclave(Date fechaInicio) {
         this.fechaInicio = fechaInicio;

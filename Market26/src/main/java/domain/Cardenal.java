@@ -1,7 +1,7 @@
 package domain;
 
-import java.util.Date;
 import javax.persistence.*;
+import java.util.*;
 
 
 
@@ -9,18 +9,20 @@ import javax.persistence.*;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class Cardenal extends Persona {
 	
-	@ManyToOne
-	private Conclave conclave;
+
     private String cargo;
     private boolean presente;
+    
+	@ManyToOne
+	private Conclave conclave;
 
     // Constructor completo
-    public Cardenal(int id, String nombre, Date fechaNacimiento, String cargo, boolean presente) {
-        super(id, nombre, fechaNacimiento);
+    public Cardenal(String nombre, Date fechaNacimiento, String cargo, boolean presente) {
+        super(nombre, fechaNacimiento);
         this.cargo = cargo;
         this.presente = presente;
     }
-
+    public Cardenal() {super();}
 
     // Getters y setters específicos
     public String getCargo() {

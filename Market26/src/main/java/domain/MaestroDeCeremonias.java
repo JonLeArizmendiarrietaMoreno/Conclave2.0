@@ -1,12 +1,17 @@
 package domain;
+import javax.persistence.*;
+import java.util.*;
 
-import java.util.Date;
 
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class MaestroDeCeremonias extends Persona {
-
-    // Constructor
+	
+	@OneToMany (mappedBy = "MaestroDeCeremonias")
+	private List<Conclave> maestroDeCeremoniasUnico;
+	
     public MaestroDeCeremonias(int id, String nombre, Date fechaNacimiento) {
-        super(id, nombre, fechaNacimiento);
+        super(nombre, fechaNacimiento);
     }
 
     @Override

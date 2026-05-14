@@ -1,36 +1,37 @@
 package domain;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.util.*;
 
 @Entity
 public class SesionVoto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idSesion;   // Ahora se genera automáticamente
-
+    private int idSesion;
     @Temporal(TemporalType.TIMESTAMP)
     private Date horaInicio;
-
     @Temporal(TemporalType.TIMESTAMP)
     private Date horaFin;
-
     private String resultado;  // "", "negra" o "blanca"
-
-    @ManyToOne  // Muchas sesiones de voto pertenecen a un cónclave
+    
+    @ManyToOne
     private Conclave conclave;
+    
+    @ManyToMany
+    private Persona candidatoSesion; //ganador
+    @ManyToMany
+    private Persona candidatoVoto; //el de un solo voto
 
-    // Valores permitidos
+    @ManyToMany
+    private List<Cardenal> yaVotados;
+
     public static final String RESULTADO_PENDIENTE = "";
     public static final String RESULTADO_NEGRA = "negra";
     public static final String RESULTADO_BLANCA = "blanca";
 
-    // Constructor sin ID (lo genera la BD)
+
     public SesionVoto(Date horaInicio, Conclave conclave) {
-        if (horaInicio == null) {
-            throw new IllegalArgumentException("La hora de inicio no puede ser nula.");
-        }
         this.horaInicio = horaInicio;
         this.horaFin = null;
         this.resultado = RESULTADO_PENDIENTE;

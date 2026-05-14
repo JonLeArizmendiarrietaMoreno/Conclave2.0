@@ -151,14 +151,18 @@ public class DataAccess {
 		try { 
 	        SimpleDateFormat today = new SimpleDateFormat("yyyy-MM-dd");
 		
-	        Cardenal card1 = new Cardenal(1, "Juan Pérez", today.parse("1970-05-20"), "Obispo de Roma", true);
-	            Cardenal card2 = new Cardenal(2, "Luis Gómez", today.parse("1945-03-10"), "Cardenal Presbítero", true);
-	            Cardenal card3 = new Cardenal(3, "Carlos Ruiz", today.parse("1990-07-15"), "Diácono", false);
+	        Cardenal card1 = new Cardenal("Juan Pérez", today.parse("1970-05-20"), "Obispo de Roma", true);
+	            Cardenal card2 = new Cardenal("Luis Gómez", today.parse("1945-03-10"), "Cardenal Presbítero", true);
+	            Cardenal card3 = new Cardenal("Carlos Ruiz", today.parse("1990-07-15"), "Diácono", false);
 	        // ... persistir cada uno
 	        em.persist(card1);
 	        em.persist(card2);
 	        em.persist(card3);
-	
+	        
+	        
+	        
+	        
+	        
 			em.getTransaction().commit();
 			
 			System.out.println(today.parse("1970-05-20"));
@@ -218,7 +222,7 @@ public class DataAccess {
             
             if (esElector) {
                 entry.setValue(true);
-                CardenalElector elector = new CardenalElector(cardenal.getId(), cardenal.getNombre(), cardenal.getFechaNacimiento(), cardenal.getCargo(), true);
+                CardenalElector elector = new CardenalElector(cardenal.getNombre(), cardenal.getFechaNacimiento(), cardenal.getCargo(), true);
                 em.persist(elector);
             }
         }
