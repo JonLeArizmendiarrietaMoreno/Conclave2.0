@@ -75,11 +75,12 @@ public class BLFacadeImplementation  implements BLFacade {
             Conclave conclave = new Conclave(new Date());
             dataAccess.updateElectores(hm, conclave);
             dataAccess.addConclave(conclave);
+            
 
 
             // 5. Enviar mensaje "Extra Omnes" a la pantalla externa
             //dataAccess.getPantalla("Extra Omnes");
-
+            System.out.println("Extra Omnes");
             return hm;
         } finally {
             dataAccess.close();
