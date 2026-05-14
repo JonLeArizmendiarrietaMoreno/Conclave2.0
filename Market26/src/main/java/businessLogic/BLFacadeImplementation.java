@@ -5,6 +5,7 @@ package businessLogic;
 
 import java.io.File;
 
+
 import java.util.Date;
 import java.util.List;
 
@@ -13,16 +14,6 @@ import javax.jws.WebService;
 
 import dataAccess.DataAccess;
 import domain.*;
-import domain.Sale;
-import domain.Cardenal;
-
-
-import domain.CardenalElector;
-import domain.Conclave;
-import java.util.ArrayList;
-import java.util.Calendar;
-
-
 
 
 
@@ -42,7 +33,7 @@ import java.util.HashMap;
  */
 @WebService(endpointInterface = "businessLogic.BLFacade")
 public class BLFacadeImplementation  implements BLFacade {
-	 private static final int baseSize = 160;
+	 //private static final int baseSize = 160;
 
 		private static final String basePath="src/main/resources/images/";
 	DataAccess dataAccess;

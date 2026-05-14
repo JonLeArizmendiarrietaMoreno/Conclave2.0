@@ -1,46 +1,19 @@
 package dataAccess;
 
-import javax.persistence.EntityManager;
+import domain.*;
 
-import domain.Cardenal;
-import domain.CardenalElector;
-import domain.Conclave;
-import domain.MaestroDeCeremonias;
-import domain.Papa;
-import domain.Persona;
-import domain.SesionVoto;
+import java.util.*;
+import javax.persistence.*;
 import gui.PantallaExterna;
-
-
-
-
-
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.ResourceBundle;
-import java.util.Date;
 import java.text.SimpleDateFormat;
-
 import javax.imageio.ImageIO;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.NoResultException;
-import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
-
 import configuration.ConfigXML;
 import configuration.UtilDate;
-import domain.Seller;
-import domain.Sale;
 import exceptions.FileNotUploadedException;
 import exceptions.MustBeLaterThanTodayException;
 import exceptions.SaleAlreadyExistException;
@@ -96,83 +69,112 @@ public class DataAccess {
     //INITIALIZE!!!!!!!!!!!!!
     //----------------------------------------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------------------------------------
-    public void initializeDB(){
-		
-		em.getTransaction().begin();
-
-		try { 
-	       
-			
-		    //Create sellers 
-			Seller seller1=new Seller("seller1@gmail.com","Aitor Fernandez");
-			Seller seller2=new Seller("seller22@gmail.com","Ane Gaztañaga");
-			Seller seller3=new Seller("seller3@gmail.com","Test Seller");
-
-			
-			//Create products
-			Date today = UtilDate.trim(new Date());
-		
-			
-			seller1.addSale("futbol baloia", "oso polita, gutxi erabilita", 2, 10,  today, null);
-			seller1.addSale("salomon mendiko botak", "44 zenbakia, 3 ateraldi",2, 20,  today, null);
-			seller1.addSale("samsung 42\" telebista", "berria, erabili gabe", 2, 175,  today, null);
-
-
-			seller2.addSale("imac 27", "7 urte, dena ondo dabil", 1, 200,today, null);
-			seller2.addSale("iphone 17", "oso gutxi erabilita", 2, 400, today, null);
-			seller2.addSale("orbea mendiko bizikleta", "29\" 10 urte, mantenua behar du", 3,225, today, null);
-			seller2.addSale("polar kilor erlojua", "Vantage M, ondo dago", 3, 30, today, null);
-
-			seller3.addSale("sukaldeko mahaia", "1.8*0.8, 4 aulkiekin. Prezio finkoa", 3,45, today, null);
-
-			
-			em.persist(seller1);
-			em.persist(seller2);
-			em.persist(seller3);
-			
-			
-			SimpleDateFormat a = new SimpleDateFormat("yyyy-MM-dd");
-
-
-			System.out.println(a.parse("1970-05-20"));
-			em.getTransaction().commit();
-			System.out.println("Db initialized");
-		}
-		catch (Exception e){
-			e.printStackTrace();
-		}
-	}
-    
-    
-    public void initializeDB2(){
-		
-		em.getTransaction().begin();
-
-		try { 
-	        SimpleDateFormat today = new SimpleDateFormat("yyyy-MM-dd");
-		
-	        Cardenal card1 = new Cardenal("Juan Pérez", today.parse("1970-05-20"), "Obispo de Roma", true);
-	            Cardenal card2 = new Cardenal("Luis Gómez", today.parse("1945-03-10"), "Cardenal Presbítero", true);
-	            Cardenal card3 = new Cardenal("Carlos Ruiz", today.parse("1990-07-15"), "Diácono", false);
-	        // ... persistir cada uno
-	        em.persist(card1);
-	        em.persist(card2);
-	        em.persist(card3);
-	        
-	        
-	        
-	        
-	        
-			em.getTransaction().commit();
-			
-			System.out.println(today.parse("1970-05-20"));
-			System.out.println("Db initialized");
-		}
-		catch (Exception e){
-			e.printStackTrace();
-		}
-	}
-
+    public void initializeDB() {
+        em.getTransaction().begin();
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            
+            // 1. Maestro de ceremonias
+            MaestroDeCeremonias maestro = new MaestroDeCeremonias("Juan Pérez", sdf.parse("1960-05-10"));
+            em.persist(maestro);
+            
+            // 2. Cardenales (3 electores, 3 no electores)
+            // Electores (menores de 80 años y presentes)
+            Date fechaElector1 = sdf.parse("1975-03-15");
+            Date fechaElector2 = sdf.parse("1978-07-22");
+            Date fechaElector3 = sdf.parse("1980-11-05");
+            
+            Cardenal cardBase1 = new Cardenal("Luis Martínez", fechaElector1, "Cardenal Presbítero", true);
+            Cardenal cardBase2 = new Cardenal("Andrés Gómez", fechaElector2, "Cardenal Diácono", true);
+            Cardenal cardBase3 = new Cardenal("Fernando Ruiz", fechaElector3, "Cardenal Obispo", true);
+            
+            // No electores (mayores de 80 años o no presentes)
+            Date fechaNoElector1 = sdf.parse("1940-02-10");
+            Date fechaNoElector2 = sdf.parse("1938-09-25");
+            Date fechaNoElector3 = sdf.parse("1942-12-01");
+            
+            Cardenal cardNoElect1 = new Cardenal("Tomás Romero", fechaNoElector1, "Cardenal Obispo", false);
+            Cardenal cardNoElect2 = new Cardenal("Javier Mendoza", fechaNoElector2, "Cardenal Presbítero", true);  // presente pero >80 años → no elector
+            Cardenal cardNoElect3 = new Cardenal("Roberto Silva", fechaNoElector3, "Cardenal Diácono", false);
+            
+            // Crear los cardenales electores (subclase CardenalElector)
+            CardenalElector elector1 = new CardenalElector(cardBase1.getNombre(), cardBase1.getFechaNacimiento(), cardBase1.getCargo(), cardBase1.isPresente());
+            CardenalElector elector2 = new CardenalElector(cardBase2.getNombre(), cardBase2.getFechaNacimiento(), cardBase2.getCargo(), cardBase2.isPresente());
+            CardenalElector elector3 = new CardenalElector(cardBase3.getNombre(), cardBase3.getFechaNacimiento(), cardBase3.getCargo(), cardBase3.isPresente());
+            
+            // Persistir todos
+            em.persist(cardBase1); em.persist(cardBase2); em.persist(cardBase3);
+            em.persist(cardNoElect1); em.persist(cardNoElect2); em.persist(cardNoElect3);
+            em.persist(elector1); em.persist(elector2); em.persist(elector3);
+            
+            // 3. Conclave
+            Date fechaInicioConclave = UtilDate.trim(new Date());
+            Conclave conclave = new Conclave(fechaInicioConclave);
+            conclave.setMaestroDeCeremonias(maestro);
+            conclave.getCardenalesElectores().add(elector1);
+            conclave.getCardenalesElectores().add(elector2);
+            conclave.getCardenalesElectores().add(elector3);
+            elector1.setConclave(conclave);
+            elector2.setConclave(conclave);
+            elector3.setConclave(conclave);
+            em.persist(conclave);
+            
+            // 4. Personas externas (candidatos que no son cardenales)
+            Persona externa1 = new Persona("Juan Ciudadano", sdf.parse("1985-03-20"));
+            Persona externa2 = new Persona("María Laica", sdf.parse("1990-07-12"));
+            em.persist(externa1);
+            em.persist(externa2);
+            
+            // 5. Primera sesión (fumata negra)
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(fechaInicioConclave);
+            cal.add(Calendar.HOUR_OF_DAY, 2);
+            Date horaInicio1 = cal.getTime();
+            SesionVoto sesion1 = new SesionVoto(horaInicio1, conclave);
+            cal.add(Calendar.HOUR_OF_DAY, 1);
+            Date horaFin1 = cal.getTime();
+            sesion1.setHoraFin(horaFin1);
+            sesion1.setResultado(SesionVoto.RESULTADO_NEGRA);
+            sesion1.getYaHanVotado().add(elector1);
+            sesion1.getYaHanVotado().add(elector2);
+            sesion1.getYaHanVotado().add(elector3);
+            // Candidatos votados (cardenales no electores + externos)
+            sesion1.getCandidatosVotados().add(cardNoElect1);
+            sesion1.getCandidatosVotados().add(cardNoElect2);
+            sesion1.getCandidatosVotados().add(externa1);
+            sesion1.getCandidatosVotados().add(externa2);
+            em.persist(sesion1);
+            
+            // 6. Segunda sesión (fumata blanca) – elegimos a cardNoElect1 como papa
+            cal.add(Calendar.DAY_OF_MONTH, 1);
+            Date horaInicio2 = cal.getTime();
+            SesionVoto sesion2 = new SesionVoto(horaInicio2, conclave);
+            cal.add(Calendar.HOUR_OF_DAY, 1);
+            Date horaFin2 = cal.getTime();
+            sesion2.setHoraFin(horaFin2);
+            sesion2.setResultado(SesionVoto.RESULTADO_BLANCA);
+            sesion2.getYaHanVotado().add(elector1);
+            sesion2.getYaHanVotado().add(elector2);
+            sesion2.getYaHanVotado().add(elector3);
+            sesion2.getCandidatosVotados().add(cardNoElect1);
+            sesion2.getCandidatosVotados().add(cardNoElect2);
+            sesion2.getCandidatosVotados().add(externa1);
+            sesion2.setGanador(cardNoElect1);
+            em.persist(sesion2);
+            
+            // 7. Crear el Papa (nueva entidad, con los datos del cardenal elegido)
+            Papa papa = new Papa(cardNoElect1.getNombre(), cardNoElect1.getFechaNacimiento(), horaFin2); // número 266
+            conclave.setPapaElegido(papa);
+            papa.setPapaConclave(conclave);
+            em.persist(papa);
+            
+            em.getTransaction().commit();
+            System.out.println("Base de datos inicializada correctamente.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            em.getTransaction().rollback();
+        }
+    }
     
     
     

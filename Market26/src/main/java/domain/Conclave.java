@@ -2,6 +2,7 @@
 package domain;
 
 import javax.persistence.*;
+
 import java.util.*;
 
 @Entity
@@ -24,11 +25,15 @@ public class Conclave {
 
     @OneToOne
     private Papa papaElegido;
+    
+    
 
     public Conclave(Date fechaInicio) {
         this.fechaInicio = fechaInicio;
 
         this.fechaFin = null;
+        this.cardenalesElectores = new ArrayList<CardenalElector>();
+        this.sesionesVoto = new ArrayList<SesionVoto>();
     }
 
     // Getters
@@ -40,9 +45,11 @@ public class Conclave {
         return fechaFin;
     }
 
+	public List<CardenalElector> getCardenalesElectores() {
+		return cardenalesElectores;
+	}
     
-    
-    // Setter solo para fechaFin (la de inicio no se modifica)
+    // Setters
     public void setFechaFin(Date fechaFin) {
         if (fechaFin != null && fechaFin.before(this.fechaInicio)) {
             throw new IllegalArgumentException("La fecha de fin no puede ser anterior a la de inicio.");
@@ -50,10 +57,46 @@ public class Conclave {
         this.fechaFin = fechaFin;
     }
     
-    
+	public void setMaestroDeCeremonias(MaestroDeCeremonias maestroDeCeremonias) {
+		this.maestroDeCeremonias = maestroDeCeremonias;
+		
+	}
+	
+	public void setPapaElegido(Papa papaElegido) {
+		this.papaElegido=papaElegido;
+	}
     
     @Override
     public String toString() {
         return "Cónclave iniciado el " + fechaInicio + " - finalizado el " + fechaFin;
     }
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

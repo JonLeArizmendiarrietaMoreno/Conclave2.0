@@ -4,8 +4,10 @@ import javax.persistence.*;
 import java.util.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
 public class CardenalElector extends Cardenal {
+	
+	@ManyToMany(mappedBy = "yaHanVotado")
+	private Set<SesionVoto> votosEmitidos;
 	
     public CardenalElector(String nombre, Date fechaNacimiento, String cargo, boolean presente) {
         super(nombre, fechaNacimiento,cargo,presente);

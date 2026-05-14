@@ -1,6 +1,8 @@
 package domain;
 
 import javax.persistence.*;
+
+
 import java.util.*;
 
 @Entity
@@ -18,13 +20,14 @@ public class SesionVoto {
     @ManyToOne
     private Conclave conclave;
     
-    @ManyToMany
-    private Persona candidatoSesion; //ganador
-    @ManyToMany
-    private Persona candidatoVoto; //el de un solo voto
+    @ManyToOne
+    private Persona ganador; //ganador
 
     @ManyToMany
-    private List<Cardenal> yaVotados;
+    private Set<Persona> candidatosVotados;
+
+    @ManyToMany
+    private Set<CardenalElector> yaHanVotado; //Cardenales
 
     public static final String RESULTADO_PENDIENTE = "";
     public static final String RESULTADO_NEGRA = "negra";
@@ -36,6 +39,11 @@ public class SesionVoto {
         this.horaFin = null;
         this.resultado = RESULTADO_PENDIENTE;
         this.conclave = conclave;
+        
+        this.candidatosVotados = new HashSet<Persona>();
+        this.yaHanVotado = new HashSet<CardenalElector>();
+        
+        
     }
     
     // Getters
@@ -71,9 +79,18 @@ public class SesionVoto {
     public void setConclave(Conclave conclave) { 
     	this.conclave = conclave; 
     }
+	public Set<CardenalElector> getYaHanVotado() {
+		return yaHanVotado;
+	}
     
-    
-    
+	public Set<Persona> getCandidatosVotados() {
+		
+		return candidatosVotados;
+	}
+	
+	public void setGanador(Cardenal ganador) {
+		this.ganador=ganador;
+	}
     
 
     @Override
@@ -83,4 +100,31 @@ public class SesionVoto {
                 + (horaFin != null ? " - Fin: " + horaFin : " (abierta)")
                 + " - Resultado: " + (resultado.isEmpty() ? "pendiente" : resultado);
     }
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

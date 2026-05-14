@@ -2,18 +2,14 @@ package businessLogic;
 
 import java.io.File;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
+
+import java.util.*;
 
 
 
 
 import gui.*;
 import domain.*;
-import domain.Cardenal;
-import domain.Sale;
-
 
 
 

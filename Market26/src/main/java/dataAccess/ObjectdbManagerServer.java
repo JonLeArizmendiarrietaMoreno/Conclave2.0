@@ -1,6 +1,7 @@
 package dataAccess;
 
 import java.awt.BorderLayout;
+
 import java.awt.FlowLayout;
 
 import javax.swing.JButton;
@@ -50,6 +51,7 @@ public class ObjectdbManagerServer extends JDialog {
 	}
 
 
+	@SuppressWarnings("deprecation")
 	public ObjectdbManagerServer() {
 	    
 		setTitle("objectDBManagerServer: running the database server");

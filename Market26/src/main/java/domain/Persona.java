@@ -3,17 +3,26 @@ package domain;
 import javax.persistence.*;
 import java.util.*;
 
+
 @Entity
-@MappedSuperclass
+@Inheritance(strategy = InheritanceType.JOINED)
+
 public class Persona {
-	
-	
+		
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombre;
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaNacimiento;
 
+    @OneToMany(mappedBy = "ganador")
+    private List<SesionVoto> ganador;
+    
+ 
+    @ManyToMany(mappedBy = "candidatosVotados")
+    private Set<SesionVoto> sesionesDondeFueCandidato;
+    
+    
     public Persona(String nombre, Date fechaNacimiento) {
         this.nombre = nombre;
         this.fechaNacimiento = fechaNacimiento;
@@ -43,6 +52,9 @@ public class Persona {
     public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
+    
+    
+    
 
     @Override
     public String toString() {

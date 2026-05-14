@@ -15,10 +15,10 @@ public class Papa extends Persona {
 	@OneToOne
 	private Conclave papaConclave;
     // Constructor completo
-    public Papa(String nombre, Date fechaNacimiento, Date fechaEleccion, int idPapa) {
+    public Papa(String nombre, Date fechaNacimiento, Date fechaEleccion) {
         super(nombre, fechaNacimiento);
         this.fechaEleccion = fechaEleccion;
-        this.idPapa = idPapa;
+        
     }
     public Papa() 
     {
@@ -41,6 +41,10 @@ public class Papa extends Persona {
     public void setIdPapa(int idPapa) {
         this.idPapa = idPapa;
     }
+    
+	public void setPapaConclave(Conclave papaConclave) {
+		this.papaConclave = papaConclave;
+	}
 
     @Override
     public String toString() {
@@ -48,4 +52,5 @@ public class Papa extends Persona {
                 + ", nacimiento: " + getFechaNacimiento()
                 + ", elegido el: " + fechaEleccion;
     }
+
 }
