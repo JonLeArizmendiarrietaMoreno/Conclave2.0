@@ -1,0 +1,68 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-15 00:17:56 #1 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\products.temp' is opened by 10676@DESKTOP-QMJV9R8
+
+[2026-05-15 00:17:56 #2 type.registry] 
+New type domain.Persona
+
+[2026-05-15 00:17:56 #3 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-15 00:17:56 #4 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-15 00:17:56 #5 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-15 00:17:56 #6 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-15 00:17:56 #7 type.registry] 
+New type domain.Conclave
+
+[2026-05-15 00:17:56 #8 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-15 00:17:56 #9 type.registry] 
+New type domain.Cardenal
+
+[2026-05-15 00:17:56 #10 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-15 00:17:56 #11 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-15 00:17:56 #12 type.registry] 
+New type domain.Papa
+
+[2026-05-15 00:17:56 #13 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-15 00:17:56 #14 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-15 00:17:56 #15 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-15 00:17:56 #16 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-15 00:17:56 #17 type.registry] 
+New type java.util.HashSet<domain.Persona>
+
+[2026-05-15 00:17:56 #18 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+[2026-05-15 00:17:56 #19 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-15 00:17:56 #20 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-15 00:17:56 #21 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-15 00:17:56 #22 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\products.temp' is closed by 10676@DESKTOP-QMJV9R8
+
