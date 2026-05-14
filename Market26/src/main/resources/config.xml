@@ -7,7 +7,7 @@
   </businessLogic>
   <database local="true" initialize="true">
 	<databaseNode>0.0.0.0</databaseNode>
-	<dbFilename>src/main/resources/products.temp</dbFilename>
+	<dbFilename>src/main/resources/conclaveDB.temp</dbFilename>
 	<databasePort>6136</databasePort>
 	<user>admin</user>
 	<password>admin</password>
