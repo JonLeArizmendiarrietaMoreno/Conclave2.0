@@ -183,6 +183,135 @@ public class BLFacadeImplementation  implements BLFacade {
     
     
     
+    @Override
+    public boolean cerrarVotacion(Date ahora) throws IllegalStateException {
+        dataAccess.open();
+        try {
+            // 1. Obtener cónclave activo
+            Conclave conclave = dataAccess.getConclaveActivo();
+            if (conclave == null) {
+                throw new IllegalStateException("No hay cónclave activo");
+            }
+            
+            // 2. Obtener última sesión de voto (debe estar abierta)
+            SesionVoto sesion = dataAccess.getLastSesionVoto(conclave);
+            if (sesion == null || sesion.getHoraFin() != null) {
+                throw new IllegalStateException("No hay ninguna votación abierta");
+            }
+            
+            // 3. Verificar que ha pasado al menos 1 hora desde el inicio
+            
+            long diffMillis = ahora.getTime() - sesion.getHoraInicio().getTime();
+            if (diffMillis < 60 * 60 * 1000) {
+                // No ha pasado una hora → rechazar cierre (según flujo alternativo)
+                PantallaExternaGUI.getInstance().mostrarMensaje(
+                    "No se puede cerrar la votación antes de 1 hora");
+                return false;
+            }
+            
+            // 4. Cerrar la sesión (establecer horaFin)
+            dataAccess.cerrarSesionVoto(sesion, ahora);
+            
+            // 5. Calcular total de votos emitidos
+            int totalVotos = sesion.getYaHanVotado().size();
+            if (totalVotos == 0) {
+                // Sin votos, fumata negra
+                PantallaExternaGUI.getInstance().mostrarMensaje("Fumata negra");
+                sesion.setResultado(SesionVoto.RESULTADO_NEGRA);
+                dataAccess.updateSesionVoto(sesion);
+                return true;
+            }
+            
+            // 6. Contar votos por candidato (usando la lista de candidatosVotados)
+            List<Persona> candidatos = sesion.getCandidatosVotados(); // ahora es List
+            Map<Persona, Integer> recuento = new HashMap<>();
+            for (Persona p : candidatos) {
+                recuento.put(p, recuento.getOrDefault(p, 0) + 1);
+            }
+            
+            // 7. Buscar el candidato con más votos y comprobar si alcanza 2/3
+            Persona ganador = null;
+            int maxVotos = 0;
+            for (Map.Entry<Persona, Integer> entry : recuento.entrySet()) {
+                if (entry.getValue() > maxVotos) {
+                    maxVotos = entry.getValue();
+                    ganador = entry.getKey();
+                }
+            }
+            
+            boolean mayoria = (maxVotos * 3 >= totalVotos * 2); // 2/3 o más
+            
+            if (!mayoria) {
+                // Fumata negra
+                PantallaExternaGUI.getInstance().mostrarMensaje("Fumata negra");
+                sesion.setResultado(SesionVoto.RESULTADO_NEGRA);
+                dataAccess.updateSesionVoto(sesion);
+                return true;
+            }
+            
+            // Hay mayoría: mostrar ganador en MainGUI y guardar en sesión (sin aceptación aún)
+            MainGUI.getInstance().mostrarMensaje("El candidato ganador es: " + ganador.getNombre() +
+                    " con " + maxVotos + " votos de " + totalVotos);
+            
+            sesion.setGanador(ganador);
+            dataAccess.updateSesionVoto(sesion);
+            
+            PersonaGUI.getInstance().mostrarMensaje(ganador.toString()+"has sido elegido como Papa, aceptas?");
+
+            
+            return true;
+            
+        } finally {
+            dataAccess.close();
+        }
+
+    }
+    
+    
+    @Override
+    public boolean procesarDecisionCandidatura(boolean acepta) {
+
+        dataAccess.open();
+        try {
+        	Conclave conclave = dataAccess.getConclaveActivo();
+        	SesionVoto sesion = dataAccess.getLastSesionVoto(conclave);
+        	Persona ganador = sesion.getGanador();
+            if (acepta) {
+                Papa nuevoPapa = new Papa(ganador.getNombre(), ganador.getFechaNacimiento(), sesion.getHoraFin());
+                dataAccess.addPapa(nuevoPapa);
+            
+                conclave.setFechaFin(new Date());
+                conclave.setPapaElegido(nuevoPapa);
+                nuevoPapa.setPapaConclave(conclave);
+                dataAccess.updateConclave(conclave);
+
+                
+                
+                sesion.setResultado(SesionVoto.RESULTADO_BLANCA);
+                dataAccess.updateSesionVoto(sesion);
+                
+                PantallaExternaGUI.getInstance().mostrarMensaje("Fumata blanca");
+                MainGUI.getInstance().mostrarMensaje("¡Tenemos nuevo Papa! " + nuevoPapa.getNombre());
+            } else {
+                // Rechaza
+            	sesion.setResultado(SesionVoto.RESULTADO_NEGRA);
+                dataAccess.updateSesionVoto(sesion);
+                PantallaExternaGUI.getInstance().mostrarMensaje("Fumata negra");
+                MainGUI.getInstance().mostrarMensaje("El candidato rechazó. Se puede iniciar una nueva votación.");
+            }
+            return true;
+        } finally {
+            dataAccess.close();
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     //----------------------------------------------------------------------------------------------------------------------------------------
     //----------------------------------------------------------------------------------------------------------------------------------------
     //No, no, DO NOT touch me there, this is my no no square

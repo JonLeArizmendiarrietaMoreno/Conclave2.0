@@ -68,7 +68,7 @@ public class ElectorGUI extends JFrame {
 		contentPane.setLayout(null);
 		
 		elegirAQuienVotar = new JTextField();
-		elegirAQuienVotar.setText("Juan Ciudadano");
+		elegirAQuienVotar.setText("Cardenal1");
 		elegirAQuienVotar.setBounds(10, 68, 133, 31);
 		contentPane.add(elegirAQuienVotar);
 		elegirAQuienVotar.setColumns(10);
@@ -78,7 +78,7 @@ public class ElectorGUI extends JFrame {
 		contentPane.add(votarButton);
 		
 		nombreElector = new JTextField();
-		nombreElector.setText("Fernando Ruiz");
+		nombreElector.setText("Elector1");
 		nombreElector.setBounds(10, 11, 133, 31);
 		contentPane.add(nombreElector);
 		nombreElector.setColumns(10);

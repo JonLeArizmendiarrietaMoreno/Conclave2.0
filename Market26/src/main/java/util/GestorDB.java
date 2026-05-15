@@ -22,7 +22,7 @@ public class GestorDB {
     private EntityManager em;
 
     public GestorDB(EntityManager em) {
-        this.em = em;
+        this.em = em; 
     }
 
     public void initializeDB() {

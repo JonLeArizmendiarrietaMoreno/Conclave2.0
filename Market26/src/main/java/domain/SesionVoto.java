@@ -24,7 +24,7 @@ public class SesionVoto {
     private Persona ganador; //ganador
 
     @ManyToMany
-    private Set<Persona> candidatosVotados;
+    private List<Persona> candidatosVotados;
 
     @ManyToMany
     private Set<CardenalElector> yaHanVotado; //Cardenales
@@ -40,9 +40,9 @@ public class SesionVoto {
         this.resultado = RESULTADO_PENDIENTE;
         this.sesionesVotoDelConclave = sesionesVotoDelConclave;
         
-        this.candidatosVotados = new HashSet<Persona>();
+        this.candidatosVotados = new ArrayList<Persona>();
         this.yaHanVotado = new HashSet<CardenalElector>();
-        
+        this.ganador = null;
         
     }
     
@@ -66,8 +66,17 @@ public class SesionVoto {
     public Conclave getConclave() { 
     	return sesionesVotoDelConclave; 
     }
+    public Persona getGanador() { 
+    	return ganador; 
+    }
+    
 
     // Setters
+    
+    public void setGanador(Persona ganador) {
+        this.ganador = ganador;
+    }
+    
     public void setHoraFin(Date horaFin) {
         this.horaFin = horaFin;
     }
@@ -83,7 +92,7 @@ public class SesionVoto {
 		return yaHanVotado;
 	}
     
-	public Set<Persona> getCandidatosVotados() {
+	public List<Persona> getCandidatosVotados() {
 		
 		return candidatosVotados;
 	}

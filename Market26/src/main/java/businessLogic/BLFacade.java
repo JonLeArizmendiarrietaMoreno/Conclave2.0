@@ -44,6 +44,12 @@ public interface BLFacade  {
 	
     @WebMethod
     public boolean votar(String nombreElector, String nombreCandidato);
+    
+    @WebMethod    
+    public boolean cerrarVotacion(Date horaFin) ;
+    
+    @WebMethod
+    public boolean procesarDecisionCandidatura(boolean decision);
 	
 	/**
 	 * This method calls the data access to initialize the database with some sellers and products.

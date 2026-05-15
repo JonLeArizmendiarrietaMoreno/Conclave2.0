@@ -62,7 +62,7 @@ public class MainGUI extends JFrame {
 	private JCalendar calendarFechaInicio; // fechaInicio
 	private JSpinner spinnerHora;          // hora (con formato HH:mm)
 	private Date fecha;
-	
+
 	
 	
 	private JCalendar jCalendar = new JCalendar();
@@ -80,7 +80,7 @@ public class MainGUI extends JFrame {
 		super();
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
-		this.setSize(495, 290);
+		this.setSize(621, 378);
 		jLabelSelectOption = new JLabel("MainGUI");
 		jLabelSelectOption.setBounds(10, 11, 51, 16);
 		jLabelSelectOption.setFont(new Font("Tahoma", Font.BOLD, 13));
@@ -88,12 +88,12 @@ public class MainGUI extends JFrame {
 		jLabelSelectOption.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		IniciarConclave = new JButton();
-		IniciarConclave.setBounds(10, 60, 109, 23);
+		IniciarConclave.setBounds(350, 169, 109, 23);
 		IniciarConclave.setText("Iniciar Conclave");
 		
 
 		IniciarVotacion = new JButton();
-		IniciarVotacion.setBounds(10, 94, 105, 23);
+		IniciarVotacion.setBounds(350, 203, 105, 23);
 		IniciarVotacion.setText("Iniciar Votacion");
 				
 		jContentPane = new JPanel();
@@ -101,7 +101,7 @@ public class MainGUI extends JFrame {
 		
 		
 		JLabel lblHora = new JLabel("Hora:");
-		lblHora.setBounds(347, 160, 40, 20);
+		lblHora.setBounds(475, 160, 40, 20);
 		jContentPane.add(lblHora);
 		
 		
@@ -110,12 +110,12 @@ public class MainGUI extends JFrame {
 		
 		JSpinner.DateEditor editorHora = new JSpinner.DateEditor(spinnerHora, "HH:mm");
 		spinnerHora.setEditor(editorHora);
-		spinnerHora.setBounds(397, 158, 80, 25);
+		spinnerHora.setBounds(525, 158, 80, 25);
 		jContentPane.add(spinnerHora);
 		
 		
 		JButton RegistrarPersona = new JButton("Registrar Persona"); //$NON-NLS-1$ //$NON-NLS-2$
-		RegistrarPersona.setBounds(10, 128, 119, 23);
+		RegistrarPersona.setBounds(350, 237, 119, 23);
 		RegistrarPersona.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
@@ -123,21 +123,42 @@ public class MainGUI extends JFrame {
 		
 		
 		JButton CerrarVotacion = new JButton("Cerrar Votacion"); //$NON-NLS-1$ //$NON-NLS-2$
-		CerrarVotacion.setBounds(10, 162, 107, 23);
+		CerrarVotacion.setBounds(350, 271, 107, 23);
 		
 		
 		JButton AceptarRechazarCandidatura = new JButton("AceptarRechazarCandidatura");
-		AceptarRechazarCandidatura.setBounds(10, 196, 175, 23);
+		
+		AceptarRechazarCandidatura.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        if (!hayDecision) {
+		            displayMainGUI.setText("No hay una decisión pendiente del candidato. Primero debe aparecer la ventana PersonaGUI y el candidato debe elegir.");
+		            return;
+		        }
+		        try {
+		            boolean exito = blfacadeinterface.procesarDecisionCandidatura(decision);
+		            if (exito) {
+		                displayMainGUI.setText("Proceso completado. Cónclave finalizado o reiniciado según decisión.");
+		                hayDecision = false; // reiniciar
+		            } else {
+		                displayMainGUI.setText("Error al procesar la decisión.");
+		            }
+		        } catch (Exception ex) {
+		            displayMainGUI.setText("Error: " + ex.getMessage());
+		        }
+		    }
+		});
+		
+		AceptarRechazarCandidatura.setBounds(350, 305, 175, 23);
+		jContentPane.add(AceptarRechazarCandidatura);
 		
 		
 		NombrePersona = new JTextField();
 		NombrePersona.setForeground(SystemColor.activeCaptionBorder);
 		NombrePersona.setText("NombrePersona");
-		NombrePersona.setBounds(391, 197, 86, 20);
+		NombrePersona.setBounds(71, 10, 249, 20);
 		NombrePersona.setColumns(10);
 		jContentPane.setLayout(null);
 		jContentPane.add(jLabelSelectOption);
-		jContentPane.add(AceptarRechazarCandidatura);
 		jContentPane.add(IniciarConclave);
 		jContentPane.add(IniciarVotacion);
 		jContentPane.add(RegistrarPersona);
@@ -146,12 +167,12 @@ public class MainGUI extends JFrame {
 		setTitle("Conclave2.0");
 		
 		
-		jCalendar.setBounds(new Rectangle(252, 0, 225, 150));
+		jCalendar.setBounds(new Rectangle(350, 0, 255, 150));
 		this.getContentPane().add(jCalendar, null);
 		
 		displayMainGUI = new JTextArea();
 		displayMainGUI.setText("Dios esta moribundo y lo voy a rematar");
-		displayMainGUI.setBounds(192, 158, 145, 82);
+		displayMainGUI.setBounds(10, 49, 330, 279);
 		displayMainGUI.setLineWrap(true);
 		displayMainGUI.setWrapStyleWord(true);
 		displayMainGUI.setLineWrap(true);
@@ -272,7 +293,56 @@ public class MainGUI extends JFrame {
 				System.exit(1);
 			}
 		});
+		
+		
+		
+		CerrarVotacion.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        try {
+		            boolean ok = blfacadeinterface.cerrarVotacion(jCalendar.getDate());
+		            if (ok) {
+		                displayMainGUI.setText("Votación cerrada correctamente.");
+		            } else {
+		                displayMainGUI.setText("No se pudo cerrar la votación (verifique que haya pasado 1 hora).");
+		            }
+		        } catch (Exception ex) {
+		            displayMainGUI.setText("Error al cerrar votación: " + ex.getMessage());
+		        }
+		    }
+		});
+		
+		
+		
+		
 	}
+	
+	
+	
+	/*
+	 * 
+	 * 
+	
+	public void mostrarDecision(String mensaje) 
+	{
+		JButton AceptarRechazarCandidatura = new JButton("AceptarRechazarCandidatura");
+		AceptarRechazarCandidatura.setBounds(350, 305, 175, 23);
+		jContentPane.add(AceptarRechazarCandidatura);
+		this.mostrarMensaje(mensaje);
+	}
+	
+
+	 * */
+	
+	
+	// En MainGUI.java
+	private boolean decision = false;
+	private boolean hayDecision = false;
+
+	public void setDecisionCandidato(boolean decision) {
+	    this.decision = decision;
+	    this.hayDecision = true;
+	}
+	
 	
 	public static MainGUI getInstance() {
         if (instancia == null) {
