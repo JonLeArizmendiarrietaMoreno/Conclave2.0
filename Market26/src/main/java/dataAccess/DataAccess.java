@@ -1,10 +1,13 @@
 package dataAccess;
 
+
+
 import domain.*;
+
 
 import java.util.*;
 import javax.persistence.*;
-import gui.PantallaExterna;
+import gui.PantallaExternaGUI;
 
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
@@ -36,6 +39,8 @@ public class DataAccess {
 
 	ConfigXML c=ConfigXML.getInstance();
 
+
+	
      public DataAccess()  {
 		if (c.isDatabaseInitialized()) {
 			String fileName=c.getDbFilename();
@@ -206,13 +211,12 @@ public class DataAccess {
     }
     
     
-    
     /**
      * Recorre el HashMap, comprueba si cada cardenal es elector (presente y edad < 80),
      * actualiza el valor a true en el mapa y persiste un objeto CardenalElector en BD.
      */
     public void añadirElectores(HashMap<Cardenal, Boolean> mapa, Conclave conclave) {
-    	Calendar rightNow = Calendar.getInstance();
+        Calendar rightNow = Calendar.getInstance();
         int anyoActual = rightNow.get(Calendar.YEAR);
         
         em.getTransaction().begin();
@@ -224,50 +228,42 @@ public class DataAccess {
             
             if (esElector) {
                 entry.setValue(true);
-                CardenalElector elector = new CardenalElector(cardenal.getNombre(), cardenal.getFechaNacimiento(), cardenal.getCargo(), true);
+                // Crear el elector copiando datos del cardenal base
+                CardenalElector elector = new CardenalElector(
+                    cardenal.getNombre(), 
+                    cardenal.getFechaNacimiento(), 
+                    cardenal.getCargo(), 
+                    true
+                );
+                // Establecer la relación bidireccional
+                elector.setConclave(conclave);
                 em.persist(elector);
+                
+                // Añadir a la lista del conclave (para mantener coherencia en el lado Java)
+                conclave.getCardenalesElectores().add(elector);
             }
         }
         em.getTransaction().commit();
     }
-
-    /**
-     * Envía un mensaje a la pantalla externa (simulado).
-     */
-    public PantallaExterna getPantalla(String mensaje) {
-        return new PantallaExterna();
-        
+    
+    public MaestroDeCeremonias getMaestroDeCeremonias() {
+        em.getTransaction().begin();
+        TypedQuery<MaestroDeCeremonias> query = em.createQuery(
+            "SELECT m FROM MaestroDeCeremonias m", MaestroDeCeremonias.class);
+        MaestroDeCeremonias maestro = query.getResultList().stream().findFirst().orElse(null);
+        em.getTransaction().commit();
+        return maestro;
     }
-    
-    
-    
-    /*
-    db.getTransaction().begin();
-    
-    Pilot pilot = new Pilot(name, nac, points);
-    db.persist(pilot);
-    db.getTransaction().commit();
-    
-    return db.find(Pilot.class,name);
-    
-    */
-    
-    
-    
-    
-    
-    
-    
-    
+
+
     
     /**
      * Busca el ultimo Conclave.
-     */
+     */  
     public Conclave getConclaveActivo() {
-        TypedQuery<Conclave> query = em.createQuery(
-            "SELECT c FROM Conclave c WHERE c.fechaFin IS NULL", Conclave.class);
         try {
-            return query.getSingleResult();
+            return em.createQuery("SELECT c FROM Conclave c WHERE c.fechaFin IS NULL", Conclave.class)
+                     .getSingleResult();
         } catch (NoResultException e) {
             return null;
         }
@@ -280,7 +276,7 @@ public class DataAccess {
      */
     public SesionVoto getLastSesionVoto(Conclave conclave) {
         TypedQuery<SesionVoto> query = em.createQuery(
-            "SELECT s FROM SesionVoto s WHERE s.conclave = :conclave ORDER BY s.idSesion DESC", SesionVoto.class);
+            "SELECT s FROM SesionVoto s WHERE s.sesionesVotoDelConclave = :conclave ORDER BY s.idSesion DESC", SesionVoto.class);
         query.setParameter("conclave", conclave);
         query.setMaxResults(1);
         List<SesionVoto> result = query.getResultList();
@@ -314,266 +310,39 @@ public class DataAccess {
     }
     
     
-    
-    
-    
-    
-    
+ // dataAccess/DataAccess.java
+    public boolean existePersona(String nombre, Date fechaNacimiento) {
+        em.getTransaction().begin();
+        TypedQuery<Long> query = em.createQuery(
+            "SELECT COUNT(p) FROM Persona p WHERE p.nombre = :nombre AND p.fechaNacimiento = :fecha",
+            Long.class);
+        query.setParameter("nombre", nombre);
+        query.setParameter("fecha", fechaNacimiento);
+        long count = query.getSingleResult();
+        em.getTransaction().commit();
+        return count > 0;
+    }
+
+    public void addPersona(Persona persona) {
+        em.getTransaction().begin();
+        em.persist(persona);
+        em.getTransaction().commit();
+    }
     
     
 
     
     
     
+    //------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------    
+    //funciones no tocar
+    //------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------------------------------------------------------------------
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    //----------------------------------------------------------------------------------------------------------------
-    //----------------------------------------------------------------------------------------------------------------
-    //FUNCIONES Deprecated!!!!!!!!!!!!!
-    //----------------------------------------------------------------------------------------------------------------
-    //----------------------------------------------------------------------------------------------------------------
-		/**
-	 * This method creates/adds a product to a seller
-	 * 
-	 * @param title of the product
-	 * @param description of the product
-	 * @param status 
-	 * @param selling price
-	 * @param category of a product
-	 * @param publicationDate
-	 * @return Product
- 	 * @throws SaleAlreadyExistException if the same product already exists for the seller
-	 */
-	public Sale createSale(String title, String description, int status, float price,  Date pubDate, String sellerEmail, File file) throws  FileNotUploadedException, MustBeLaterThanTodayException, SaleAlreadyExistException {
-		
-
-		System.out.println(">> DataAccess: createProduct=> title= "+title+" seller="+sellerEmail);
-		try {
-		
-
-			if(pubDate.before(UtilDate.trim(new Date()))) {
-				throw new MustBeLaterThanTodayException(ResourceBundle.getBundle("Etiquetas").getString("DataAccess.ErrorSaleMustBeLaterThanToday"));
-			}
-			if (file==null)
-				throw new FileNotUploadedException(ResourceBundle.getBundle("Etiquetas").getString("DataAccess.ErrorFileNotUploadedException"));
-
-			em.getTransaction().begin();
-			
-			Seller seller = em.find(Seller.class, sellerEmail);
-			if (seller.doesSaleExist(title)) {
-				em.getTransaction().commit();
-				throw new SaleAlreadyExistException(ResourceBundle.getBundle("Etiquetas").getString("DataAccess.SaleAlreadyExist"));
-			}
-
-			Sale sale = seller.addSale(title, description, status, price, pubDate, file);
-			//next instruction can be obviated
-
-			em.persist(seller); 
-			em.getTransaction().commit();
-			 System.out.println("sale stored "+sale+ " "+seller);
-
-			return sale;
-		} catch (NullPointerException e) {
-			   e.printStackTrace();
-			// TODO Auto-generated catch block
-			em.getTransaction().commit();
-			return null;
-		}
-		
-		
-	}
-	
-	/**
-	 * This method retrieves all the products that contain a desc text in a title
-	 * 
-	 * @param desc the text to search
-	 * @return collection of products that contain desc in a title
-	 */
-	public List<Sale> getSales(String desc) {
-		System.out.println(">> DataAccess: getProducts=> from= "+desc);
-
-		List<Sale> res = new ArrayList<Sale>();	
-		TypedQuery<Sale> query = em.createQuery("SELECT s FROM Sale s WHERE s.title LIKE ?1",Sale.class);   
-		query.setParameter(1, "%"+desc+"%");
-		
-		List<Sale> sales = query.getResultList();
-	 	 for (Sale sale:sales){
-		   res.add(sale);
-		  }
-	 	return res;
-	}
-	
-	/**
-	 * This method retrieves the products that contain a desc text in a title and the publicationDate today or before
-	 * 
-	 * @param desc the text to search
-	 * @return collection of products that contain desc in a title
-	 */
-	public List<Sale> getPublishedSales(String desc, Date pubDate) {
-		System.out.println(">> DataAccess: getProducts=> from= "+desc);
-
-		List<Sale> res = new ArrayList<Sale>();	
-		TypedQuery<Sale> query = em.createQuery("SELECT s FROM Sale s WHERE s.title LIKE ?1 AND s.pubDate <=?2",Sale.class);   
-		query.setParameter(1, "%"+desc+"%");
-		query.setParameter(2,pubDate);
-		
-		List<Sale> sales = query.getResultList();
-	 	 for (Sale sale:sales){
-		   res.add(sale);
-		  }
-	 	return res;
-	}
-
-public void open(){
+    public void open(){
 		
 		String fileName=c.getDbFilename();
 		if (c.isDatabaseLocal()) {
@@ -588,37 +357,44 @@ public void open(){
 			  em = emf.createEntityManager();
     	   }
 		System.out.println("DataAccess opened => isDatabaseLocal: "+c.isDatabaseLocal());
-
-		
 	}
-
-	public BufferedImage getFile(String fileName) {
-		File file=new File(basePath+fileName);
-		BufferedImage targetImg=null;
-		try {
-             targetImg = rescale(ImageIO.read(file));
-        } catch (IOException ex) {
-            //Logger.getLogger(MainAppFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
-		return targetImg;
-
-	}
-	
-	public BufferedImage rescale(BufferedImage originalImage)
-    {
-		System.out.println("rescale "+originalImage);
-        BufferedImage resizedImage = new BufferedImage(baseSize, baseSize, BufferedImage.TYPE_INT_RGB);
-        Graphics2D g = resizedImage.createGraphics();
-        g.drawImage(originalImage, 0, 0, baseSize, baseSize, null);
-        g.dispose();
-        return resizedImage;
-    }
-	
-	
 	
 	public void close(){
 		em.close();
 		System.out.println("DataAcess closed");
+	}
+
+
+	
+	public CardenalElector findCardenalElectorPorNombre(String nombre) {
+	    TypedQuery<CardenalElector> query = em.createQuery(
+	        "SELECT e FROM CardenalElector e WHERE e.nombre = :nombre", CardenalElector.class);
+	    query.setParameter("nombre", nombre);
+	    try {
+	        return query.getSingleResult();
+	    } catch (NoResultException e) {
+	        return null;
+	    }
+	}
+
+	public Persona findPersonaPorNombre(String nombre) {
+	    TypedQuery<Persona> query = em.createQuery(
+	        "SELECT p FROM Persona p WHERE p.nombre = :nombre",
+	        Persona.class);
+	    query.setParameter("nombre", nombre);
+	    try {
+	        return query.getSingleResult();
+	    } catch (NoResultException e) {
+	        return null;
+	    }
+	}
+
+	public void registrarVoto(SesionVoto sesionVoto, CardenalElector cardenalElector, Persona candidato) {
+	    em.getTransaction().begin();
+	    SesionVoto managed = em.merge(sesionVoto);
+	    managed.getYaHanVotado().add(cardenalElector);
+	    managed.getCandidatosVotados().add(candidato);
+	    em.getTransaction().commit();
 	}
 	
 }

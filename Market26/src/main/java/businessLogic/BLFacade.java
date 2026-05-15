@@ -3,10 +3,9 @@ package businessLogic;
 import java.io.File;
 
 
+
+
 import java.util.*;
-
-
-
 
 import gui.*;
 import domain.*;
@@ -28,12 +27,8 @@ import java.awt.Image;
  */
 @WebService
 public interface BLFacade  {
-	  
 	
-	
-	
-	
-	
+
     @WebMethod
     public HashMap<Cardenal, Boolean> iniciarConclave(Date fechaInicio);
 	
@@ -43,73 +38,12 @@ public interface BLFacade  {
 	public boolean iniciarVotacion(Date horaInicio);
 	
 	
+    @WebMethod
+    public boolean registrarPersona(String nombre, Date fechaNacimiento);
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	/**
-	 * This method creates/adds a product to a seller
-	 * 
-	 * @param title of the product
-	 * @param description of the product
-	 * @param status 
-	 * @param selling price
-	 * @param category of a product
-	 * @param publicationDate
-	 * @return Sale
-	 */
-   @WebMethod
-	public Sale createSale(String title, String description, int status, float price, Date pubDate, String sellerEmail, File file) throws  FileNotUploadedException, MustBeLaterThanTodayException, SaleAlreadyExistException;
-	
-	
-	/**
-	 * This method retrieves the products that contain desc
-	 * 
-	 * @param desc the text to search
-	 * @return collection of sales that contain desc 
-	 */
-	@WebMethod public List<Sale> getSales(String desc);
-	
-	/**
-	 * 	 * This method retrieves the products that contain a desc text in a title and the publicationDate today or before
-	 * 
-	 * @param desc the text to search
-	 * @param pubDate the date  of the publication date
-	 * @return collection of sales that contain desc and published before pubDate
-	 */
-	@WebMethod public List<Sale> getPublishedSales(String desc, Date pubDate);
-
+    @WebMethod
+    public boolean votar(String nombreElector, String nombreCandidato);
 	
 	/**
 	 * This method calls the data access to initialize the database with some sellers and products.
@@ -118,14 +52,4 @@ public interface BLFacade  {
 	@WebMethod public void initializeBD();
 	
 		
-	@WebMethod public Image downloadImage(String imageName);
-
-
-
-
-
-	
-	
-
-	
 }

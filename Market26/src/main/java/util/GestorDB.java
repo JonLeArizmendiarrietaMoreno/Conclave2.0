@@ -2,25 +2,23 @@ package util;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+import java.util.*;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import javax.persistence.*;
 
 import configuration.ConfigXML;
 import configuration.UtilDate;
-import domain.Cardenal;
-import domain.CardenalElector;
-import domain.Conclave;
-import domain.MaestroDeCeremonias;
-import domain.Papa;
-import domain.Persona;
-import domain.SesionVoto;
+import domain.*;
+
 
 public class GestorDB {
 
+	
+	//--------------------------------------------------------------------------------------------------------------------------------
+	//--------------------------------------------------------------------------------------------------------------------------------
+	//Esta clase lo uso para tocar un poco la base de datos, el programa no lo usa
+	//--------------------------------------------------------------------------------------------------------------------------------
+	//--------------------------------------------------------------------------------------------------------------------------------
     private EntityManager em;
 
     public GestorDB(EntityManager em) {
@@ -32,103 +30,68 @@ public class GestorDB {
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
-            // 1. Maestro de ceremonias
-            MaestroDeCeremonias maestro = new MaestroDeCeremonias("Juan Pérez", sdf.parse("1960-05-10"));
+            // 1. Maestro de ceremonias (único)
+            MaestroDeCeremonias maestro = crearMaestro(sdf);
             em.persist(maestro);
 
-            // 2. Cardenales (3 electores, 3 no electores)
-            Date fechaElector1 = sdf.parse("1975-03-15");
-            Date fechaElector2 = sdf.parse("1978-07-22");
-            Date fechaElector3 = sdf.parse("1980-11-05");
+            // 2. Cardenales electores (4)
+            //List<CardenalElector> electores = crearCardenalesElectores(sdf);
+            //electores.forEach(em::persist);
 
-            Cardenal cardBase1 = new Cardenal("Luis Martínez", fechaElector1, "Cardenal Presbítero", true);
-            Cardenal cardBase2 = new Cardenal("Andrés Gómez", fechaElector2, "Cardenal Diácono", true);
-            Cardenal cardBase3 = new Cardenal("Fernando Ruiz", fechaElector3, "Cardenal Obispo", true);
+            // 3. Cardenales no electores (2)
+            List<Cardenal> cardenales = crearCardenalesNoElectores(sdf);
+            cardenales.forEach(em::persist);
 
-            Date fechaNoElector1 = sdf.parse("1940-02-10");
-            Date fechaNoElector2 = sdf.parse("1938-09-25");
-            Date fechaNoElector3 = sdf.parse("1942-12-01");
-
-            Cardenal cardNoElect1 = new Cardenal("Tomás Romero", fechaNoElector1, "Cardenal Obispo", false);
-            Cardenal cardNoElect2 = new Cardenal("Javier Mendoza", fechaNoElector2, "Cardenal Presbítero", true);
-            Cardenal cardNoElect3 = new Cardenal("Roberto Silva", fechaNoElector3, "Cardenal Diácono", false);
-
-            CardenalElector elector1 = new CardenalElector(cardBase1.getNombre(), cardBase1.getFechaNacimiento(), cardBase1.getCargo(), cardBase1.isPresente());
-            CardenalElector elector2 = new CardenalElector(cardBase2.getNombre(), cardBase2.getFechaNacimiento(), cardBase2.getCargo(), cardBase2.isPresente());
-            CardenalElector elector3 = new CardenalElector(cardBase3.getNombre(), cardBase3.getFechaNacimiento(), cardBase3.getCargo(), cardBase3.isPresente());
-
-            em.persist(cardBase1); em.persist(cardBase2); em.persist(cardBase3);
-            em.persist(cardNoElect1); em.persist(cardNoElect2); em.persist(cardNoElect3);
-            em.persist(elector1); em.persist(elector2); em.persist(elector3);
-
-            // 3. Conclave
-            Date fechaInicioConclave = UtilDate.trim(new Date());
-            Conclave conclave = new Conclave(fechaInicioConclave);
-            conclave.setMaestroDeCeremonias(maestro);
-            conclave.getCardenalesElectores().add(elector1);
-            conclave.getCardenalesElectores().add(elector2);
-            conclave.getCardenalesElectores().add(elector3);
-            elector1.setConclave(conclave);
-            elector2.setConclave(conclave);
-            elector3.setConclave(conclave);
-            em.persist(conclave);
-
-            // 4. Personas externas
-            Persona externa1 = new Persona("Juan Ciudadano", sdf.parse("1985-03-20"));
-            Persona externa2 = new Persona("María Laica", sdf.parse("1990-07-12"));
-            em.persist(externa1);
-            em.persist(externa2);
-
-            // 5. Primera sesión (fumata negra)
-            Calendar cal = Calendar.getInstance();
-            cal.setTime(fechaInicioConclave);
-            cal.add(Calendar.HOUR_OF_DAY, 2);
-            Date horaInicio1 = cal.getTime();
-            SesionVoto sesion1 = new SesionVoto(horaInicio1, conclave);
-            cal.add(Calendar.HOUR_OF_DAY, 1);
-            Date horaFin1 = cal.getTime();
-            sesion1.setHoraFin(horaFin1);
-            sesion1.setResultado(SesionVoto.RESULTADO_NEGRA);
-            sesion1.getYaHanVotado().add(elector1);
-            sesion1.getYaHanVotado().add(elector2);
-            sesion1.getYaHanVotado().add(elector3);
-            sesion1.getCandidatosVotados().add(cardNoElect1);
-            sesion1.getCandidatosVotados().add(cardNoElect2);
-            sesion1.getCandidatosVotados().add(externa1);
-            sesion1.getCandidatosVotados().add(externa2);
-            em.persist(sesion1);
-
-            // 6. Segunda sesión (fumata blanca)
-            cal.add(Calendar.DAY_OF_MONTH, 1);
-            Date horaInicio2 = cal.getTime();
-            SesionVoto sesion2 = new SesionVoto(horaInicio2, conclave);
-            cal.add(Calendar.HOUR_OF_DAY, 1);
-            Date horaFin2 = cal.getTime();
-            sesion2.setHoraFin(horaFin2);
-            sesion2.setResultado(SesionVoto.RESULTADO_BLANCA);
-            sesion2.getYaHanVotado().add(elector1);
-            sesion2.getYaHanVotado().add(elector2);
-            sesion2.getYaHanVotado().add(elector3);
-            sesion2.getCandidatosVotados().add(cardNoElect1);
-            sesion2.getCandidatosVotados().add(cardNoElect2);
-            sesion2.getCandidatosVotados().add(externa1);
-            sesion2.setGanador(cardNoElect1);
-            em.persist(sesion2);
-
-            // 7. Papa
-            Papa papa = new Papa(cardNoElect1.getNombre(), cardNoElect1.getFechaNacimiento(), horaFin2);
-            conclave.setPapaElegido(papa);
-            papa.setPapaConclave(conclave);
-            em.persist(papa);
+            // 4. Personas externas (2)
+            List<Persona> externas = crearPersonasExternas(sdf);
+            externas.forEach(em::persist);
 
             em.getTransaction().commit();
-            System.out.println("Base de datos inicializada correctamente.");
+            System.out.println("✅ Base de datos inicializada (escenario limpio, sin cónclave previo).");
         } catch (Exception e) {
             e.printStackTrace();
             em.getTransaction().rollback();
         }
     }
 
+    // Métodos auxiliares
+    private MaestroDeCeremonias crearMaestro(SimpleDateFormat sdf) throws Exception {
+        return new MaestroDeCeremonias("Carlos Gomez", sdf.parse("1990-01-15"));
+    }
+
+    private List<CardenalElector> crearCardenalesElectores(SimpleDateFormat sdf) throws Exception {
+        return List.of(
+            new CardenalElector("Luis Martinez", sdf.parse("1980-03-15"), "Cardenal Presbitero", true),
+            new CardenalElector("Andrés Gomez",  sdf.parse("1982-07-22"), "Cardenal Diacono",   true),
+            new CardenalElector("Fernando Ruiz", sdf.parse("1985-11-05"), "Cardenal Obispo",    true),
+            new CardenalElector("Miguel Angel",  sdf.parse("1978-09-10"), "Cardenal Presbitero", true)
+        );
+    }
+
+    private List<Cardenal> crearCardenalesNoElectores(SimpleDateFormat sdf) throws Exception {
+        return List.of(
+            new Cardenal("Tomas Romero",   sdf.parse("1940-02-10"), "Cardenal Obispo",   true),  // >80 años
+            new Cardenal("Javier Mendoza", sdf.parse("1975-05-20"), "Cardenal Diácono", false),  // ausente
+            new Cardenal("Luis Martinez", sdf.parse("1980-03-15"), "Cardenal Presbítero", true),
+            new Cardenal("Andres Gómez",  sdf.parse("1982-07-22"), "Cardenal Diacono",   true),
+            new Cardenal("Fernando Ruiz", sdf.parse("1985-11-05"), "Cardenal Obispo",    true),
+            new Cardenal("Miguel Angel",  sdf.parse("1978-09-10"), "Cardenal Presbítero", true)
+        );
+    }
+
+    private List<Persona> crearPersonasExternas(SimpleDateFormat sdf) throws Exception {
+        return List.of(
+            new Persona("Juan Ciudadano", sdf.parse("1985-03-20")),
+            new Persona("Maria Laica",    sdf.parse("1990-07-12"))
+        );
+    }   
+    
+    
+    
+    
+    
+    
+    
     public static void main(String[] args) {
         ConfigXML c = ConfigXML.getInstance();
         String fileName = c.getDbFilename();

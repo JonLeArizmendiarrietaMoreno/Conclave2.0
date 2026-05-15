@@ -2,6 +2,8 @@ package gui;
 
 import java.awt.Color;
 
+
+
 import java.net.URL;
 import java.util.Locale;
 
@@ -16,10 +18,9 @@ import businessLogic.BLFacade;
 import businessLogic.BLFacadeImplementation;
 
 
-
+import gui.*;
 
 public class ApplicationLauncher { 
-	
 	
 	
 	public static void main(String[] args) {
@@ -27,13 +28,10 @@ public class ApplicationLauncher {
 		ConfigXML c=ConfigXML.getInstance();		
 		Locale.setDefault(new Locale(c.getLocale()));
 		
-		MainGUI a=new MainGUI("seller3@gmail.com");
+		MenuGUI a=new MenuGUI();
 		a.setVisible(true);
-		/*
-		JFrame pantallaExterna = new PantallaExterna();
-
-		pantallaExterna.setVisible(true);
-		*/
+		
+		
 
 		try {
 			
@@ -64,8 +62,6 @@ public class ApplicationLauncher {
 			//g.setVisible(true);
 			
 		}catch (Exception e) {
-			a.jLabelSelectOption.setText("Error: "+e.toString());
-			a.jLabelSelectOption.setForeground(Color.RED);	
 			
 			System.out.println("Error in ApplicationLauncher: "+e.toString());
 		}

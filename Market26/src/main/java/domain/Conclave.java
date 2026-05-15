@@ -14,14 +14,14 @@ public class Conclave {
     private Date fechaFin;  // null por defecto
 
     
-    @OneToMany(mappedBy = "conclave")   // Cardenal tiene el many-to-one
-    private List<CardenalElector> cardenalesElectores;
+    @OneToMany(mappedBy = "electores")   // Cardenal tiene el many-to-one
+    private List<CardenalElector> electores;
 
-    @OneToMany(mappedBy = "conclave")   // SesionVoto tiene el many-to-one
-    private List<SesionVoto> sesionesVoto;
+    @OneToMany(mappedBy = "sesionesVotoDelConclave")   // SesionVoto tiene el many-to-one
+    private List<SesionVoto> sesionesVotoDelConclave;
 
     @ManyToOne 
-    private MaestroDeCeremonias maestroDeCeremonias;
+    private MaestroDeCeremonias maestroDeCeremoniasUnico;
 
     @OneToOne
     private Papa papaElegido;
@@ -30,10 +30,9 @@ public class Conclave {
 
     public Conclave(Date fechaInicio) {
         this.fechaInicio = fechaInicio;
-
         this.fechaFin = null;
-        this.cardenalesElectores = new ArrayList<CardenalElector>();
-        this.sesionesVoto = new ArrayList<SesionVoto>();
+        this.electores = new ArrayList<CardenalElector>();
+        this.sesionesVotoDelConclave = new ArrayList<SesionVoto>();
     }
 
     // Getters
@@ -46,7 +45,7 @@ public class Conclave {
     }
 
 	public List<CardenalElector> getCardenalesElectores() {
-		return cardenalesElectores;
+		return electores;
 	}
     
     // Setters
@@ -57,8 +56,8 @@ public class Conclave {
         this.fechaFin = fechaFin;
     }
     
-	public void setMaestroDeCeremonias(MaestroDeCeremonias maestroDeCeremonias) {
-		this.maestroDeCeremonias = maestroDeCeremonias;
+	public void setMaestroDeCeremonias(MaestroDeCeremonias maestroDeCeremoniasUnico) {
+		this.maestroDeCeremoniasUnico = maestroDeCeremoniasUnico;
 		
 	}
 	

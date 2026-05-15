@@ -7,7 +7,7 @@ import java.util.*;
 @Inheritance(strategy = InheritanceType.JOINED)
 public class MaestroDeCeremonias extends Persona {
 	
-	@OneToMany (mappedBy = "maestroDeCeremonias")
+	@OneToMany (mappedBy = "maestroDeCeremoniasUnico")
 	private List<Conclave> maestroDeCeremoniasUnico;
 	
 	

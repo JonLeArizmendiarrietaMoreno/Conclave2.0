@@ -1,22 +1,17 @@
 package businessLogic;
 
 
+import java.util.*;
+import domain.*;
+import gui.*;
 
 
 import java.io.File;
-
-
-import java.util.Date;
-import java.util.List;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 import dataAccess.DataAccess;
-import domain.*;
-
-
-
 
 import exceptions.FileNotUploadedException;
 import exceptions.MustBeLaterThanTodayException;
@@ -26,7 +21,7 @@ import java.awt.image.BufferedImage;
 import java.awt.Image;
 import javax.imageio.ImageIO;
 import java.io.IOException;
-import java.util.HashMap;
+
 
 /**
  * It implements the business logic as a web service.
@@ -35,9 +30,12 @@ import java.util.HashMap;
 public class BLFacadeImplementation  implements BLFacade {
 	 //private static final int baseSize = 160;
 
-		private static final String basePath="src/main/resources/images/";
+	private static final String basePath="src/main/resources/images/";
+	
 	DataAccess dataAccess;
-
+	
+	String mensaje="";
+	
 	public BLFacadeImplementation()  {		
 		System.out.println("Creating BLFacadeImplementation instance");
 		dataAccess=new DataAccess();		
@@ -48,28 +46,39 @@ public class BLFacadeImplementation  implements BLFacade {
 		dataAccess=da;		
 	}
     
-
-    
-    
-
+  //----------------------------------------------------------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------------------------------------------------------
+  //Aqui empiezan l
+  //----------------------------------------------------------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------------------------------------------------------
     
     public HashMap<Cardenal, Boolean> iniciarConclave(Date fechaInicio) {
         dataAccess.open();
+        String mensaje = "";
         try {
-        	HashMap<Cardenal, Boolean> hm = dataAccess.getCardenales();
-
-            // 3. Crear y guardar el cónclave
-            Conclave conclave = new Conclave(new Date());
+        	
+            Conclave activo = dataAccess.getConclaveActivo();
+            if (activo != null) {
+                throw new IllegalStateException("Ya hay un cónclave activo");
+            }
+            MaestroDeCeremonias maestro = dataAccess.getMaestroDeCeremonias();
+            if (maestro == null) {
+                throw new IllegalStateException("No hay maestro de ceremonias en la BD");
+            }
+            
+            HashMap<Cardenal, Boolean> hm = dataAccess.getCardenales();
+            
+            // Usar la fecha recibida como parámetro, no new Date()
+            Conclave conclave = new Conclave(fechaInicio);
+            conclave.setMaestroDeCeremonias(maestro);
+            
             dataAccess.añadirElectores(hm, conclave);
             dataAccess.addConclave(conclave);
             
-
-
-            // 5. Enviar mensaje "Extra Omnes" a la pantalla externa
-            //dataAccess.getPantalla("Extra Omnes");
-            System.out.println("Extra Omnes");
+            mensaje = "Extra Omnes";
             return hm;
         } finally {
+            PantallaExternaGUI.getInstance().mostrarMensaje(mensaje);
             dataAccess.close();
         }
     }
@@ -77,99 +86,112 @@ public class BLFacadeImplementation  implements BLFacade {
     
     
     public boolean iniciarVotacion(Date horaInicio) {
+    	System.out.println("empieza iniciarVotacion");
+    	
     	dataAccess.open();
+    	mensaje ="";
+    	
         try {
         	
             Conclave conclaveActual = dataAccess.getConclaveActivo();
             if (conclaveActual == null) {
-                return false;  // No a habido ningun conclave
+            	mensaje="No hay conclaves abiertos";
+                return false;  
             }
 
             SesionVoto ultima = dataAccess.getLastSesionVoto(conclaveActual);
 
             if (ultima != null && ultima.getHoraFin() == null) {
-                return false;  // Votación previa aún abierta
+            	mensaje="SesionVoto previa aún abierta";
+                return false;
             }
             
             return dataAccess.añadirSesionVoto(horaInicio, conclaveActual);
         } finally {
+        	PantallaExternaGUI.getInstance().mostrarMensaje(mensaje);
             dataAccess.close();
         }
+        
 
+    }
+
+    
+    
+    
+ // businessLogic/BLFacadeImplementation.java
+    @Override
+    public boolean registrarPersona(String nombre, Date fechaNacimiento) {
+        dataAccess.open();
+        try {
+            // Verificar si ya existe una persona con mismo nombre y fecha
+            if (dataAccess.existePersona(nombre, fechaNacimiento)) {
+                return false; // ya existe, no se registra
+            }
+            // Crear nueva persona y guardar
+            Persona nueva = new Persona(nombre, fechaNacimiento);
+            dataAccess.addPersona(nueva);
+            return true;
+        } finally {
+            dataAccess.close();
+        }
+    }
+    
+    
+    @Override
+    public boolean votar(String nombreElector, String nombreCandidato) {
+        dataAccess.open();
+        try {
+        	
+            Conclave conclave = dataAccess.getConclaveActivo();
+            if (conclave == null) {
+                return false;
+            }
+            
+            SesionVoto sesionActual = dataAccess.getLastSesionVoto(conclave);
+            if (sesionActual == null) {
+                return false;
+            }
+            
+            //Verrificar elector
+            CardenalElector elector = dataAccess.findCardenalElectorPorNombre(nombreElector);
+            if (elector == null) {
+                return false;
+            }
+            
+            //corrupto?
+            if (sesionActual.getYaHanVotado().contains(elector)) {
+                return false;
+            }
+            
+            Persona candidato = dataAccess.findPersonaPorNombre(nombreCandidato);
+            if (candidato == null) {
+            	
+            	MainGUI.getInstance().mostrarMensaje("Error: El candidato '" + nombreCandidato + "' no está registrado.");
+            	
+                return false;
+
+            }
+            
+            dataAccess.registrarVoto(sesionActual, elector, candidato);
+            
+            return true;
+        } finally {
+            dataAccess.close();
+        }
     }
     
     
     
     
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    //No, no, DO NOT touch me there, this is my no no square
+    //----------------------------------------------------------------------------------------------------------------------------------------
+    //----------------------------------------------------------------------------------------------------------------------------------------
     
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-	/**
-	 * {@inheritDoc}
-	 */
-   @WebMethod
-	public Sale createSale(String title, String description,int status, float price, Date pubDate, String sellerEmail, File file) throws  FileNotUploadedException, MustBeLaterThanTodayException, SaleAlreadyExistException {
-		dataAccess.open();
-		Sale product=dataAccess.createSale(title, description, status, price, pubDate, sellerEmail, file);		
-		dataAccess.close();
-		return product;
-   };
-	
-   /**
-    * {@inheritDoc}
-    */
-	@WebMethod 
-	public List<Sale> getSales(String desc){
-		dataAccess.open();
-		List<Sale>  rides=dataAccess.getSales(desc);
-		dataAccess.close();
-		return rides;
-	}
-	
-	/**
-	    * {@inheritDoc}
-	    */
-		@WebMethod 
-		public List<Sale> getPublishedSales(String desc, Date pubDate) {
-			dataAccess.open();
-			List<Sale>  rides=dataAccess.getPublishedSales(desc,pubDate);
-			dataAccess.close();
-			return rides;
-		}
-	/**
-	    * {@inheritDoc}
-	    */
-	@WebMethod public BufferedImage getFile(String fileName) {
-		return dataAccess.getFile(fileName);
-	}
-
     
 	public void close() {
 		DataAccess dB4oManager=new DataAccess();
@@ -186,18 +208,6 @@ public class BLFacadeImplementation  implements BLFacade {
 		dataAccess.initializeDB();
 		dataAccess.close();
 	}
-    /**
-	 * {@inheritDoc}
-	 */
-    @WebMethod public Image downloadImage(String imageName) {
-        File image = new File(basePath+imageName);
-        try {
-            return ImageIO.read(image);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 
     
 }

@@ -18,7 +18,7 @@ public class SesionVoto {
     private String resultado;  // "", "negra" o "blanca"
     
     @ManyToOne
-    private Conclave conclave;
+    private Conclave sesionesVotoDelConclave;
     
     @ManyToOne
     private Persona ganador; //ganador
@@ -34,11 +34,11 @@ public class SesionVoto {
     public static final String RESULTADO_BLANCA = "blanca";
 
 
-    public SesionVoto(Date horaInicio, Conclave conclave) {
+    public SesionVoto(Date horaInicio, Conclave sesionesVotoDelConclave) {
         this.horaInicio = horaInicio;
         this.horaFin = null;
         this.resultado = RESULTADO_PENDIENTE;
-        this.conclave = conclave;
+        this.sesionesVotoDelConclave = sesionesVotoDelConclave;
         
         this.candidatosVotados = new HashSet<Persona>();
         this.yaHanVotado = new HashSet<CardenalElector>();
@@ -64,7 +64,7 @@ public class SesionVoto {
     }
 
     public Conclave getConclave() { 
-    	return conclave; 
+    	return sesionesVotoDelConclave; 
     }
 
     // Setters
@@ -76,8 +76,8 @@ public class SesionVoto {
         this.resultado = resultado;
     }
     
-    public void setConclave(Conclave conclave) { 
-    	this.conclave = conclave; 
+    public void setConclave(Conclave sesionesVotoDelConclave) { 
+    	this.sesionesVotoDelConclave = sesionesVotoDelConclave; 
     }
 	public Set<CardenalElector> getYaHanVotado() {
 		return yaHanVotado;

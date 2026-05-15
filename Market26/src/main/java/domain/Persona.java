@@ -20,7 +20,7 @@ public class Persona {
     
  
     @ManyToMany(mappedBy = "candidatosVotados")
-    private Set<SesionVoto> sesionesDondeFueCandidato;
+    private Set<SesionVoto> candidatosVotados;
     
     
     public Persona(String nombre, Date fechaNacimiento) {

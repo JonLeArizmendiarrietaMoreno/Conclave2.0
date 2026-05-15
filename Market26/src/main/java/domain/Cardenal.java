@@ -13,9 +13,8 @@ public class Cardenal extends Persona {
     private String cargo;
     private boolean presente;
     
-	@ManyToOne
-	private Conclave conclave;
 
+    
     // Constructor completo
     public Cardenal(String nombre, Date fechaNacimiento, String cargo, boolean presente) {
         super(nombre, fechaNacimiento);
@@ -40,9 +39,8 @@ public class Cardenal extends Persona {
     public void setPresente(boolean presente) {
         this.presente = presente;
     }
+   
 
-    public Conclave getConclave() { return conclave; }
-    public void setConclave(Conclave conclave) { this.conclave = conclave; }
     
     @Override
     public String toString() {

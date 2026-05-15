@@ -6,26 +6,23 @@ package gui;
 
 import businessLogic.BLFacade;
 
+
+
+
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.awt.Rectangle;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.FlowLayout;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Locale;
-import java.util.ResourceBundle;
-import java.util.Date;
-import java.util.HashMap;
+import java.util.*;
 
 import com.toedter.calendar.JCalendar;
 
@@ -35,12 +32,6 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.SystemColor;
 
 import domain.*;
-
-
-
-
-
-
 
 
 public class MainGUI extends JFrame {
@@ -57,9 +48,9 @@ public class MainGUI extends JFrame {
 
     private static BLFacade blfacadeinterface;
 	
-	public static BLFacade getBusinessLogic(){
-		return blfacadeinterface;
-	}
+    public static BLFacade getBusinessLogic(){
+        return blfacadeinterface;
+    }
 	 
 	public static void setBussinessLogic (BLFacade facade){
 		blfacadeinterface=facade;
@@ -78,16 +69,17 @@ public class MainGUI extends JFrame {
 	private Calendar calendarAct = null;
 	private Calendar calendarAnt = null;
 	private JTextArea displayMainGUI;
+	
+	private static MainGUI instancia;
 
 	/**
 	 * This is the default constructor
 	 */
-	public MainGUI( String mail) {
+	private MainGUI() {
 		
 		super();
-
-		this.sellerMail=mail;
-		Locale.setDefault(new Locale("es"));
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		
 		this.setSize(495, 290);
 		jLabelSelectOption = new JLabel("MainGUI");
 		jLabelSelectOption.setBounds(10, 11, 51, 16);
@@ -103,14 +95,7 @@ public class MainGUI extends JFrame {
 		IniciarVotacion = new JButton();
 		IniciarVotacion.setBounds(10, 94, 105, 23);
 		IniciarVotacion.setText("Iniciar Votacion");
-		IniciarVotacion.addActionListener(new java.awt.event.ActionListener() {
-			public void actionPerformed(java.awt.event.ActionEvent e) {
-				JFrame a = new QuerySalesGUI();
-
-				a.setVisible(true);
-			}
-		});
-		
+				
 		jContentPane = new JPanel();
 		setContentPane(jContentPane);
 		
@@ -215,6 +200,8 @@ public class MainGUI extends JFrame {
 				}}});
 		
 		
+		
+		//iniciarConclave
 		IniciarConclave.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		        try {
@@ -237,7 +224,7 @@ public class MainGUI extends JFrame {
 		});
 		
 		
-		// Dentro del constructor de MainGUI, después de crear IniciarVotacion
+		//IniciarVotacion
 		IniciarVotacion.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 
@@ -250,6 +237,28 @@ public class MainGUI extends JFrame {
 		    }
 		});
 		
+		//RegistrarPersona
+		RegistrarPersona.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        String nombre = NombrePersona.getText().trim();
+		        if (nombre.isEmpty()) {
+		            displayMainGUI.setText("Error: ingrese un nombre.");
+		            return;
+		        }
+		        Date fechaNacimiento = jCalendar.getDate(); // fecha seleccionada en el calendario
+		        if (fechaNacimiento == null) {
+		            displayMainGUI.setText("Error: seleccione una fecha de nacimiento.");
+		            return;
+		        }
+		        boolean ok = blfacadeinterface.registrarPersona(nombre, fechaNacimiento);
+		        if (ok) {
+		            displayMainGUI.setText("Persona registrada correctamente:\n" + nombre + " (" + fechaNacimiento + ")");
+		            NombrePersona.setText(""); // limpiar campo
+		        } else {
+		            displayMainGUI.setText("Error: ya existe una persona con ese nombre y fecha.");
+		        }
+		    }
+		});
 		
 		
 		
@@ -264,5 +273,26 @@ public class MainGUI extends JFrame {
 			}
 		});
 	}
+	
+	public static MainGUI getInstance() {
+        if (instancia == null) {
+            instancia = new MainGUI();
+        }
+        return instancia;
+    }
+	
+	
+	public void mostrarMensaje(String mensaje) {
+        SwingUtilities.invokeLater(() -> {
+            displayMainGUI.setText(mensaje);
+        });
+	}
+	
+	
+	
+	
+	
+	
+	
 } // @jve:decl-index=0:visual-constraint="0,0"
 

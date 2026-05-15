@@ -13,8 +13,8 @@ public class Papa extends Persona {
     private int idPapa;
 	
 	@OneToOne
-	private Conclave papaConclave;
-    // Constructor completo
+	private Conclave papaElegido;
+	
     public Papa(String nombre, Date fechaNacimiento, Date fechaEleccion) {
         super(nombre, fechaNacimiento);
         this.fechaEleccion = fechaEleccion;
@@ -42,8 +42,8 @@ public class Papa extends Persona {
         this.idPapa = idPapa;
     }
     
-	public void setPapaConclave(Conclave papaConclave) {
-		this.papaConclave = papaConclave;
+	public void setPapaConclave(Conclave papaElegido) {
+		this.papaElegido = papaElegido;
 	}
 
     @Override
