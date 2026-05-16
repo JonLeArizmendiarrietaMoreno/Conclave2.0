@@ -70,6 +70,7 @@ public class MainGUI extends JFrame {
 	private Calendar calendarAnt = null;
 	private JTextArea displayMainGUI;
 	
+	
 	private static MainGUI instancia;
 
 	/**
@@ -248,8 +249,8 @@ public class MainGUI extends JFrame {
 		//IniciarVotacion
 		IniciarVotacion.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
-
-		        boolean conseguido = blfacadeinterface.iniciarVotacion(jCalendar.getDate());
+		    	Date fechaHoraInicio = getFechaHoraSeleccionada();
+		        boolean conseguido = blfacadeinterface.iniciarVotacion(fechaHoraInicio);
 		        if (conseguido) {
 		            displayMainGUI.setText("Votación iniciada a las " + jCalendar.getDate());
 		        } else {
@@ -299,7 +300,8 @@ public class MainGUI extends JFrame {
 		CerrarVotacion.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		        try {
-		            boolean ok = blfacadeinterface.cerrarVotacion(jCalendar.getDate());
+		        	Date fechaHoraCierre = getFechaHoraSeleccionada();
+		            boolean ok = blfacadeinterface.cerrarVotacion(fechaHoraCierre);
 		            if (ok) {
 		                displayMainGUI.setText("Votación cerrada correctamente.");
 		            } else {
@@ -315,7 +317,19 @@ public class MainGUI extends JFrame {
 		
 		
 	}
-	
+	private Date getFechaHoraSeleccionada() {
+	    Calendar cal = Calendar.getInstance();
+	    cal.setTime(jCalendar.getDate()); // fecha (día/mes/año)
+	    // Obtener hora y minutos del spinner
+	    Date time = (Date) spinnerHora.getValue();
+	    Calendar timeCal = Calendar.getInstance();
+	    timeCal.setTime(time);
+	    cal.set(Calendar.HOUR_OF_DAY, timeCal.get(Calendar.HOUR_OF_DAY));
+	    cal.set(Calendar.MINUTE, timeCal.get(Calendar.MINUTE));
+	    cal.set(Calendar.SECOND, 0);
+	    cal.set(Calendar.MILLISECOND, 0);
+	    return cal.getTime();
+	}
 	
 	
 	/*

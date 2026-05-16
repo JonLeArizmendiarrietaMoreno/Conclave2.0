@@ -2,6 +2,7 @@ package businessLogic;
 
 
 import java.util.*;
+
 import domain.*;
 import gui.*;
 
@@ -165,9 +166,6 @@ public class BLFacadeImplementation  implements BLFacade {
             
             Persona candidato = dataAccess.findPersonaPorNombre(nombreCandidato);
             if (candidato == null) {
-            	
-            	MainGUI.getInstance().mostrarMensaje("Error: El candidato '" + nombreCandidato + "' no está registrado.");
-            	
                 return false;
 
             }

@@ -13,9 +13,11 @@ import javax.swing.border.EmptyBorder;
 
 
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 import javax.swing.JButton;
 
 import businessLogic.*;
+import javax.swing.JTextArea;
 
 public class ElectorGUI extends JFrame {
 	
@@ -27,7 +29,7 @@ public class ElectorGUI extends JFrame {
 	private JTextField elegirAQuienVotar;
 	private JTextField nombreElector;
 
-	
+	private JTextArea displayElectorGUI;
 	
 	
 	/**
@@ -83,6 +85,10 @@ public class ElectorGUI extends JFrame {
 		contentPane.add(nombreElector);
 		nombreElector.setColumns(10);
 		
+		displayElectorGUI = new JTextArea();
+		displayElectorGUI.setBounds(10, 116, 138, 70);
+		contentPane.add(displayElectorGUI);
+		
 		
 		
 		
@@ -97,35 +103,27 @@ public class ElectorGUI extends JFrame {
                 String nombreCandidatoStr = elegirAQuienVotar.getText();
                 System.out.println(nombreElectorStr+nombreCandidatoStr);
                 
-                /*
-                if (nombreElectorStr.isEmpty() || nombreCandidatoStr.isEmpty()) {
-                    JOptionPane.showMessageDialog(ElectorGUI.this, 
-                        "Debe introducir el nombre del elector y del candidato", 
-                        "Error", JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-           
-                */
-                
-            
-                
-                
-                
-                
+
                 
                System.out.println("nombreelector y candidato no vacio");
                if( MainGUI.getBusinessLogic().votar(nombreElectorStr, nombreCandidatoStr)) 
                {
-            	   JOptionPane.showMessageDialog(ElectorGUI.this,"voto procesado",
-                           "Exito", JOptionPane.INFORMATION_MESSAGE);
+            	   displayElectorGUI.setText("Voto emitido ");
 
                }else {
-                    JOptionPane.showMessageDialog(ElectorGUI.this,
-                        "No se pudo emitir el voto",
-                        "Error", JOptionPane.ERROR_MESSAGE);
+            	   displayElectorGUI.setText("Voto no emitido" );
                 }return;
             }
         });
 		
 	}
+	
+	
+	public void mostrarMensaje(String mensaje) {
+        SwingUtilities.invokeLater(() -> {
+        	displayElectorGUI.setText(mensaje);
+        });
+	}
+
+
 }
