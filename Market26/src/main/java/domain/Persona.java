@@ -54,7 +54,6 @@ public class Persona {
     }
     
     
-    
 
     @Override
     public String toString() {

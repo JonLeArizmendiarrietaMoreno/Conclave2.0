@@ -1291,3 +1291,1616 @@ New type java.util.ArrayList<domain.Conclave>
 [2026-05-17 02:31:29 #23 type.registry] 
 New type java.util.ArrayList<domain.CardenalElector>
 
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 06:31:45 #1 server] 
+Server on port 6136 has started by 1104@DESKTOP-QMJV9R8
+
+[2026-05-17 06:31:50 #2 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 1104@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 06:31:51 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 06:31:51 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 06:31:51 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 06:31:51 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 06:31:51 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 06:31:51 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 06:31:51 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 06:31:51 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 06:31:51 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 06:31:51 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 06:31:51 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 06:31:51 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 06:31:51 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 06:31:51 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 06:32:18 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 06:32:18 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 06:32:18 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 06:32:18 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 06:32:18 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 06:32:18 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 06:32:18 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 06:32:18 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 06:32:18 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 15:31:38 #1 server] 
+Server on port 50113 has started by 4696@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 15:32:11 #1 server] 
+Server on port 50114 has started by 9664@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 15:33:09 #1 server] 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:390)
+	at java.net.ServerSocket.<init>(ServerSocket.java:252)
+	at java.net.ServerSocket.<init>(ServerSocket.java:196)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 15:37:45 #1 server] 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:390)
+	at java.net.ServerSocket.<init>(ServerSocket.java:252)
+	at java.net.ServerSocket.<init>(ServerSocket.java:196)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 15:38:12 #1 server] 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:390)
+	at java.net.ServerSocket.<init>(ServerSocket.java:252)
+	at java.net.ServerSocket.<init>(ServerSocket.java:196)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 15:39:19 #1 server] 
+Server on port 50130 has started by 7236@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 15:40:06 #1 server] 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:390)
+	at java.net.ServerSocket.<init>(ServerSocket.java:252)
+	at java.net.ServerSocket.<init>(ServerSocket.java:196)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 15:41:09 #1 server] 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:390)
+	at java.net.ServerSocket.<init>(ServerSocket.java:252)
+	at java.net.ServerSocket.<init>(ServerSocket.java:196)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 15:43:38 #1 server] 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:390)
+	at java.net.ServerSocket.<init>(ServerSocket.java:252)
+	at java.net.ServerSocket.<init>(ServerSocket.java:196)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 15:46:40 #1 server] 
+Server on port 6136 has started by 1452@DESKTOP-QMJV9R8
+
+[2026-05-17 15:46:44 #2 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 1452@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 15:46:44 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 15:46:44 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 15:46:44 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 15:46:44 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 15:46:44 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 15:46:44 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 15:46:44 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 15:46:44 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 15:46:44 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 15:46:44 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 15:46:44 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 15:46:44 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 15:46:44 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 15:46:44 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 15:48:36 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 15:48:37 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 15:48:37 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 15:48:37 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 15:48:37 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 15:48:37 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 15:48:37 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 15:48:37 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 15:48:37 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-17 15:48:43 #3 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 1452@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 15:56:56 #1 server] 
+Server on port 50189 has started by 6932@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 15:59:11 #1 server] 
+Server on port 6136 has started by 6368@DESKTOP-QMJV9R8
+
+[2026-05-17 15:59:16 #2 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 15:59:16 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 15:59:16 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 15:59:16 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 15:59:16 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 15:59:16 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 15:59:16 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 15:59:16 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 15:59:16 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 15:59:16 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 15:59:16 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 15:59:16 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 15:59:16 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 15:59:16 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 15:59:16 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 15:59:21 #3 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 6368@DESKTOP-QMJV9R8
+
+[2026-05-17 16:00:10 #4 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\conclaveDB.temp' is opened by 6368@DESKTOP-QMJV9R8
+
+[2026-05-17 16:04:11 #5 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\conclaveDB.temp' is closed by 6368@DESKTOP-QMJV9R8
+
+[2026-05-17 16:04:35 #6 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\conclaveDB.temp' is opened by 6368@DESKTOP-QMJV9R8
+
+[2026-05-17 16:05:10 #7 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\conclaveDB.temp' is closed by 6368@DESKTOP-QMJV9R8
+
+[2026-05-17 16:07:01 #8 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\conclaveDB.temp' is opened by 6368@DESKTOP-QMJV9R8
+
+[2026-05-17 16:07:24 #9 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\conclaveDB.temp' is closed by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 16:16:56 #1 server] 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:390)
+	at java.net.ServerSocket.<init>(ServerSocket.java:252)
+	at java.net.ServerSocket.<init>(ServerSocket.java:196)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-17 16:17:06 #10 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 16:17:06 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 16:17:06 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 16:17:06 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 16:17:06 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 16:17:06 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 16:17:06 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 16:17:06 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 16:17:06 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 16:17:06 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 16:17:06 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 16:17:06 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 16:17:06 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 16:17:06 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 16:17:06 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 16:17:35 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 16:17:35 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 16:17:35 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 16:17:35 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 16:17:35 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 16:17:35 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 16:17:35 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 16:17:35 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 16:17:35 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-17 16:17:39 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-17 16:17:39 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+[2026-05-17 16:19:05 #11 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 16:21:18 #1 server] 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:390)
+	at java.net.ServerSocket.<init>(ServerSocket.java:252)
+	at java.net.ServerSocket.<init>(ServerSocket.java:196)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-17 16:21:25 #12 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 16:21:25 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 16:21:25 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 16:21:25 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 16:21:25 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 16:21:25 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 16:21:25 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 16:21:25 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 16:21:25 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 16:21:25 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 16:21:25 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 16:21:25 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 16:21:25 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 16:21:25 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 16:21:25 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 16:21:41 #13 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 16:21:55 #1 server] 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:390)
+	at java.net.ServerSocket.<init>(ServerSocket.java:252)
+	at java.net.ServerSocket.<init>(ServerSocket.java:196)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-17 16:22:00 #14 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 16:22:00 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 16:22:00 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 16:22:00 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 16:22:00 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 16:22:00 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 16:22:00 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 16:22:00 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 16:22:00 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 16:22:00 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 16:22:00 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 16:22:00 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 16:22:00 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 16:22:00 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 16:22:00 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 16:22:28 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 16:22:28 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 16:22:28 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 16:22:28 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 16:22:28 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 16:22:28 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 16:22:28 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 16:22:28 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 16:22:28 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-17 16:22:37 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-17 16:22:37 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+[2026-05-17 16:25:43 #15 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 16:26:14 #1 server] 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:390)
+	at java.net.ServerSocket.<init>(ServerSocket.java:252)
+	at java.net.ServerSocket.<init>(ServerSocket.java:196)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-17 16:26:19 #16 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 16:26:19 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 16:26:19 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 16:26:19 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 16:26:19 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 16:26:19 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 16:26:19 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 16:26:19 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 16:26:19 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 16:26:19 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 16:26:19 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 16:26:19 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 16:26:19 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 16:26:19 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 16:26:19 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 16:27:05 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 16:27:05 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 16:27:05 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 16:27:05 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 16:27:05 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 16:27:05 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 16:27:05 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 16:27:05 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 16:27:05 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-17 16:27:09 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-17 16:27:09 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+[2026-05-17 16:28:49 #17 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 16:36:08 #1 server] 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:390)
+	at java.net.ServerSocket.<init>(ServerSocket.java:252)
+	at java.net.ServerSocket.<init>(ServerSocket.java:196)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-17 16:36:11 #18 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 16:36:12 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 16:36:12 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 16:36:12 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 16:36:12 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 16:36:12 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 16:36:12 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 16:36:12 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 16:36:12 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 16:36:12 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 16:36:12 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 16:36:12 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 16:36:12 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 16:36:12 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 16:36:12 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 16:36:41 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 16:36:41 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 16:36:41 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 16:36:41 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 16:36:41 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 16:36:41 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 16:36:41 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 16:36:41 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 16:36:41 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-17 16:36:46 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-17 16:36:46 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+[2026-05-17 16:39:05 #19 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 16:44:17 #1 server] 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:390)
+	at java.net.ServerSocket.<init>(ServerSocket.java:252)
+	at java.net.ServerSocket.<init>(ServerSocket.java:196)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-17 16:44:22 #20 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 16:44:22 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 16:44:22 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 16:44:22 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 16:44:22 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 16:44:22 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 16:44:22 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 16:44:22 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 16:44:22 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 16:44:22 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 16:44:22 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 16:44:22 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 16:44:22 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 16:44:22 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 16:44:22 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 16:44:41 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 16:44:41 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 16:44:41 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 16:44:41 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 16:44:41 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 16:44:41 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 16:44:41 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 16:44:41 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 16:44:41 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-17 16:44:42 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-17 16:44:42 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+[2026-05-17 16:47:01 #21 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 16:49:35 #1 server] 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:390)
+	at java.net.ServerSocket.<init>(ServerSocket.java:252)
+	at java.net.ServerSocket.<init>(ServerSocket.java:196)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-17 16:49:38 #22 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 16:49:38 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 16:49:38 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 16:49:38 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 16:49:38 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 16:49:38 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 16:49:38 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 16:49:38 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 16:49:38 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 16:49:38 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 16:49:38 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 16:49:38 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 16:49:38 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 16:49:38 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 16:49:38 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 16:50:01 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 16:50:01 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 16:50:01 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 16:50:01 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 16:50:01 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 16:50:01 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 16:50:01 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 16:50:01 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 16:50:01 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-17 16:50:13 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-17 16:50:13 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+[2026-05-17 16:56:54 #23 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 17:01:07 #1 server] 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:390)
+	at java.net.ServerSocket.<init>(ServerSocket.java:252)
+	at java.net.ServerSocket.<init>(ServerSocket.java:196)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-17 17:01:13 #24 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 17:01:13 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 17:01:13 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 17:01:13 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 17:01:13 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 17:01:13 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 17:01:13 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 17:01:13 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 17:01:13 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 17:01:13 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 17:01:13 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 17:01:13 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 17:01:13 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 17:01:13 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 17:01:13 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 17:01:37 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 17:01:37 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 17:01:37 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 17:01:37 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 17:01:37 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 17:01:37 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 17:01:37 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 17:01:37 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 17:01:37 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-17 17:01:37 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-17 17:01:37 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+[2026-05-17 17:08:09 #25 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 17:08:22 #1 server] 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:390)
+	at java.net.ServerSocket.<init>(ServerSocket.java:252)
+	at java.net.ServerSocket.<init>(ServerSocket.java:196)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-17 17:08:26 #26 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 17:08:27 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 17:08:27 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 17:08:27 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 17:08:27 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 17:08:27 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 17:08:27 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 17:08:27 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 17:08:27 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 17:08:27 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 17:08:27 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 17:08:27 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 17:08:27 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 17:08:27 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 17:08:27 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 17:08:48 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 17:08:48 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 17:08:48 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 17:08:48 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 17:08:48 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 17:08:48 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 17:08:48 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 17:08:48 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 17:08:48 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-17 17:08:50 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-17 17:08:50 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+[2026-05-17 17:10:02 #27 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 17:15:05 #1 server] 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:390)
+	at java.net.ServerSocket.<init>(ServerSocket.java:252)
+	at java.net.ServerSocket.<init>(ServerSocket.java:196)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-17 17:15:09 #28 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 17:15:09 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 17:15:09 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 17:15:09 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 17:15:09 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 17:15:09 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 17:15:09 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 17:15:09 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 17:15:09 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 17:15:09 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 17:15:09 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 17:15:09 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 17:15:09 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 17:15:09 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 17:15:09 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 17:15:37 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 17:15:37 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 17:15:37 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 17:15:37 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 17:15:37 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 17:15:37 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 17:15:37 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 17:15:37 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 17:15:38 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-17 17:15:38 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-17 17:15:38 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+[2026-05-17 17:16:08 #29 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 17:25:41 #1 server] 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:390)
+	at java.net.ServerSocket.<init>(ServerSocket.java:252)
+	at java.net.ServerSocket.<init>(ServerSocket.java:196)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 17:25:51 #1 server] 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:390)
+	at java.net.ServerSocket.<init>(ServerSocket.java:252)
+	at java.net.ServerSocket.<init>(ServerSocket.java:196)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-17 17:25:54 #30 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 17:25:54 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 17:25:55 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 17:25:55 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 17:25:55 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 17:25:55 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 17:25:55 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 17:25:55 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 17:25:55 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 17:25:55 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 17:25:55 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 17:25:55 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 17:25:55 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 17:25:55 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 17:25:55 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 17:26:19 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 17:26:19 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 17:26:19 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 17:26:19 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 17:26:19 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 17:26:19 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 17:26:19 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 17:26:19 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 17:26:19 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-17 17:26:22 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-17 17:26:22 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+[2026-05-17 17:28:24 #31 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 17:28:34 #1 server] 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:390)
+	at java.net.ServerSocket.<init>(ServerSocket.java:252)
+	at java.net.ServerSocket.<init>(ServerSocket.java:196)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-17 17:28:38 #32 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 17:28:38 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 17:28:38 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 17:28:38 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 17:28:38 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 17:28:38 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 17:28:38 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 17:28:38 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 17:28:38 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 17:28:38 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 17:28:38 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 17:28:38 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 17:28:38 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 17:28:38 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 17:28:38 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 17:29:03 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 17:29:03 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 17:29:03 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 17:29:03 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 17:29:03 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 17:29:03 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 17:29:03 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 17:29:03 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 17:29:03 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-17 17:29:04 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-17 17:29:04 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+[2026-05-17 17:29:53 #33 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 6368@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 17:32:30 #1 server] 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:390)
+	at java.net.ServerSocket.<init>(ServerSocket.java:252)
+	at java.net.ServerSocket.<init>(ServerSocket.java:196)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 17:32:53 #1 server] 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:390)
+	at java.net.ServerSocket.<init>(ServerSocket.java:252)
+	at java.net.ServerSocket.<init>(ServerSocket.java:196)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 17:34:27 #1 server] 
+java.net.BindException: Address already in use: JVM_Bind
+	at java.net.DualStackPlainSocketImpl.bind0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketBind(DualStackPlainSocketImpl.java:106)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+	at java.net.PlainSocketImpl.bind(PlainSocketImpl.java:190)
+	at java.net.ServerSocket.bind(ServerSocket.java:390)
+	at java.net.ServerSocket.<init>(ServerSocket.java:252)
+	at java.net.ServerSocket.<init>(ServerSocket.java:196)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+

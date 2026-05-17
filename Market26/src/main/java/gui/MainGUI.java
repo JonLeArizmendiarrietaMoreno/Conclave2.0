@@ -169,7 +169,7 @@ public class MainGUI extends JFrame {
 		
 		
 		displayMainGUI = new JTextArea();
-		displayMainGUI.setText("Dios esta moribundo y lo voy a rematar");
+		displayMainGUI.setText("Aplicacion Conclave2.0");
 		displayMainGUI.setBounds(0, 38, 340, 290);
 		displayMainGUI.setLineWrap(true);
 		displayMainGUI.setWrapStyleWord(true);

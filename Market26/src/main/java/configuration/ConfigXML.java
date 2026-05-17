@@ -46,6 +46,8 @@ public class ConfigXML {
 	
 	private String locale;
 
+
+	
 	public String getLocale() {
 		return locale;
 	}

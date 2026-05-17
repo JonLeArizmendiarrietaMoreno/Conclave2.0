@@ -65,6 +65,8 @@ public class BLFacadeImplementation  implements BLFacade {
             if (activo != null) {
                 throw new IllegalStateException("Ya hay un cónclave activo");
             }
+
+            Conclave conclave = new Conclave(fechaInicio);
             MaestroDeCeremonias maestro = dataAccess.getMaestroDeCeremonias();
             if (maestro == null) {
                 throw new IllegalStateException("No hay maestro de ceremonias en la BD");
@@ -73,7 +75,6 @@ public class BLFacadeImplementation  implements BLFacade {
             List<Cardenal> lista = dataAccess.getCardenales();
             
             
-            Conclave conclave = new Conclave(fechaInicio);
             conclave.setMaestroDeCeremonias(maestro);
             
             dataAccess.añadirElectores(lista, conclave);
@@ -157,7 +158,6 @@ public class BLFacadeImplementation  implements BLFacade {
             Conclave conclave = dataAccess.getConclaveActivo();
             if (conclave == null) {
             	return "no hay conclave activo";
-                
             }
             
             SesionVoto sesionActual = dataAccess.getLastSesionVoto(conclave);
@@ -165,14 +165,22 @@ public class BLFacadeImplementation  implements BLFacade {
             	return "no hay sesion de voto activo";
             }
             
-            //Verrificar elector
-            CardenalElector elector = dataAccess.findCardenalElectorPorNombre(nombreElector);
+            CardenalElector elector = dataAccess.findCardenalElectorPorNombre(nombreElector,conclave);
             if (elector == null) {
             	return "Nombre elector incorrecto";
             }
             
+            
+            
+            
+         // En BLFacadeImplementation.java
+
+            
+            boolean yaHanVotado = dataAccess.getYaHanVotadoEnSesion(sesionActual.getIdSesion(), elector.getId());
+            
+            
             //corrupto?
-            if (sesionActual.getYaHanVotado().contains(elector)) {
+            if (yaHanVotado) {
             	return "Ya has votado";
             }
             

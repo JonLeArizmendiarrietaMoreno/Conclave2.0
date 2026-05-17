@@ -110,19 +110,21 @@ public class DataAccess {
 
 
     private List<Cardenal> crearCardenalesNoElectores(SimpleDateFormat sdf) throws Exception {
-        return List.of(
+        return Arrays.asList(
             new Cardenal("Cardenal1",   sdf.parse("1940-02-10"), "Cardenal Obispo",   true),  // >80 años
             new Cardenal("Cardenal2", sdf.parse("1975-05-20"), "Cardenal Diácono", false),  // ausente
             //electores
             new Cardenal("Elector1", sdf.parse("1980-03-15"), "Cardenal Presbítero", true),
             new Cardenal("Elector12",  sdf.parse("1982-07-22"), "Cardenal Diacono",   true),
             new Cardenal("Elector123", sdf.parse("1985-11-05"), "Cardenal Obispo",    true),
-            new Cardenal("Elector1234",  sdf.parse("1978-09-10"), "Cardenal Presbítero", true)
+            new Cardenal("Elector1234",  sdf.parse("1978-09-10"), "Cardenal Presbítero", true),
+            new Cardenal("Elector12345", sdf.parse("1985-11-05"), "Cardenal Obispo",    true),
+            new Cardenal("Elector123456",  sdf.parse("1978-09-10"), "Cardenal Presbítero", true)
         );
     }
 
     private List<Persona> crearPersonasExternas(SimpleDateFormat sdf) throws Exception {
-        return List.of(
+        return Arrays.asList(
             new Persona("persona1", sdf.parse("1985-03-20")),
             new Persona("persona2",    sdf.parse("1990-07-12"))
         );
@@ -137,13 +139,13 @@ public class DataAccess {
      */
     public List<Cardenal> getCardenales() {
         em.getTransaction().begin();
-        TypedQuery<Cardenal> query = em.createQuery("SELECT c FROM Cardenal c", Cardenal.class);
+        TypedQuery<Cardenal> query = em.createQuery(
+            "SELECT c FROM Cardenal c WHERE TYPE(c) = Cardenal", 
+            Cardenal.class);
         List<Cardenal> lista = query.getResultList();
         em.getTransaction().commit();
-        
         return lista;
     }
-
     
  
     /**
@@ -309,17 +311,18 @@ public class DataAccess {
     }
     
     
-	
-	public CardenalElector findCardenalElectorPorNombre(String nombre) {
-	    TypedQuery<CardenalElector> query = em.createQuery(
-	        "SELECT e FROM CardenalElector e WHERE e.nombre = :nombre", CardenalElector.class);
-	    query.setParameter("nombre", nombre);
-	    try {
-	        return query.getSingleResult();
-	    } catch (NoResultException e) {
-	        return null;
-	    }
-	}
+    public CardenalElector findCardenalElectorPorNombre(String nombre, Conclave conclave) {
+        TypedQuery<CardenalElector> query = em.createQuery(
+            "SELECT e FROM CardenalElector e WHERE e.nombre = :nombre AND e.electores = :conclave",
+            CardenalElector.class);
+        query.setParameter("nombre", nombre);
+        query.setParameter("conclave", conclave);
+        try {
+            return query.getSingleResult();
+        } catch (NoResultException e) {
+            return null;
+        }
+    }
 
 	public Persona findPersonaPorNombre(String nombre) {
 	    TypedQuery<Persona> query = em.createQuery(
@@ -340,6 +343,24 @@ public class DataAccess {
 	    managed.getCandidatosVotados().add(candidato);
 	    em.getTransaction().commit();
 	}
+
+	public boolean getYaHanVotadoEnSesion(int idSesion, int idElector) {
+	    em.getTransaction().begin();
+	    try {
+	        TypedQuery<Long> query = em.createQuery(
+	            "SELECT COUNT(s) FROM SesionVoto s JOIN s.yaHanVotado e " +
+	            "WHERE s.idSesion = :idSesion AND e.id = :idElector", Long.class);
+	        query.setParameter("idSesion", idSesion);
+	        query.setParameter("idElector", idElector);
+	        long count = query.getSingleResult();
+	        em.getTransaction().commit();
+	        return count > 0;
+	    } catch (Exception e) {
+	        em.getTransaction().rollback();
+	        return false;
+	    }
+	}
+
 	
 	
 	public void cerrarSesionVoto(SesionVoto sesion, Date horaFin) {
@@ -397,7 +418,6 @@ public class DataAccess {
 		System.out.println("DataAcess closed");
 	}
 
-	
 
 	
 	

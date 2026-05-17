@@ -1,0 +1,2046 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 01:21:20 #1 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\conclaveDB.temp' is opened by 11708@DESKTOP-QMJV9R8
+
+[2026-05-16 01:21:20 #2 type.registry] 
+New type domain.Persona
+
+[2026-05-16 01:21:20 #3 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 01:21:20 #4 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 01:21:20 #5 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 01:21:20 #6 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 01:21:20 #7 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 01:21:20 #8 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 01:21:20 #9 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 01:21:20 #10 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 01:21:20 #11 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 01:21:20 #12 type.registry] 
+New type domain.Papa
+
+[2026-05-16 01:21:20 #13 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 01:21:20 #14 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 01:21:20 #15 type] 
+Type domain.Papa is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 01:24:48 #1 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\conclaveDB.temp' is opened by 5868@DESKTOP-QMJV9R8
+
+[2026-05-16 01:24:48 #2 type.registry] 
+New type domain.Persona
+
+[2026-05-16 01:24:48 #3 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 01:24:48 #4 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 01:24:48 #5 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 01:24:48 #6 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 01:24:48 #7 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 01:24:48 #8 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 01:24:48 #9 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 01:24:48 #10 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 01:24:48 #11 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 01:24:48 #12 type.registry] 
+New type domain.Papa
+
+[2026-05-16 01:24:48 #13 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 01:24:48 #14 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 01:24:48 #15 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 01:25:06 #16 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-16 01:25:06 #17 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-16 01:25:06 #18 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-16 01:25:06 #19 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-16 01:25:06 #20 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-16 01:25:06 #21 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-16 01:25:06 #22 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-16 01:25:06 #23 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-16 01:25:06 #24 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-16 01:25:08 #25 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-16 01:25:08 #26 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 01:31:49 #1 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\conclaveDB.temp' is opened by 6192@DESKTOP-QMJV9R8
+
+[2026-05-16 01:31:49 #2 type.registry] 
+New type domain.Persona
+
+[2026-05-16 01:31:49 #3 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 01:31:49 #4 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 01:31:49 #5 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 01:31:49 #6 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 01:31:49 #7 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 01:31:49 #8 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 01:31:49 #9 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 01:31:49 #10 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 01:31:49 #11 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 01:31:49 #12 type.registry] 
+New type domain.Papa
+
+[2026-05-16 01:31:49 #13 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 01:31:49 #14 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 01:31:49 #15 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 01:32:08 #16 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-16 01:32:08 #17 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-16 01:32:08 #18 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-16 01:32:08 #19 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-16 01:32:08 #20 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-16 01:32:08 #21 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-16 01:32:08 #22 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-16 01:32:08 #23 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-16 01:32:08 #24 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-16 01:32:08 #25 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-16 01:32:08 #26 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 01:35:24 #1 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\conclaveDB.temp' is opened by 3932@DESKTOP-QMJV9R8
+
+[2026-05-16 01:35:24 #2 type.registry] 
+New type domain.Persona
+
+[2026-05-16 01:35:24 #3 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 01:35:24 #4 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 01:35:24 #5 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 01:35:24 #6 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 01:35:24 #7 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 01:35:24 #8 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 01:35:24 #9 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 01:35:24 #10 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 01:35:24 #11 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 01:35:24 #12 type.registry] 
+New type domain.Papa
+
+[2026-05-16 01:35:24 #13 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 01:35:24 #14 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 01:35:24 #15 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 01:35:52 #16 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-16 01:35:52 #17 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-16 01:35:52 #18 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-16 01:35:52 #19 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-16 01:35:52 #20 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-16 01:35:52 #21 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-16 01:35:52 #22 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-16 01:35:52 #23 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-16 01:35:52 #24 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-16 01:35:52 #25 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-16 01:35:52 #26 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 01:38:59 #1 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\conclaveDB.temp' is opened by 8368@DESKTOP-QMJV9R8
+
+[2026-05-16 01:38:59 #2 type.registry] 
+New type domain.Persona
+
+[2026-05-16 01:38:59 #3 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 01:38:59 #4 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 01:38:59 #5 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 01:39:00 #6 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 01:39:00 #7 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 01:39:00 #8 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 01:39:00 #9 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 01:39:00 #10 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 01:39:00 #11 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 01:39:00 #12 type.registry] 
+New type domain.Papa
+
+[2026-05-16 01:39:00 #13 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 01:39:00 #14 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 01:39:00 #15 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 01:39:04 #16 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-16 01:39:04 #17 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-16 01:39:04 #18 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-16 01:39:04 #19 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-16 01:39:04 #20 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-16 01:39:04 #21 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-16 01:39:04 #22 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-16 01:39:04 #23 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-16 01:39:04 #24 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-16 01:39:05 #25 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-16 01:39:05 #26 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 01:41:44 #1 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\conclaveDB.temp' is opened by 5496@DESKTOP-QMJV9R8
+
+[2026-05-16 01:41:45 #2 type.registry] 
+New type domain.Persona
+
+[2026-05-16 01:41:45 #3 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 01:41:45 #4 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 01:41:45 #5 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 01:41:45 #6 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 01:41:45 #7 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 01:41:45 #8 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 01:41:45 #9 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 01:41:45 #10 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 01:41:45 #11 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 01:41:45 #12 type.registry] 
+New type domain.Papa
+
+[2026-05-16 01:41:45 #13 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 01:41:45 #14 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 01:41:45 #15 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 01:41:53 #16 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-16 01:41:53 #17 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-16 01:41:53 #18 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-16 01:41:53 #19 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-16 01:41:53 #20 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-16 01:41:53 #21 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-16 01:41:53 #22 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-16 01:41:53 #23 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-16 01:41:53 #24 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-16 01:41:54 #25 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-16 01:41:54 #26 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 01:56:47 #1 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\conclaveDB.temp' is opened by 2460@DESKTOP-QMJV9R8
+
+[2026-05-16 01:56:47 #2 type.registry] 
+New type domain.Persona
+
+[2026-05-16 01:56:47 #3 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 01:56:47 #4 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 01:56:47 #5 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 01:56:47 #6 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 01:56:47 #7 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 01:56:47 #8 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 01:56:47 #9 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 01:56:47 #10 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 01:56:47 #11 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 01:56:47 #12 type.registry] 
+New type domain.Papa
+
+[2026-05-16 01:56:47 #13 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 01:56:47 #14 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 01:56:47 #15 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 01:56:57 #16 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-16 01:56:57 #17 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-16 01:56:57 #18 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-16 01:56:57 #19 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-16 01:56:57 #20 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-16 01:56:57 #21 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-16 01:56:57 #22 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-16 01:56:57 #23 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-16 01:56:57 #24 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-16 01:56:58 #25 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-16 01:56:58 #26 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 02:01:41 #1 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\conclaveDB.temp' is opened by 2112@DESKTOP-QMJV9R8
+
+[2026-05-16 02:01:42 #2 type.registry] 
+New type domain.Persona
+
+[2026-05-16 02:01:42 #3 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 02:01:42 #4 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 02:01:42 #5 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 02:01:42 #6 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 02:01:42 #7 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 02:01:42 #8 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 02:01:42 #9 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 02:01:42 #10 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 02:01:42 #11 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 02:01:42 #12 type.registry] 
+New type domain.Papa
+
+[2026-05-16 02:01:42 #13 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 02:01:42 #14 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 02:01:42 #15 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 02:01:45 #16 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-16 02:01:45 #17 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-16 02:01:45 #18 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-16 02:01:45 #19 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-16 02:01:45 #20 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-16 02:01:45 #21 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-16 02:01:45 #22 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-16 02:01:45 #23 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-16 02:01:45 #24 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-16 02:01:47 #25 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-16 02:01:47 #26 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 02:11:46 #1 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\conclaveDB.temp' is opened by 10696@DESKTOP-QMJV9R8
+
+[2026-05-16 02:11:46 #2 type.registry] 
+New type domain.Persona
+
+[2026-05-16 02:11:46 #3 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 02:11:46 #4 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 02:11:46 #5 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 02:11:46 #6 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 02:11:46 #7 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 02:11:46 #8 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 02:11:46 #9 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 02:11:46 #10 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 02:11:46 #11 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 02:11:46 #12 type.registry] 
+New type domain.Papa
+
+[2026-05-16 02:11:46 #13 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 02:11:46 #14 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 02:11:46 #15 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 02:11:51 #16 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-16 02:11:51 #17 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-16 02:11:51 #18 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-16 02:11:51 #19 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-16 02:11:51 #20 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-16 02:11:51 #21 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-16 02:11:51 #22 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-16 02:11:51 #23 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-16 02:11:51 #24 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-16 02:11:52 #25 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-16 02:11:52 #26 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 02:14:23 #1 store] 
+Database 'C:\Users\jla\git\conclave2.0\Market26\src\main\resources\conclaveDB.temp' is opened by 1096@DESKTOP-QMJV9R8
+
+[2026-05-16 02:14:23 #2 type.registry] 
+New type domain.Persona
+
+[2026-05-16 02:14:23 #3 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 02:14:23 #4 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 02:14:23 #5 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 02:14:23 #6 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 02:14:23 #7 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 02:14:23 #8 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 02:14:23 #9 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 02:14:23 #10 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 02:14:23 #11 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 02:14:23 #12 type.registry] 
+New type domain.Papa
+
+[2026-05-16 02:14:23 #13 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 02:14:23 #14 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 02:14:23 #15 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 02:14:32 #16 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-16 02:14:32 #17 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-16 02:14:32 #18 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-16 02:14:32 #19 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-16 02:14:32 #20 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-16 02:14:32 #21 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-16 02:14:32 #22 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-16 02:14:32 #23 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-16 02:14:32 #24 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-16 02:14:32 #25 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-16 02:14:32 #26 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 22:42:20 #1 server] 
+Server on port 6136 has started by 3840@DESKTOP-QMJV9R8
+
+[2026-05-16 22:42:25 #2 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 22:42:25 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-16 22:42:25 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 22:42:25 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 22:42:25 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 22:42:25 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 22:42:25 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 22:42:25 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 22:42:25 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 22:42:25 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 22:42:25 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 22:42:25 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-16 22:42:25 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 22:42:25 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 22:42:25 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 22:42:38 #3 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+[2026-05-16 22:43:38 #4 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 22:43:38 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-16 22:43:38 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 22:43:38 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 22:43:38 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 22:43:38 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 22:43:38 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 22:43:38 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 22:43:38 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 22:43:38 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 22:43:38 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 22:43:38 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-16 22:43:38 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 22:43:38 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 22:43:38 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 22:43:52 #5 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 22:44:04 #1 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\conclaveDB.temp' has been recovered (tr. 1-17)
+
+[2026-05-16 22:44:04 #2 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\conclaveDB.temp' is opened by 4680@DESKTOP-QMJV9R8
+
+[2026-05-16 22:44:04 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 22:44:04 #4 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 22:44:04 #5 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 22:44:04 #6 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 22:44:04 #7 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 22:44:04 #8 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 22:44:04 #9 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 22:44:04 #10 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\conclaveDB.temp' is closed by 4680@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 22:44:15 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-16 22:44:19 #6 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 22:44:19 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-16 22:44:19 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 22:44:19 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 22:44:19 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 22:44:19 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 22:44:19 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 22:44:19 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 22:44:19 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 22:44:19 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 22:44:19 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 22:44:19 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-16 22:44:19 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 22:44:19 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 22:44:19 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 22:44:23 #7 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+[2026-05-16 22:44:29 #8 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 22:44:29 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-16 22:44:29 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 22:44:29 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 22:44:29 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 22:44:29 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 22:44:29 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 22:44:29 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 22:44:29 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 22:44:29 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 22:44:29 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 22:44:29 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-16 22:44:29 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 22:44:29 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 22:44:29 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 22:45:19 #9 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 22:59:10 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-16 22:59:14 #10 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 22:59:14 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-16 22:59:14 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 22:59:14 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 22:59:14 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 22:59:14 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 22:59:14 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 22:59:14 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 22:59:14 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 22:59:14 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 22:59:14 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 22:59:14 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-16 22:59:14 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 22:59:14 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 22:59:14 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 22:59:39 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-16 22:59:39 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-16 22:59:39 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-16 22:59:39 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-16 22:59:39 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-16 22:59:39 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-16 22:59:39 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-16 22:59:39 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-16 22:59:39 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-16 22:59:41 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-16 22:59:41 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+[2026-05-16 23:00:44 #11 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 23:04:08 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-16 23:04:12 #12 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 23:04:12 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-16 23:04:12 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 23:04:12 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 23:04:12 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 23:04:12 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 23:04:12 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 23:04:12 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 23:04:12 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 23:04:12 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 23:04:12 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 23:04:12 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-16 23:04:12 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 23:04:12 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 23:04:12 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 23:06:42 #13 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 23:09:14 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-16 23:09:17 #14 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 23:09:17 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-16 23:09:17 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 23:09:17 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 23:09:17 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 23:09:17 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 23:09:17 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 23:09:17 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 23:09:17 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 23:09:17 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 23:09:17 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 23:09:17 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-16 23:09:17 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 23:09:17 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 23:09:17 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 23:10:58 #15 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 23:11:05 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-16 23:11:08 #16 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 23:11:09 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-16 23:11:09 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 23:11:09 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 23:11:09 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 23:11:09 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 23:11:09 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 23:11:09 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 23:11:09 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 23:11:09 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 23:11:09 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 23:11:09 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-16 23:11:09 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 23:11:09 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 23:11:09 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 23:13:50 #17 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 23:14:03 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-16 23:14:07 #18 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 23:14:07 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-16 23:14:07 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 23:14:07 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 23:14:07 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 23:14:07 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 23:14:07 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 23:14:07 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 23:14:07 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 23:14:07 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 23:14:07 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 23:14:07 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-16 23:14:07 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 23:14:07 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 23:14:07 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 23:14:32 #19 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 23:15:34 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-16 23:15:36 #20 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 23:15:36 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-16 23:15:36 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 23:15:36 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 23:15:36 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 23:15:36 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 23:15:36 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 23:15:36 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 23:15:36 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 23:15:36 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 23:15:36 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 23:15:36 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-16 23:15:36 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 23:15:36 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 23:15:36 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 23:16:08 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-16 23:16:08 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-16 23:16:08 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-16 23:16:08 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-16 23:16:08 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-16 23:16:08 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-16 23:16:08 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-16 23:16:08 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-16 23:16:08 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-16 23:16:21 #21 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 23:18:45 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-16 23:18:47 #22 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 23:18:48 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-16 23:18:48 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 23:18:48 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 23:18:48 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 23:18:48 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 23:18:48 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 23:18:48 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 23:18:48 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 23:18:48 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 23:18:48 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 23:18:48 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-16 23:18:48 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 23:18:48 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 23:18:48 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 23:19:23 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-16 23:19:23 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-16 23:19:23 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-16 23:19:23 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-16 23:19:23 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-16 23:19:23 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-16 23:19:23 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-16 23:19:23 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-16 23:19:23 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-16 23:19:26 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-16 23:19:26 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+[2026-05-16 23:20:52 #23 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 23:21:00 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-16 23:21:02 #24 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 23:21:02 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-16 23:21:02 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 23:21:02 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 23:21:02 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 23:21:02 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 23:21:02 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 23:21:02 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 23:21:02 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 23:21:02 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 23:21:02 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 23:21:02 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-16 23:21:02 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 23:21:02 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 23:21:02 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 23:21:36 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-16 23:21:36 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-16 23:21:36 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-16 23:21:36 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-16 23:21:36 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-16 23:21:36 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-16 23:21:36 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-16 23:21:36 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-16 23:21:36 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-16 23:21:38 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-16 23:21:38 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+[2026-05-16 23:24:18 #25 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 23:26:00 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-16 23:26:05 #26 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 23:26:05 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-16 23:26:05 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 23:26:05 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 23:26:05 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 23:26:05 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 23:26:05 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 23:26:05 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 23:26:05 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 23:26:05 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 23:26:05 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 23:26:05 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-16 23:26:05 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 23:26:05 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 23:26:05 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 23:26:42 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-16 23:26:42 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-16 23:26:42 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-16 23:26:42 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-16 23:26:42 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-16 23:26:42 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-16 23:26:42 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-16 23:26:42 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-16 23:26:42 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-16 23:26:52 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-16 23:26:52 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+[2026-05-16 23:29:15 #27 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 23:29:22 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-16 23:29:24 #28 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 23:29:24 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-16 23:29:24 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 23:29:24 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 23:29:24 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 23:29:24 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 23:29:24 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 23:29:24 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 23:29:24 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 23:29:24 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 23:29:24 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 23:29:24 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-16 23:29:24 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 23:29:24 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 23:29:24 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 23:29:50 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-16 23:29:50 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-16 23:29:50 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-16 23:29:50 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-16 23:29:50 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-16 23:29:51 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-16 23:29:51 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-16 23:29:51 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-16 23:29:51 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-16 23:29:51 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-16 23:29:51 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+[2026-05-16 23:30:17 #29 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 23:32:39 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+[2026-05-16 23:32:40 #30 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-16 23:32:40 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-16 23:32:40 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-16 23:32:40 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-16 23:32:40 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-16 23:32:40 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-16 23:32:40 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-16 23:32:40 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-16 23:32:40 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-16 23:32:41 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-16 23:32:41 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-16 23:32:41 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-16 23:32:41 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-16 23:32:41 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-16 23:32:41 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-16 23:38:32 #31 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 00:00:24 #32 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 00:03:46 #33 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 00:12:26 #34 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 00:12:32 #35 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 00:12:43 #36 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 00:22:34 #37 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 00:22:45 #38 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 00:25:40 #39 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 00:36:55 #40 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 00:38:18 #41 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 01:19:47 #42 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 01:21:24 #43 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 01:53:19 #44 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 01:54:30 #45 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 02:04:08 #46 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 02:06:51 #47 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 02:07:06 #48 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 02:11:38 #49 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 02:11:52 #50 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 02:13:28 #51 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 02:17:17 #52 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 02:18:21 #53 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 02:20:10 #54 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 02:21:08 #55 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 02:28:57 #56 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 02:30:20 #57 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 02:31:19 #58 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is opened by 3840@DESKTOP-QMJV9R8
+
+[2026-05-17 02:32:15 #59 store] 
+Database 'C:\Users\jla\eclipse-workspace\Market26\src\main\resources\db\src\main\resources\conclaveDB.temp' is closed by 3840@DESKTOP-QMJV9R8
+

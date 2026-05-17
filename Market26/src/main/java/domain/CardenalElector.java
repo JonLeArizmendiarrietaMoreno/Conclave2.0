@@ -37,4 +37,10 @@ public class CardenalElector extends Cardenal {
     public String toString() {
         return "Elector: " + super.toString();
     }
+    
+    
+    
+    
+    
+    
 }
