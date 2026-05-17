@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-  <businessLogic local="true"> 
-	<businessLogicNode>0.0.0.0</businessLogicNode>
+  <businessLogic local="false"> 
+	<businessLogicNode>192.168.1.144</businessLogicNode>
 	<businessLogicPort>1099</businessLogicPort>
 	<businessLogicName>Market</businessLogicName>
   </businessLogic>
-  <database local="true" initialize="true">
-	<databaseNode>0.0.0.0</databaseNode>
+  <database local="false" initialize="true">
+	<databaseNode>192.168.1.144</databaseNode>
 	<dbFilename>src/main/resources/conclaveDB.temp</dbFilename>
 	<databasePort>6136</databasePort>
 	<user>admin</user>

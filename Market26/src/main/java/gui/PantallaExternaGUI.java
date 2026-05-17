@@ -1,11 +1,32 @@
 package gui;
 
 import javax.swing.*;
+
+import businessLogic.BLFacade;
+
 import java.awt.*;
 
 public class PantallaExternaGUI extends JFrame {
     private static PantallaExternaGUI instancia;
     private JTextField textFieldMensaje;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    private static BLFacade blfacadeinterface;
+	
+    public static BLFacade getBusinessLogic(){
+        return blfacadeinterface;
+    }
+	 
+	public static void setBussinessLogic (BLFacade facade){
+		blfacadeinterface=facade;
+	}
 
     // Constructor privado para Singleton
     private PantallaExternaGUI() {
@@ -20,6 +41,13 @@ public class PantallaExternaGUI extends JFrame {
         textFieldMensaje.setEditable(false);
         add(textFieldMensaje, BorderLayout.CENTER);
 
+        
+        
+        
+        
+        
+        
+        
         // Mensaje inicial (opcional)
         textFieldMensaje.setText("Esperando mensajes...");
     }

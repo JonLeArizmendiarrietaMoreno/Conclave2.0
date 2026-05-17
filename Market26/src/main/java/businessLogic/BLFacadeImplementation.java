@@ -37,6 +37,8 @@ public class BLFacadeImplementation  implements BLFacade {
 	
 	String mensaje="";
 	
+	
+	
 	public BLFacadeImplementation()  {		
 		System.out.println("Creating BLFacadeImplementation instance");
 		dataAccess=new DataAccess();		
@@ -52,8 +54,9 @@ public class BLFacadeImplementation  implements BLFacade {
   //Aqui empiezan l
   //----------------------------------------------------------------------------------------------------------------------------------------
   //----------------------------------------------------------------------------------------------------------------------------------------
-    
-    public HashMap<Cardenal, Boolean> iniciarConclave(Date fechaInicio) {
+    @WebMethod
+    public List<Cardenal> iniciarConclave(Date fechaInicio) {
+    	
         dataAccess.open();
         String mensaje = "";
         try {
@@ -67,17 +70,17 @@ public class BLFacadeImplementation  implements BLFacade {
                 throw new IllegalStateException("No hay maestro de ceremonias en la BD");
             }
             
-            HashMap<Cardenal, Boolean> hm = dataAccess.getCardenales();
+            List<Cardenal> lista = dataAccess.getCardenales();
             
-            // Usar la fecha recibida como parámetro, no new Date()
+            
             Conclave conclave = new Conclave(fechaInicio);
             conclave.setMaestroDeCeremonias(maestro);
             
-            dataAccess.añadirElectores(hm, conclave);
+            dataAccess.añadirElectores(lista, conclave);
             dataAccess.addConclave(conclave);
             
             mensaje = "Extra Omnes";
-            return hm;
+            return lista;
         } finally {
             PantallaExternaGUI.getInstance().mostrarMensaje(mensaje);
             dataAccess.close();
@@ -85,8 +88,8 @@ public class BLFacadeImplementation  implements BLFacade {
     }
     
     
-    
-    public boolean iniciarVotacion(Date horaInicio) {
+    @WebMethod
+    public String iniciarVotacion(Date horaInicio) {
     	System.out.println("empieza iniciarVotacion");
     	
     	dataAccess.open();
@@ -97,18 +100,26 @@ public class BLFacadeImplementation  implements BLFacade {
             Conclave conclaveActual = dataAccess.getConclaveActivo();
             if (conclaveActual == null) {
             	mensaje="No hay conclaves abiertos";
-                return false;  
+                return mensaje;  
             }
 
             SesionVoto ultima = dataAccess.getLastSesionVoto(conclaveActual);
 
             if (ultima != null && ultima.getHoraFin() == null) {
             	mensaje="SesionVoto previa aún abierta";
-                return false;
+                return mensaje;
             }
             
-            return dataAccess.añadirSesionVoto(horaInicio, conclaveActual);
-        } finally {
+            if(dataAccess.añadirSesionVoto(horaInicio, conclaveActual)) { 
+            	mensaje= "empiez la sesion de voto" ;
+            }else { 
+            	mensaje = "no se a podido añadir una sesion de voto";
+            }
+            
+            
+            return mensaje;
+           
+        } finally { 
         	PantallaExternaGUI.getInstance().mostrarMensaje(mensaje);
             dataAccess.close();
         }
@@ -118,61 +129,62 @@ public class BLFacadeImplementation  implements BLFacade {
 
     
     
-    
- // businessLogic/BLFacadeImplementation.java
-    @Override
-    public boolean registrarPersona(String nombre, Date fechaNacimiento) {
+    @WebMethod
+    public String registrarPersona(String nombre, Date fechaNacimiento) {
         dataAccess.open();
+        mensaje = "";
         try {
             // Verificar si ya existe una persona con mismo nombre y fecha
             if (dataAccess.existePersona(nombre, fechaNacimiento)) {
-                return false; // ya existe, no se registra
+            	mensaje="Ya existe";
             }
-            // Crear nueva persona y guardar
             Persona nueva = new Persona(nombre, fechaNacimiento);
             dataAccess.addPersona(nueva);
-            return true;
+            mensaje = "persona añadida: "+ nueva.toString();
+            return mensaje;
         } finally {
             dataAccess.close();
         }
     }
     
     
-    @Override
-    public boolean votar(String nombreElector, String nombreCandidato) {
+    @WebMethod
+    public String votar(String nombreElector, String nombreCandidato) {
         dataAccess.open();
+        mensaje = "";
         try {
         	
             Conclave conclave = dataAccess.getConclaveActivo();
             if (conclave == null) {
-                return false;
+            	return "no hay conclave activo";
+                
             }
             
             SesionVoto sesionActual = dataAccess.getLastSesionVoto(conclave);
             if (sesionActual == null) {
-                return false;
+            	return "no hay sesion de voto activo";
             }
             
             //Verrificar elector
             CardenalElector elector = dataAccess.findCardenalElectorPorNombre(nombreElector);
             if (elector == null) {
-                return false;
+            	return "Nombre elector incorrecto";
             }
             
             //corrupto?
             if (sesionActual.getYaHanVotado().contains(elector)) {
-                return false;
+            	return "Ya has votado";
             }
             
             Persona candidato = dataAccess.findPersonaPorNombre(nombreCandidato);
             if (candidato == null) {
-                return false;
+            	return "La persona no esta en la base de datos, espera un momento he intentalo otra vez";
 
             }
             
             dataAccess.registrarVoto(sesionActual, elector, candidato);
-            
-            return true;
+            return "Se a registrado el voto: "+elector.toString() + " a " + candidato.toString();
+           
         } finally {
             dataAccess.close();
         }
@@ -181,8 +193,8 @@ public class BLFacadeImplementation  implements BLFacade {
     
     
     
-    @Override
-    public boolean cerrarVotacion(Date ahora) throws IllegalStateException {
+    @WebMethod
+    public String cerrarVotacion(Date ahora) {
         dataAccess.open();
         try {
             // 1. Obtener cónclave activo
@@ -196,39 +208,32 @@ public class BLFacadeImplementation  implements BLFacade {
             if (sesion == null || sesion.getHoraFin() != null) {
                 throw new IllegalStateException("No hay ninguna votación abierta");
             }
-            
-            // 3. Verificar que ha pasado al menos 1 hora desde el inicio
-            
+                        
             long diffMillis = ahora.getTime() - sesion.getHoraInicio().getTime();
             if (diffMillis < 60 * 60 * 1000) {
-                // No ha pasado una hora → rechazar cierre (según flujo alternativo)
-                PantallaExternaGUI.getInstance().mostrarMensaje(
-                    "No se puede cerrar la votación antes de 1 hora");
-                return false;
+                return "no ha transcurrido 1 hora";
             }
             
-            // 4. Cerrar la sesión (establecer horaFin)
+
             dataAccess.cerrarSesionVoto(sesion, ahora);
             
-            // 5. Calcular total de votos emitidos
+            
             int totalVotos = sesion.getYaHanVotado().size();
             if (totalVotos == 0) {
-                // Sin votos, fumata negra
                 PantallaExternaGUI.getInstance().mostrarMensaje("Fumata negra");
                 sesion.setResultado(SesionVoto.RESULTADO_NEGRA);
                 dataAccess.updateSesionVoto(sesion);
-                return true;
+                return "ningun voto";
             }
             
-            // 6. Contar votos por candidato (usando la lista de candidatosVotados)
-            List<Persona> candidatos = sesion.getCandidatosVotados(); // ahora es List
+            List<Persona> candidatos = sesion.getCandidatosVotados();
             Map<Persona, Integer> recuento = new HashMap<>();
             for (Persona p : candidatos) {
                 recuento.put(p, recuento.getOrDefault(p, 0) + 1);
             }
+
+        	Persona ganador = null;
             
-            // 7. Buscar el candidato con más votos y comprobar si alcanza 2/3
-            Persona ganador = null;
             int maxVotos = 0;
             for (Map.Entry<Persona, Integer> entry : recuento.entrySet()) {
                 if (entry.getValue() > maxVotos) {
@@ -236,29 +241,20 @@ public class BLFacadeImplementation  implements BLFacade {
                     ganador = entry.getKey();
                 }
             }
-            
-            boolean mayoria = (maxVotos * 3 >= totalVotos * 2); // 2/3 o más
-            
-            if (!mayoria) {
-                // Fumata negra
+                       
+            if (!(maxVotos * 3 >= totalVotos * 2)  ) {
                 PantallaExternaGUI.getInstance().mostrarMensaje("Fumata negra");
                 sesion.setResultado(SesionVoto.RESULTADO_NEGRA);
                 dataAccess.updateSesionVoto(sesion);
-                return true;
+                return "no ha habido mayoria";
             }
             
-            // Hay mayoría: mostrar ganador en MainGUI y guardar en sesión (sin aceptación aún)
-            MainGUI.getInstance().mostrarMensaje("El candidato ganador es: " + ganador.getNombre() +
-                    " con " + maxVotos + " votos de " + totalVotos);
+
             
             sesion.setGanador(ganador);
             dataAccess.updateSesionVoto(sesion);
-            
-            PersonaGUI.getInstance().mostrarMensaje(ganador.toString()+"has sido elegido como Papa, aceptas?");
-
-            
-            return true;
-            
+            mensaje = "GANADOR:" + ganador.getNombre() + ":" + maxVotos + ":" + totalVotos;   
+            return mensaje;
         } finally {
             dataAccess.close();
         }
@@ -266,38 +262,103 @@ public class BLFacadeImplementation  implements BLFacade {
     }
     
     
-    @Override
-    public boolean procesarDecisionCandidatura(boolean acepta) {
+ // En BLFacadeImplementation.java
 
+    @WebMethod
+    public String obtenerSesionPendienteConGanador() {
         dataAccess.open();
         try {
         	Conclave conclave = dataAccess.getConclaveActivo();
-        	SesionVoto sesion = dataAccess.getLastSesionVoto(conclave);
-        	Persona ganador = sesion.getGanador();
-            if (acepta) {
-                Papa nuevoPapa = new Papa(ganador.getNombre(), ganador.getFechaNacimiento(), sesion.getHoraFin());
-                dataAccess.addPapa(nuevoPapa);
+        if (conclave == null) {
+            return "";
+        }
+        
+        SesionVoto sesion = dataAccess.getUltimaSesion();
+        return sesion.getResultado();
+
+        } finally {
+            dataAccess.close();
+        }
+    }
+
+    @WebMethod
+    public String añadirDecision(boolean decision) {
+        dataAccess.open();
+        try {
+        	
+            Conclave conclave = dataAccess.getConclaveActivo();
+            if (conclave == null) {
+                return "";
+            }
+            SesionVoto sesion = dataAccess.getUltimaSesion();
+            if (sesion == null) {
+                return "No hay ninguna votación pendiente.";
+            }
+
+            if(decision) 
+            {
+            	sesion.setResultado("blanca");
+            }
+            else 
+            {
+            	sesion.setResultado("negra");
+            }
             
+
+            dataAccess.updateSesionVoto(sesion);
+            
+            return "precesado con Exito";
+           
+        } finally {
+            dataAccess.close();
+        }
+    }
+    
+    
+    
+    
+    
+    @WebMethod
+    public String procesarDecisionCandidatoDesdeGUI() {
+        dataAccess.open();
+        try {
+        	
+            Conclave conclave = dataAccess.getConclaveActivo();
+            if (conclave == null) {
+                return "";
+            }
+            SesionVoto sesion = dataAccess.getUltimaSesion();
+
+            Persona ganador = sesion.getGanador();
+            
+            
+            if (sesion.getResultado().equals("blanca")) {
+                Papa nuevoPapa = new Papa(ganador.getNombre(), ganador.getFechaNacimiento(), new Date());
+                dataAccess.addPapa(nuevoPapa);
                 conclave.setFechaFin(new Date());
                 conclave.setPapaElegido(nuevoPapa);
                 nuevoPapa.setPapaConclave(conclave);
                 dataAccess.updateConclave(conclave);
-
-                
-                
-                sesion.setResultado(SesionVoto.RESULTADO_BLANCA);
-                dataAccess.updateSesionVoto(sesion);
-                
                 PantallaExternaGUI.getInstance().mostrarMensaje("Fumata blanca");
-                MainGUI.getInstance().mostrarMensaje("¡Tenemos nuevo Papa! " + nuevoPapa.getNombre());
+                return "¡Tenemos nuevo Papa! " + nuevoPapa.getNombre();
             } else {
-                // Rechaza
-            	sesion.setResultado(SesionVoto.RESULTADO_NEGRA);
-                dataAccess.updateSesionVoto(sesion);
                 PantallaExternaGUI.getInstance().mostrarMensaje("Fumata negra");
-                MainGUI.getInstance().mostrarMensaje("El candidato rechazó. Se puede iniciar una nueva votación.");
+                return "El candidato rechazó. Se puede iniciar una nueva votación.";
             }
-            return true;
+        } finally {
+            dataAccess.close();
+        }
+    }
+    
+    
+    @WebMethod
+    public String obtenerSesionPendienteConResultado() {
+
+        dataAccess.open();
+        try {
+        	Conclave conclave = dataAccess.getConclaveActivo();
+        	SesionVoto sesion = dataAccess.getLastSesionVotoAcabado(conclave);
+        	return sesion.getResultado();
         } finally {
             dataAccess.close();
         }

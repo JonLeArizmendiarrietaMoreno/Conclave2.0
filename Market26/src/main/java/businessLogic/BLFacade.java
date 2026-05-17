@@ -30,32 +30,43 @@ public interface BLFacade  {
 	
 
     @WebMethod
-    public HashMap<Cardenal, Boolean> iniciarConclave(Date fechaInicio);
-	
+    public List<Cardenal> iniciarConclave(Date fechaInicio);
+
+    @WebMethod
+	public String iniciarVotacion(Date horaInicio);
 	
 	
     @WebMethod
-	public boolean iniciarVotacion(Date horaInicio);
+    public String registrarPersona(String nombre, Date fechaNacimiento);
 	
 	
     @WebMethod
-    public boolean registrarPersona(String nombre, Date fechaNacimiento);
-	
-	
-    @WebMethod
-    public boolean votar(String nombreElector, String nombreCandidato);
+    public String votar(String nombreElector, String nombreCandidato);
     
     @WebMethod    
-    public boolean cerrarVotacion(Date horaFin) ;
+    public String cerrarVotacion(Date horaFin);
     
     @WebMethod
-    public boolean procesarDecisionCandidatura(boolean decision);
+    public String obtenerSesionPendienteConResultado();
 	
+ // En businessLogic/BLFacade.java
+    @WebMethod
+    public String obtenerSesionPendienteConGanador();
+
+    @WebMethod    
+    public String procesarDecisionCandidatoDesdeGUI();
+    
+    @WebMethod
+	public String añadirDecision(boolean decision);
+    
+    
+    
 	/**
 	 * This method calls the data access to initialize the database with some sellers and products.
 	 * It is only invoked  when the option "initialize" is declared in the tag dataBaseOpenMode of resources/config.xml file
 	 */	
 	@WebMethod public void initializeBD();
+
 	
 		
 }

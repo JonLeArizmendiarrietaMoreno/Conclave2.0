@@ -1,0 +1,1293 @@
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 00:00:19 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 00:00:24 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 00:00:24 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 00:00:24 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 00:00:24 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 00:00:24 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 00:00:24 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 00:00:24 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 00:00:24 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 00:00:24 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 00:00:24 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 00:00:24 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 00:00:24 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 00:00:24 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 00:00:24 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 00:00:54 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 00:00:54 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 00:00:54 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 00:00:54 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 00:00:54 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 00:00:54 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 00:00:54 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 00:00:54 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 00:00:54 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-17 00:00:57 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-17 00:00:57 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 00:12:23 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 00:12:26 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 00:12:26 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 00:12:26 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 00:12:26 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 00:12:26 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 00:12:26 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 00:12:26 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 00:12:26 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 00:12:26 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 00:12:26 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 00:12:26 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 00:12:26 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 00:12:26 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 00:12:26 #14 type] 
+Type domain.Papa is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 00:12:39 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 00:12:43 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 00:12:43 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 00:12:43 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 00:12:43 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 00:12:43 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 00:12:43 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 00:12:43 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 00:12:43 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 00:12:43 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 00:12:43 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 00:12:43 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 00:12:43 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 00:12:43 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 00:12:43 #14 type] 
+Type domain.Papa is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 00:21:45 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 00:21:49 #1 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 00:21:49 #2 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 00:21:49 #3 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 00:21:49 #4 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 00:21:49 #5 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 00:21:49 #6 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 00:21:49 #7 type] 
+Type domain.Papa is not enhanced.
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 00:22:41 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 00:22:45 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 00:22:45 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 00:22:45 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 00:22:45 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 00:22:45 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 00:22:45 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 00:22:45 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 00:22:45 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 00:22:45 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 00:22:45 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 00:22:45 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 00:22:45 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 00:22:45 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 00:22:45 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 00:24:40 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 00:24:40 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 00:24:40 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 00:24:40 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 00:24:40 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 00:24:40 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 00:24:40 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 00:24:40 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 00:24:40 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-17 00:24:48 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-17 00:24:48 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 00:36:53 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 00:36:55 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 00:36:55 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 00:36:55 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 00:36:55 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 00:36:55 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 00:36:55 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 00:36:55 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 00:36:55 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 00:36:55 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 00:36:55 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 00:36:55 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 00:36:55 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 00:36:55 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 00:36:55 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 00:37:31 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 00:37:31 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 00:37:31 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 00:37:31 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 00:37:31 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 00:37:31 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 00:37:31 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 00:37:31 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 00:37:31 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-17 00:37:32 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-17 00:37:32 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 01:19:42 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 01:19:47 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 01:19:47 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 01:19:47 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 01:19:47 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 01:19:47 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 01:19:47 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 01:19:47 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 01:19:47 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 01:19:47 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 01:19:47 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 01:19:47 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 01:19:47 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 01:19:47 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 01:19:47 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 01:20:26 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 01:20:26 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 01:20:26 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 01:20:26 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 01:20:26 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 01:20:26 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 01:20:26 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 01:20:26 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 01:20:26 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-17 01:20:31 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-17 01:20:31 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 01:53:17 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 01:53:19 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 01:53:19 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 01:53:19 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 01:53:19 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 01:53:19 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 01:53:19 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 01:53:19 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 01:53:19 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 01:53:19 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 01:53:19 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 01:53:19 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 01:53:19 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 01:53:19 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 01:53:19 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 01:53:56 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 01:53:56 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 01:53:56 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 01:53:56 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 01:53:56 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 01:53:56 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 01:53:56 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 01:53:56 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 01:53:56 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-17 01:53:59 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-17 01:53:59 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 02:04:03 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 02:04:08 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 02:04:08 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 02:04:08 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 02:04:08 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 02:04:08 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 02:04:08 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 02:04:08 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 02:04:08 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 02:04:08 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 02:04:08 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 02:04:08 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 02:04:08 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 02:04:08 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 02:04:08 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 02:05:14 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 02:05:14 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 02:05:14 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 02:05:14 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 02:05:14 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 02:05:14 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 02:05:14 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 02:05:14 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 02:05:14 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-17 02:05:16 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-17 02:05:16 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 02:07:02 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 02:07:06 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 02:07:06 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 02:07:06 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 02:07:06 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 02:07:06 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 02:07:06 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 02:07:06 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 02:07:06 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 02:07:06 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 02:07:06 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 02:07:06 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 02:07:06 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 02:07:06 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 02:07:06 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 02:07:56 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 02:07:56 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 02:07:56 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 02:07:56 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 02:07:56 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 02:07:56 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 02:07:56 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 02:07:56 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 02:07:56 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-17 02:07:57 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-17 02:07:57 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 02:11:50 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 02:11:53 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 02:11:53 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 02:11:53 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 02:11:53 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 02:11:53 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 02:11:53 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 02:11:53 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 02:11:53 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 02:11:53 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 02:11:53 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 02:11:53 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 02:11:53 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 02:11:53 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 02:11:53 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 02:12:29 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 02:12:29 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 02:12:29 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 02:12:29 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 02:12:29 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 02:12:29 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 02:12:29 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 02:12:29 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 02:12:29 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-17 02:12:29 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-17 02:12:29 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 02:17:15 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 02:17:17 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 02:17:17 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 02:17:17 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 02:17:17 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 02:17:17 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 02:17:17 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 02:17:17 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 02:17:17 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 02:17:17 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 02:17:17 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 02:17:17 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 02:17:17 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 02:17:17 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 02:17:17 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 02:17:56 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 02:17:56 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 02:17:56 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 02:17:56 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 02:17:56 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 02:17:57 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 02:17:57 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 02:17:57 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 02:17:57 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-17 02:17:57 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-17 02:17:57 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 02:20:06 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 02:20:10 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 02:20:10 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 02:20:10 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 02:20:10 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 02:20:10 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 02:20:10 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 02:20:10 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 02:20:10 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 02:20:10 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 02:20:10 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 02:20:10 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 02:20:10 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 02:20:10 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 02:20:10 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 02:20:32 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 02:20:32 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 02:20:32 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 02:20:32 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 02:20:32 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 02:20:32 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 02:20:32 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 02:20:32 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 02:20:32 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+[2026-05-17 02:20:35 #24 type.registry] 
+New type java.util.ArrayList<domain.Persona>
+
+[2026-05-17 02:20:35 #25 type.registry] 
+New type java.util.HashSet<domain.CardenalElector>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 02:28:56 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 02:28:57 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 02:28:57 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 02:28:57 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 02:28:57 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 02:28:57 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 02:28:57 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 02:28:57 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 02:28:57 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 02:28:57 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 02:28:57 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 02:28:57 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 02:28:57 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 02:28:57 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 02:28:57 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 02:29:02 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 02:29:02 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 02:29:02 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 02:29:02 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 02:29:02 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 02:29:02 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 02:29:02 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 02:29:02 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 02:29:02 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 02:31:15 #1 server] 
+java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:577)
+	at java.base/sun.nio.ch.Net.bind(Net.java:566)
+	at java.base/sun.nio.ch.NioSocketImpl.bind(NioSocketImpl.java:636)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:391)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:278)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:222)
+	at com.objectdb.o.SMR.I(SMR.java:259)
+	at com.objectdb.o.SMR.n(SMR.java:159)
+	at com.objectdb.o.TOL.run(TOL.java:116)
+	at com.objectdb.Server.runCommand(Server.java:200)
+	at com.objectdb.Server.run(Server.java:104)
+	at com.objectdb.Server.main(Server.java:63)
+
+------------------------------------------------------------------------------------------------------------------------
+
+[2026-05-17 02:31:19 #1 type.registry] 
+New type domain.Persona
+
+[2026-05-17 02:31:19 #2 type.registry] 
+New type domain.MaestroDeCeremonias
+
+[2026-05-17 02:31:19 #3 type] 
+Type domain.Persona is not enhanced.
+
+[2026-05-17 02:31:19 #4 type.registry] 
+New type domain.SesionVoto
+
+[2026-05-17 02:31:19 #5 type] 
+Type domain.MaestroDeCeremonias is not enhanced.
+
+[2026-05-17 02:31:19 #6 type.registry] 
+New type domain.Conclave
+
+[2026-05-17 02:31:19 #7 type] 
+Type domain.SesionVoto is not enhanced.
+
+[2026-05-17 02:31:19 #8 type.registry] 
+New type domain.Cardenal
+
+[2026-05-17 02:31:19 #9 type.registry] 
+New type domain.CardenalElector
+
+[2026-05-17 02:31:19 #10 type] 
+Type domain.Conclave is not enhanced.
+
+[2026-05-17 02:31:19 #11 type.registry] 
+New type domain.Papa
+
+[2026-05-17 02:31:19 #12 type] 
+Type domain.Cardenal is not enhanced.
+
+[2026-05-17 02:31:19 #13 type] 
+Type domain.CardenalElector is not enhanced.
+
+[2026-05-17 02:31:19 #14 type] 
+Type domain.Papa is not enhanced.
+
+[2026-05-17 02:31:29 #15 type.registry] 
+New type java.util.ArrayList<java.lang.Object>
+
+[2026-05-17 02:31:29 #16 type.registry] 
+New type java.util.ArrayList<domain.SesionVoto>
+
+[2026-05-17 02:31:29 #17 type.registry] 
+New type com.objectdb.o.LMT
+
+[2026-05-17 02:31:29 #18 type.registry] 
+New type com.objectdb.o.VAL
+
+[2026-05-17 02:31:29 #19 type.registry] 
+New type com.objectdb.o.RFV
+
+[2026-05-17 02:31:29 #20 type.registry] 
+New type java.util.HashSet<java.lang.Object>
+
+[2026-05-17 02:31:29 #21 type.registry] 
+New type java.util.HashSet<domain.SesionVoto>
+
+[2026-05-17 02:31:29 #22 type.registry] 
+New type java.util.ArrayList<domain.Conclave>
+
+[2026-05-17 02:31:29 #23 type.registry] 
+New type java.util.ArrayList<domain.CardenalElector>
+

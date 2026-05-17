@@ -63,6 +63,7 @@ public class ElectorGUI extends JFrame {
 	 */
 	public ElectorGUI() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -76,7 +77,7 @@ public class ElectorGUI extends JFrame {
 		elegirAQuienVotar.setColumns(10);
 		
 		JButton votarButton = new JButton("Votar");
-		votarButton.setBounds(211, 28, 89, 23);
+		votarButton.setBounds(172, 72, 89, 23);
 		contentPane.add(votarButton);
 		
 		nombreElector = new JTextField();
@@ -86,7 +87,7 @@ public class ElectorGUI extends JFrame {
 		nombreElector.setColumns(10);
 		
 		displayElectorGUI = new JTextArea();
-		displayElectorGUI.setBounds(10, 116, 138, 70);
+		displayElectorGUI.setBounds(10, 116, 414, 134);
 		contentPane.add(displayElectorGUI);
 		
 		
@@ -100,19 +101,10 @@ public class ElectorGUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
             	
                 String nombreElectorStr = nombreElector.getText();
-                String nombreCandidatoStr = elegirAQuienVotar.getText();
-                System.out.println(nombreElectorStr+nombreCandidatoStr);
-                
-
-                
-               System.out.println("nombreelector y candidato no vacio");
-               if( MainGUI.getBusinessLogic().votar(nombreElectorStr, nombreCandidatoStr)) 
-               {
-            	   displayElectorGUI.setText("Voto emitido ");
-
-               }else {
-            	   displayElectorGUI.setText("Voto no emitido" );
-                }return;
+                String nombreCandidatoStr = elegirAQuienVotar.getText();                
+               
+               String mensaje =  blfacadeinterface.votar(nombreElectorStr, nombreCandidatoStr);
+               mostrarMensaje(mensaje);
             }
         });
 		

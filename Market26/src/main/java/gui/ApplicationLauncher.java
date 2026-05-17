@@ -57,7 +57,9 @@ public class ApplicationLauncher {
 		        blfcade = service.getPort(BLFacade.class);
 			} 
 			
-			MainGUI.setBussinessLogic(blfcade);
+			
+			MenuGUI.setBussinessLogic(blfcade);
+
 			//ErreklamatuGUI g=new ErreklamatuGUI();
 			//g.setVisible(true);
 			

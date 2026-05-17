@@ -18,6 +18,10 @@ public class CardenalElector extends Cardenal {
     public CardenalElector(String nombre, Date fechaNacimiento, String cargo, boolean presente) {
         super(nombre, fechaNacimiento,cargo,presente);
     }
+    
+    public CardenalElector(Cardenal cardenal) {
+        super(cardenal.getNombre(), cardenal.getFechaNacimiento(),cardenal.getCargo(),true);
+    }
 	
     public CardenalElector() {super();}
 

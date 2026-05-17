@@ -29,7 +29,7 @@ public class SesionVoto {
     @ManyToMany
     private Set<CardenalElector> yaHanVotado; //Cardenales
 
-    public static final String RESULTADO_PENDIENTE = "";
+    public static final String RESULTADO_PENDIENTE = "pendiente";
     public static final String RESULTADO_NEGRA = "negra";
     public static final String RESULTADO_BLANCA = "blanca";
 

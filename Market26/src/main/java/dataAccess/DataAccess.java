@@ -135,17 +135,13 @@ public class DataAccess {
     /**
      * Devuelve un HashMap con todos los cardenales y valor false (inicial).
      */
-    public HashMap<Cardenal, Boolean> getCardenales() {
+    public List<Cardenal> getCardenales() {
         em.getTransaction().begin();
         TypedQuery<Cardenal> query = em.createQuery("SELECT c FROM Cardenal c", Cardenal.class);
         List<Cardenal> lista = query.getResultList();
         em.getTransaction().commit();
         
-        HashMap<Cardenal, Boolean> map = new HashMap<>();
-        for (Cardenal c : lista) {
-            map.put(c, false);
-        }
-        return map;
+        return lista;
     }
 
     
@@ -164,31 +160,25 @@ public class DataAccess {
      * Recorre el HashMap, comprueba si cada cardenal es elector (presente y edad < 80),
      * actualiza el valor a true en el mapa y persiste un objeto CardenalElector en BD.
      */
-    public void añadirElectores(HashMap<Cardenal, Boolean> mapa, Conclave conclave) {
+    public void añadirElectores(List<Cardenal> lista, Conclave conclave) {
         Calendar rightNow = Calendar.getInstance();
         int anyoActual = rightNow.get(Calendar.YEAR);
         
         em.getTransaction().begin();
-        for (Map.Entry<Cardenal, Boolean> entry : mapa.entrySet()) {
-            Cardenal cardenal = entry.getKey();
+        
+        for (Cardenal cardenal : lista) {
+
             rightNow.setTime(cardenal.getFechaNacimiento());
             int edad = anyoActual - rightNow.get(Calendar.YEAR);
             boolean esElector = cardenal.isPresente() && (edad < 80);
             
             if (esElector) {
-                entry.setValue(true);
-                // Crear el elector copiando datos del cardenal base
-                CardenalElector elector = new CardenalElector(
-                    cardenal.getNombre(), 
-                    cardenal.getFechaNacimiento(), 
-                    cardenal.getCargo(), 
-                    true
-                );
-                // Establecer la relación bidireccional
+
+                CardenalElector elector = new CardenalElector(cardenal);
+
                 elector.setConclave(conclave);
                 em.persist(elector);
                 
-                // Añadir a la lista del conclave (para mantener coherencia en el lado Java)
                 conclave.getCardenalesElectores().add(elector);
             }
         }
@@ -263,6 +253,22 @@ public class DataAccess {
         //return result.isEmpty() ? null : result.get(0); TERNARIO
         //return  if                true : false
     }
+    
+    
+    
+    public SesionVoto getLastSesionVotoAcabado(Conclave conclave) {
+        TypedQuery<SesionVoto> query = em.createQuery(
+            "SELECT s FROM SesionVoto s ORDER BY s.idSesion DESC",
+            SesionVoto.class);
+        query.setParameter("conclave", conclave);
+        query.setParameter("pendiente", SesionVoto.RESULTADO_PENDIENTE);
+        query.setMaxResults(1);
+        List<SesionVoto> result = query.getResultList();
+        return result.isEmpty() ? null : result.get(0);
+        //return result.isEmpty() ? null : result.get(0); TERNARIO
+        //return  if                true : false
+    }
+    
     
     public boolean añadirSesionVoto(Date horaInicio,Conclave conclaveActual) 
     {
@@ -351,8 +357,15 @@ public class DataAccess {
 	}
 	
 	
-    
-    
+	public SesionVoto getUltimaSesion() {
+	    TypedQuery<SesionVoto> query = em.createQuery(
+	        "SELECT s FROM SesionVoto s ORDER BY s.idSesion DESC", 
+	        SesionVoto.class);
+	    query.setMaxResults(1);
+	    List<SesionVoto> result = query.getResultList();
+	    return result.isEmpty() ? null : result.get(0);
+	}
+	
     
     //------------------------------------------------------------------------------------------------------------
     //------------------------------------------------------------------------------------------------------------    
@@ -384,12 +397,8 @@ public class DataAccess {
 		System.out.println("DataAcess closed");
 	}
 
+	
 
-
-	
-	
-	
-	
 	
 	
 	

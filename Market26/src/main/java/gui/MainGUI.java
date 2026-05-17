@@ -9,6 +9,8 @@ import businessLogic.BLFacade;
 
 
 
+
+
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
@@ -37,7 +39,6 @@ import domain.*;
 public class MainGUI extends JFrame {
 	
 	
-    private String sellerMail;
 	private static final long serialVersionUID = 1L;
 
 	private JPanel jContentPane = null;
@@ -55,6 +56,7 @@ public class MainGUI extends JFrame {
 	public static void setBussinessLogic (BLFacade facade){
 		blfacadeinterface=facade;
 	}
+	
 	protected JLabel jLabelSelectOption;
 	private JTextField NombrePersona;
 	
@@ -89,12 +91,12 @@ public class MainGUI extends JFrame {
 		jLabelSelectOption.setHorizontalAlignment(SwingConstants.CENTER);
 		
 		IniciarConclave = new JButton();
-		IniciarConclave.setBounds(350, 169, 109, 23);
+		IniciarConclave.setBounds(356, 159, 109, 23);
 		IniciarConclave.setText("Iniciar Conclave");
 		
 
 		IniciarVotacion = new JButton();
-		IniciarVotacion.setBounds(350, 203, 105, 23);
+		IniciarVotacion.setBounds(366, 193, 105, 23);
 		IniciarVotacion.setText("Iniciar Votacion");
 				
 		jContentPane = new JPanel();
@@ -116,47 +118,39 @@ public class MainGUI extends JFrame {
 		
 		
 		JButton RegistrarPersona = new JButton("Registrar Persona"); //$NON-NLS-1$ //$NON-NLS-2$
-		RegistrarPersona.setBounds(350, 237, 119, 23);
+		RegistrarPersona.setBounds(356, 227, 124, 23);
 		RegistrarPersona.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
 		});
 		
 		
-		JButton CerrarVotacion = new JButton("Cerrar Votacion"); //$NON-NLS-1$ //$NON-NLS-2$
-		CerrarVotacion.setBounds(350, 271, 107, 23);
+		JButton CerrarVotacion = new JButton("Cerrar Votacion");
+		CerrarVotacion.setBounds(498, 191, 107, 23);
 		
 		
 		JButton AceptarRechazarCandidatura = new JButton("AceptarRechazarCandidatura");
+		AceptarRechazarCandidatura.setEnabled(false);
 		
 		AceptarRechazarCandidatura.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
-		        if (!hayDecision) {
-		            displayMainGUI.setText("No hay una decisión pendiente del candidato. Primero debe aparecer la ventana PersonaGUI y el candidato debe elegir.");
-		            return;
-		        }
 		        try {
-		            boolean exito = blfacadeinterface.procesarDecisionCandidatura(decision);
-		            if (exito) {
-		                displayMainGUI.setText("Proceso completado. Cónclave finalizado o reiniciado según decisión.");
-		                hayDecision = false; // reiniciar
-		            } else {
-		                displayMainGUI.setText("Error al procesar la decisión.");
-		            }
+		            String mensaje = blfacadeinterface.procesarDecisionCandidatoDesdeGUI();
+		            mostrarMensaje(mensaje);
 		        } catch (Exception ex) {
-		            displayMainGUI.setText("Error: " + ex.getMessage());
+		        	mostrarMensaje("Error: " + ex.getMessage());
 		        }
 		    }
 		});
 		
-		AceptarRechazarCandidatura.setBounds(350, 305, 175, 23);
+		AceptarRechazarCandidatura.setBounds(366, 305, 175, 23);
 		jContentPane.add(AceptarRechazarCandidatura);
 		
 		
 		NombrePersona = new JTextField();
 		NombrePersona.setForeground(SystemColor.activeCaptionBorder);
 		NombrePersona.setText("NombrePersona");
-		NombrePersona.setBounds(71, 10, 249, 20);
+		NombrePersona.setBounds(482, 225, 119, 25);
 		NombrePersona.setColumns(10);
 		jContentPane.setLayout(null);
 		jContentPane.add(jLabelSelectOption);
@@ -171,9 +165,12 @@ public class MainGUI extends JFrame {
 		jCalendar.setBounds(new Rectangle(350, 0, 255, 150));
 		this.getContentPane().add(jCalendar, null);
 		
+		
+		
+		
 		displayMainGUI = new JTextArea();
 		displayMainGUI.setText("Dios esta moribundo y lo voy a rematar");
-		displayMainGUI.setBounds(10, 49, 330, 279);
+		displayMainGUI.setBounds(0, 38, 340, 290);
 		displayMainGUI.setLineWrap(true);
 		displayMainGUI.setWrapStyleWord(true);
 		displayMainGUI.setLineWrap(true);
@@ -181,6 +178,31 @@ public class MainGUI extends JFrame {
 
 
 		jContentPane.add(displayMainGUI);
+		
+		refreshButton = new JButton("Actualizar DB");
+		
+		refreshButton.addActionListener(e -> {
+			try {
+		        String sesion = blfacadeinterface.obtenerSesionPendienteConResultado();
+		        if (sesion.equals("pendiente")) {
+		            mostrarMensaje("No hay ninguna votación pendiente.");
+		            return;
+		        }
+		        if (sesion.equals(SesionVoto.RESULTADO_BLANCA)) {
+		            mostrarMensaje("El candidato ACEPTÓ. ¡Fumata blanca! Conclave finalizado.");
+		            AceptarRechazarCandidatura.setEnabled(true);
+		        } else if (sesion.equals(SesionVoto.RESULTADO_NEGRA)) {
+		            mostrarMensaje("El candidato RECHAZÓ. Fumata negra. Se puede iniciar otra votación.");
+		            AceptarRechazarCandidatura.setEnabled(true);
+		        } else {
+		            mostrarMensaje("Votación pendiente. El candidato aún no ha respondido.");
+		        }
+		    } catch (Exception ex) {
+		        mostrarMensaje("Error al consultar: " + ex.getMessage());
+		    }
+		});
+		refreshButton.setBounds(366, 261, 119, 23);
+		jContentPane.add(refreshButton);
 		
 						
 		//-------------------------------------------------------------------------------------------------
@@ -222,25 +244,76 @@ public class MainGUI extends JFrame {
 				}}});
 		
 		
-		
-		//iniciarConclave
+		/*
 		IniciarConclave.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		        try {
 		            // Llamada a la fachada (asegúrate de que appFacadeInterface no sea null)
 		        	System.out.println(jCalendar.getDate());
-		            HashMap<Cardenal, Boolean> resultado = blfacadeinterface.iniciarConclave(jCalendar.getDate());
+		            List<Cardenal> resultado = blfacadeinterface.iniciarConclave(jCalendar.getDate());
 
-		            // Mostrar información en el área de texto
-		            int electores = 0;
-		            for (Boolean esElector : resultado.values()) {
-		                if (esElector) electores++;
+		            mostrarMensaje("Cónclave iniciado.\nElectores: ");
+		            for (Cardenal cardenal : resultado) {
+		            	
+		                int edad = calcularEdad(cardenal.getFechaNacimiento(),jCalendar.getDate());
+		                boolean esElector = cardenal.isPresente() && (edad < 80);
+		                
+		                if (esElector) {
+
+		                    CardenalElector elector = new CardenalElector(cardenal);
+		                    mostrarMensaje(elector.toString());
+
+		                }
 		            }
-		            displayMainGUI.setText("Cónclave iniciado.\nElectores: " + electores +
-		                                    "\nTotal cardenales: " + resultado.size());
+		            
 		        } catch (Exception ex) {
 		            ex.printStackTrace();
-		            displayMainGUI.setText("Error al iniciar cónclave: " + ex.getMessage());
+		            mostrarMensaje("Error al iniciar cónclave: " + ex.getMessage());
+		        }
+		    }
+		});*/
+		
+		
+		//iniciarConclave
+		IniciarConclave.addActionListener(new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        try {
+		            System.out.println(jCalendar.getDate());
+		            List<Cardenal> resultado = blfacadeinterface.iniciarConclave(jCalendar.getDate());
+
+		            // Construir el mensaje completo
+		            StringBuilder sb = new StringBuilder();
+		            sb.append("Cónclave iniciado.\n\n");
+		            
+		            // Lista de todos los cardenales
+		            sb.append("--- TODOS LOS CARDENALES ---\n");
+		            for (Cardenal cardenal : resultado) {
+		                int edad = calcularEdad(cardenal.getFechaNacimiento(), jCalendar.getDate());
+		                boolean esElector = cardenal.isPresente() && (edad < 80);
+		                sb.append(cardenal.getNombre())
+		                  .append(" (")
+		                  .append(edad).append(" años, ")
+		                  .append(cardenal.isPresente() ? "presente" : "ausente")
+		                  .append(")\n");
+		            }
+		            
+		            // Lista de electores (solo los que cumplen condición)
+		            sb.append("\n--- CARDENALES ELECTORES ---\n");
+		            for (Cardenal cardenal : resultado) {
+		                int edad = calcularEdad(cardenal.getFechaNacimiento(), jCalendar.getDate());
+		                boolean esElector = cardenal.isPresente() && (edad < 80);
+		                if (esElector) {
+		                    CardenalElector elector = new CardenalElector(cardenal);
+		                    sb.append(elector.toString()).append("\n");
+		                }
+		            }
+		            
+		            // Mostrar todo de una vez
+		            mostrarMensaje(sb.toString());
+		            
+		        } catch (Exception ex) {
+		            ex.printStackTrace();
+		            mostrarMensaje("Error al iniciar cónclave: " + ex.getMessage());
 		        }
 		    }
 		});
@@ -250,12 +323,10 @@ public class MainGUI extends JFrame {
 		IniciarVotacion.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		    	Date fechaHoraInicio = getFechaHoraSeleccionada();
-		        boolean conseguido = blfacadeinterface.iniciarVotacion(fechaHoraInicio);
-		        if (conseguido) {
-		            displayMainGUI.setText("Votación iniciada a las " + jCalendar.getDate());
-		        } else {
-		            displayMainGUI.setText("Error: ya hay una votación abierta.");
-		        }
+		        String mensaje = blfacadeinterface.iniciarVotacion(fechaHoraInicio);
+		       
+		        mostrarMensaje(mensaje);
+		       
 		    }
 		});
 		
@@ -264,21 +335,14 @@ public class MainGUI extends JFrame {
 		    public void actionPerformed(ActionEvent e) {
 		        String nombre = NombrePersona.getText().trim();
 		        if (nombre.isEmpty()) {
-		            displayMainGUI.setText("Error: ingrese un nombre.");
+		        	mostrarMensaje("Error: ingrese un nombre.");
 		            return;
 		        }
-		        Date fechaNacimiento = jCalendar.getDate(); // fecha seleccionada en el calendario
-		        if (fechaNacimiento == null) {
-		            displayMainGUI.setText("Error: seleccione una fecha de nacimiento.");
-		            return;
-		        }
-		        boolean ok = blfacadeinterface.registrarPersona(nombre, fechaNacimiento);
-		        if (ok) {
-		            displayMainGUI.setText("Persona registrada correctamente:\n" + nombre + " (" + fechaNacimiento + ")");
-		            NombrePersona.setText(""); // limpiar campo
-		        } else {
-		            displayMainGUI.setText("Error: ya existe una persona con ese nombre y fecha.");
-		        }
+		        Date fechaNacimiento = jCalendar.getDate();
+
+		        String mensaje = blfacadeinterface.registrarPersona(nombre, fechaNacimiento);
+		      	mostrarMensaje(mensaje);
+		        
 		    }
 		});
 		
@@ -301,14 +365,10 @@ public class MainGUI extends JFrame {
 		    public void actionPerformed(ActionEvent e) {
 		        try {
 		        	Date fechaHoraCierre = getFechaHoraSeleccionada();
-		            boolean ok = blfacadeinterface.cerrarVotacion(fechaHoraCierre);
-		            if (ok) {
-		                displayMainGUI.setText("Votación cerrada correctamente.");
-		            } else {
-		                displayMainGUI.setText("No se pudo cerrar la votación (verifique que haya pasado 1 hora).");
-		            }
+		            String mensaje = blfacadeinterface.cerrarVotacion(fechaHoraCierre);
+		            mostrarMensaje(mensaje);
 		        } catch (Exception ex) {
-		            displayMainGUI.setText("Error al cerrar votación: " + ex.getMessage());
+		        	mostrarMensaje("Error al cerrar votación: " + ex.getMessage());
 		        }
 		    }
 		});
@@ -349,13 +409,8 @@ public class MainGUI extends JFrame {
 	
 	
 	// En MainGUI.java
-	private boolean decision = false;
-	private boolean hayDecision = false;
+	private JButton refreshButton;
 
-	public void setDecisionCandidato(boolean decision) {
-	    this.decision = decision;
-	    this.hayDecision = true;
-	}
 	
 	
 	public static MainGUI getInstance() {
@@ -371,7 +426,25 @@ public class MainGUI extends JFrame {
             displayMainGUI.setText(mensaje);
         });
 	}
-	
+	public static int calcularEdad(Date fechaNacimiento, Date fechaActual) {
+        // Crear un calendario para la fecha de nacimiento
+        Calendar calNacimiento = Calendar.getInstance();
+        calNacimiento.setTime(fechaNacimiento);
+        
+        // Crear un calendario para la fecha actual	
+        Calendar calActual = Calendar.getInstance();
+        calActual.setTime(fechaActual);
+        
+        // Calcular la edad inicial (diferencia de años)
+        int edad = calActual.get(Calendar.YEAR) - calNacimiento.get(Calendar.YEAR);
+        
+        // Verificar si ya cumplió años en el año actual
+        if (calActual.get(Calendar.DAY_OF_YEAR) < calNacimiento.get(Calendar.DAY_OF_YEAR)) {
+            edad--; // Aún no ha cumplido años este año
+        }
+        
+        return edad;
+    }
 	
 	
 	
